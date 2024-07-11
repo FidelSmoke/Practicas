@@ -1,6 +1,6 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
-import Sidebar from '../Components/Sidebar'
+import 'bootstrap/scss/bootstrap.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react' 
 const Home = () => {
     return (
         <div>
