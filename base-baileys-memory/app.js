@@ -44,6 +44,13 @@ const flowDiscord = addKeyword(['discord']).addAnswer(
     [flowSecundario]
 )
 
+const flowHolamvd = addKeyword(['Hola mvd']).addAnswer(
+    ['Hola Guapa ¿Como Estas? , ¿Me Extrañaste Mucho?'],
+    null,
+    null,
+    [flowSecundario]
+)
+
 const flowPrincipal = addKeyword(['hola', 'ole', 'alo','buenas'])
     .addAnswer('Hola ¿Como Estas?')
     .addAnswer('Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍')
