@@ -1,0 +1,320 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: '166FF539F0063A4BAA6CE302F43ECDDC',
+    participant: undefined
+  },
+  messageTimestamp: 1721101511,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola mvd',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola mvd',
+  from: '573042078733'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  keyword: 'key_00d85ee2-9239-4a8a-ab7f-477c42c66701',
+  answer: 'Hola ¿Como Estas?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8a17630db9b8799f8adef0e4abd7350a'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4bbe757f-36ee-4ab7-bf21-6372c76d33f8',
+  keyword: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  answer: 'Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a701975e6862d0575614a553c3f95cae'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: '77A1D458BBCF357ADF2C43C1A24E9D28',
+    participant: undefined
+  },
+  messageTimestamp: 1721101561,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola mvd',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola mvd',
+  from: '573042078733'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  keyword: 'key_00d85ee2-9239-4a8a-ab7f-477c42c66701',
+  answer: 'Hola ¿Como Estas?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8a17630db9b8799f8adef0e4abd7350a'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4bbe757f-36ee-4ab7-bf21-6372c76d33f8',
+  keyword: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  answer: 'Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a701975e6862d0575614a553c3f95cae'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: '56A07E29FF23359152B8ABA277339314',
+    participant: undefined
+  },
+  messageTimestamp: 1721101568,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Discord',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Discord',
+  from: '573042078733'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: 'B000400565DC48CA19D8529CA69FCF21',
+    participant: undefined
+  },
+  messageTimestamp: 1721101578,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'discord',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'discord',
+  from: '573042078733'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: '40F268A6FE02D054FFD022A1FB457F73',
+    participant: undefined
+  },
+  messageTimestamp: 1721101597,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola mvd',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola mvd',
+  from: '573042078733'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  keyword: 'key_00d85ee2-9239-4a8a-ab7f-477c42c66701',
+  answer: 'Hola ¿Como Estas?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8a17630db9b8799f8adef0e4abd7350a'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4bbe757f-36ee-4ab7-bf21-6372c76d33f8',
+  keyword: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  answer: 'Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a701975e6862d0575614a553c3f95cae'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: 'C3C41503C894674EC87290127A629BE1',
+    participant: undefined
+  },
+  messageTimestamp: 1721101599,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Ole',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Ole',
+  from: '573042078733'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  keyword: 'key_00d85ee2-9239-4a8a-ab7f-477c42c66701',
+  answer: 'Hola ¿Como Estas?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8a17630db9b8799f8adef0e4abd7350a'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4bbe757f-36ee-4ab7-bf21-6372c76d33f8',
+  keyword: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  answer: 'Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a701975e6862d0575614a553c3f95cae'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '573042078733@s.whatsapp.net',
+    fromMe: false,
+    id: '1D1AA3C3566D1FCD245B485D5352C2E9',
+    participant: undefined
+  },
+  messageTimestamp: 1721101601,
+  pushName: 'Julio Espitia',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola',
+  from: '573042078733'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  keyword: 'key_00d85ee2-9239-4a8a-ab7f-477c42c66701',
+  answer: 'Hola ¿Como Estas?',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '8a17630db9b8799f8adef0e4abd7350a'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4bbe757f-36ee-4ab7-bf21-6372c76d33f8',
+  keyword: 'ans_2b0d6c94-c373-4857-938c-236f5eedf802',
+  answer: 'Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?🐱‍🏍🐱‍🏍🐱‍🏍',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'a701975e6862d0575614a553c3f95cae'
+}
