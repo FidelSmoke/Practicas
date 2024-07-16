@@ -44,21 +44,19 @@ const flowDiscord = addKeyword(['discord']).addAnswer(
     [flowSecundario]
 )
 
-const flowHolamvd = addKeyword(['holamvd']).addAnswer(
-    ['Hola Guapa ¿Como Estas? , ¿Me Extrañaste Mucho?'],
-    null,
-    null,
+const flowHolamvd = addKeyword(['hola mvd']).addAnswer(
+    ['Hola Guapa ¿Como Estas? , ¿Me Extrañaste Mucho?']
     [flowSecundario]
 )
 
-const flowPrincipal = addKeyword(['hola', 'ole', 'alo','buenas','Hola mvd'])
+const flowPrincipal = addKeyword(['ole', 'alo','buenas',])
     .addAnswer('Hola ¿Como Estas?')
     .addAnswer('Bienvenido Al Chat De Fidel Smoke ¿De Que Quieres Hablar El Dia De Hoy?')
 
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowPrincipal])
+    const adapterFlow = createFlow([flowPrincipal,flowDocs,flowHolamvd,flowSecundario,flowGracias,flowDiscord,flowTuto])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
