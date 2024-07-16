@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-rou
 import Navbar from './Components/Navbar'
 import Sidebar from '../src/Components/Sidebar'
 import Home from './pages/Home'
-import Sales from './pages/Sales'
+import Ventas from './pages/Ventas'
 import Clients from './pages/Clients'
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Inventario from './pages/inventario'
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
           <Routes>
             <Route exact path='*' element={<Navbar />}></Route>
             <Route exact path='/' element={<Home />}> </Route>
-            <Route exact path='/sales' element={<Sales />}> </Route>
+            <Route exact path='/Ventas' element={<Ventas />}> </Route>
             <Route exact path='/clients' element={<Clients />}> </Route>
+            <Route exact path='/Inventario' element={<Inventario />}> </Route>
           </Routes>
         </div>
       </div>

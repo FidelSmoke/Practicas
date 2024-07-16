@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
   margin: 0;
@@ -21,7 +22,7 @@ $gray: #e7e9eb;
 
 
 .navbar {
-  background-color: $light;
+  font-family: "Bebas Neue", sans-serif;
   padding: 1rem 2rem;
   border-bottom: 1px solid $gray;
 }

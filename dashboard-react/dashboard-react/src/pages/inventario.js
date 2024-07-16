@@ -1,12 +1,12 @@
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
-const Navbar = () => {
+import React from 'react' 
+const Inventario= () => {
     return (
-        <div className="navbar">
-            Master Barber   
+        <div>
+            <p>Inventario</p>
         </div>
     )
 }
 
-
-export default Navbar
+export default Inventario
