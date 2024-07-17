@@ -3,9 +3,13 @@ import { NavLink } from 'react-router-dom'
 import 'bootstrap/scss/bootstrap.scss'
 import * as faIncons from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BsBasket3Fill } from "react-icons/bs"
+import { IoPersonAddSharp } from "react-icons/io5";
 const Sidebar = () => {
     return (
-        <div className="sidebar">
+        <div className="sidebar border-end">
+              <h1 className='fs-4 pt-3 pb-4 text-center d-none d-sm-block mt-4' >Master Barber</h1>
+            <div className='nave'>
             <ul>
                  <li>
                       <NavLink to="/" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'><faIncons.FaHome className='me-2'/>Inicio</NavLink>
@@ -15,13 +19,18 @@ const Sidebar = () => {
                       Ventas</NavLink>
                 </li>
                 <li>
-                      <NavLink to="/Clients" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Clientes</NavLink>
+                      <NavLink to="/Clientes" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Clientes</NavLink>
                 </li>
                 <li>
-                      <NavLink to="/Inventario" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Inventario</NavLink>
+                      <NavLink to="/Barberos" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'><    IoPersonAddSharp className='me-2' />Barberos</NavLink>
+                </li>
+                <li>
+                      <NavLink to="/Inventario" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'><BsBasket3Fill className='me-2' />Inventario</NavLink>
                 </li>
             </ul>
+            </div>
         </div>
+        
     )
 }
 

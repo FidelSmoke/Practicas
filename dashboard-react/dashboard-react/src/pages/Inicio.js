@@ -1,12 +1,12 @@
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react' 
-const Home = () => {
+const Inicio= () => {
     return (
         <div>
-            <p>Home</p>
+            <p>Inicio</p>
         </div>
     )
 }
 
-export default Home
+export default Inicio

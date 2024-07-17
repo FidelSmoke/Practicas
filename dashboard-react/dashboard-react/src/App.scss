@@ -19,20 +19,21 @@ $gray: #e7e9eb;
   display: flex;
 }
 
-
+.Texto {
+  font-family: "Bebas Neue", sans-serif;
+}
 
 .navbar {
-  font-family: "Bebas Neue", sans-serif;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid $gray;
+  margin-top: 50px;
+  z-index:2;
+  letter-spacing: 1px;
 }
   
 .sidebar {
-  // background-color: red;
-  margin-top: 100px;
-  width:  14rem;
-  height: calc(100vh - 52px);
-  border-right: 1px solid $gray;
+    font-family: "Bebas Neue", sans-serif;
+    margin-top: 0%;
+    width:  20rem;
+    height: calc(100vh - 100px);
   ul {
     list-style: none;
     padding: 1rem 2rem;
@@ -46,4 +47,8 @@ $gray: #e7e9eb;
       }
     }
   }
+}
+
+.nave {
+  margin-top: 9%;
 }

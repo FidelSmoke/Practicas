@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-const Clients = () => {
+const Clientes = () => {
     return (
         <div>
-            <p>Clients</p>
+            <p>Clientes</p>
         </div>
     )
 }
 
-export default Clients
+export default Clientes
