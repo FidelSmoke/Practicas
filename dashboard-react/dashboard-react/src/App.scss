@@ -10,6 +10,8 @@
 
 body {
   font-family: "Rubik", sans-serif;
+  background-color:#1f1f1f;
+
 }
   
 $light:#ffffff;
@@ -24,8 +26,6 @@ $gray: #e7e9eb;
 }
 
 .navbar {
-  margin-top: 50px;
-  z-index:2;
   letter-spacing: 1px;
 }
   

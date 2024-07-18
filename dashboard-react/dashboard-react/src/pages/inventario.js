@@ -4,8 +4,8 @@ import React from 'react'
 const Inventario = () => {
     return (
         <div>
-            <h5 className='mt-5 text-center pb-3 pt-3'>MASTER BARBER | INVENTARIO</h5>
-            <table className=" table table-striped mt-5">
+            <h5 className='mt-5 text-center pb-3 pt-3 text-white'>MASTER BARBER | INVENTARIO</h5>
+            <table className=" table-dark table table-striped mt-5">
                 <thead>
                     <tr>
 
@@ -36,6 +36,8 @@ const Inventario = () => {
                     </tr>
                 </tbody>
             </table>
+
+
         </div>
 
     )
