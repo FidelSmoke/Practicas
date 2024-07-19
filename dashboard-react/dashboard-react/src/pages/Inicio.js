@@ -4,7 +4,7 @@ import React from 'react'
 const Inicio= () => {
     return (
         <div>
-            <p>Inicio</p>
+            <p className='text-white'>Inicio</p>
         </div>
     )
 }

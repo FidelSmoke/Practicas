@@ -3,13 +3,12 @@ import Navbar from './Components/Navbar'
 import Sidebar from '../src/Components/Sidebar'
 import Ventas from './pages/Ventas'
 import Clientes from './pages/Clientes'
-import Barberos from './pages/Barberos'
+import AddBarberos from './pages/AddBarberos'
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Inventario from './pages/inventario'
 import Inicio from './pages/Inicio'
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +22,7 @@ function App() {
             <Route exact path='/Ventas' element={<Ventas />}> </Route>
             <Route exact path='/Clientes' element={<Clientes />}> </Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
-            <Route exact path='/Barberos' element={<Barberos />}> </Route>
+            <Route exact path='/addBarberos' element={<AddBarberos />}> </Route>
           </Routes>
         </div>
       </div>

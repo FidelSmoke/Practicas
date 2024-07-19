@@ -1,6 +1,7 @@
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BiSolidUserCircle } from "react-icons/bi";
+
 const Navbar = () => {
     return (
         <div className="navbar border-bottom mt-0 justify-content-end ">

@@ -1,10 +1,11 @@
 import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react' 
+import { Link } from 'react-router-dom'
 const Ventas= () => {
     return (
         <div>
-            <p>Ventas</p>
+            <p className='text-white'>Ventas</p>
         </div>
     )
 }
