@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import 'bootstrap/scss/bootstrap.scss'
 import * as faIncons from 'react-icons/fa'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BsBasket3Fill } from "react-icons/bs"
 import { IoPersonAddSharp } from "react-icons/io5";
 const Sidebar = () => {
@@ -14,13 +13,9 @@ const Sidebar = () => {
                  <li>
                       <NavLink to="/" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'><faIncons.FaHome className='me-2'/>Inicio</NavLink>
                 </li>
-                <li>
-                      <NavLink to="/Ventas" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'> <faIncons.FaRegChartBar className='me-2'/>
-                      Ventas</NavLink>
-                </li>
-                {/* <li>
-                      <NavLink to="/Clientes" exact className='text-dark rounded py-2 w-100 d-inline-block px-3'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Clientes</NavLink>
-                </li> */}
+                  <li>
+                      <NavLink to="/Clientes" exact className='rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Clientes</NavLink>
+                </li> 
                 <li>
                       <NavLink to="/AddBarberos" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'><IoPersonAddSharp className='me-2' /> Add Barbers</NavLink>
                 </li>

@@ -1,5 +1,4 @@
 import 'bootstrap/scss/bootstrap.scss'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BiSolidUserCircle } from "react-icons/bi";
 
 const Navbar = () => {
