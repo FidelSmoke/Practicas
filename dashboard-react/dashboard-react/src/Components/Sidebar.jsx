@@ -7,15 +7,12 @@ import { IoPersonAddSharp } from "react-icons/io5";
 const Sidebar = () => {
     return (
         <div className="sidebar border-end">
-              <h1 className='fs-4 pt-3 pb-4 text-center d-none d-sm-block mt-4 text-warning mt-5' >Master Barber</h1>
+              <h1 className='fs-4 pt-3 pb-4 text-center d-none d-sm-block mt-4 text-warning mb-4' >Master Barber</h1>
             <div className='nave'>
             <ul>
                  <li>
-                      <NavLink to="/" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'><faIncons.FaHome className='me-2'/>Inicio</NavLink>
+                      <NavLink to="/" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning mt-3'  activeClassName='active'><faIncons.FaHome className='me-2'/>Inicio</NavLink>
                 </li>
-                  <li>
-                      <NavLink to="/Clientes" exact className='rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'> <faIncons.FaUserFriends className='me-2'/>Clientes</NavLink>
-                </li> 
                 <li>
                       <NavLink to="/AddBarberos" exact className=' rounded py-2 w-100 d-inline-block px-3 text-warning'  activeClassName='active'><IoPersonAddSharp className='me-2' /> Add Barbers</NavLink>
                 </li>

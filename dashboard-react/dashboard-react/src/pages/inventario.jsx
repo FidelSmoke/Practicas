@@ -4,6 +4,16 @@ const Inventario = () => {
     return (
         <div>
             <h5 className='mt-5 text-center pb-3 pt-3 text-white'>MASTER BARBER | INVENTARIO</h5>
+
+            <nav class="navbar  bg-dark">
+                <div class="container-fluid justify-content-end">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search"></input>
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+            
             <table className=" table-dark table table-striped mt-5">
                 <thead>
                     <tr>

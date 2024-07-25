@@ -25,20 +25,20 @@ $gray: #e7e9eb;
   font-family: "Bebas Neue", sans-serif;
 }
 
-.navbar {
-  letter-spacing: 1px;
-}
+// .navbar {
+//   letter-spacing: 1px;
+// }
   
 .sidebar {
     font-family: "Bebas Neue", sans-serif;
     margin-top: 0%;
     width:  20rem;
-    height: calc(100vh - 100px);
+    height: calc(114vh - 100px);
   ul {
     list-style: none;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       a{
       text-decoration: none;
       &.active {
