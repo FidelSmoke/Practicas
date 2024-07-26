@@ -4,8 +4,9 @@ import Sidebar from '../src/Components/Sidebar'
 import AddBarberos from './pages/AddBarberos'
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
-import Inventario from './pages/inventario'
+import Perfil from './pages/Perfil'
 import Inicio from './pages/Inicio'
+import Inventario from './pages/inventario'
 function App() {
   return (
     <BrowserRouter>
@@ -18,13 +19,13 @@ function App() {
             <Route exact path='/' element={<Inicio />}> </Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/addBarberos' element={<AddBarberos />}> </Route>
-  
+            <Route exact path='/Perfil' element={<Perfil />}> </Route>
           </Routes>
         </div>
       </div>
     </BrowserRouter>
 
-  );
+  )
 }
 
 export default App;

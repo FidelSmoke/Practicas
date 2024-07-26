@@ -1,11 +1,10 @@
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-const addBarberos = () => {
+const Perfil = () => {
     return (
         <div>
-            <p className='text-white'>Barberos</p>
         </div>
     )
 }
 
-export default addBarberos
+export default Perfil

@@ -5,15 +5,16 @@ const Inventario = () => {
         <div>
             <h5 className='mt-5 text-center pb-3 pt-3 text-white'>MASTER BARBER | INVENTARIO</h5>
 
-            <nav class="navbar  bg-dark">
-                <div class="container-fluid justify-content-end">
+            <nav class="navbar bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white">INVENTARIO MB</a>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search"></input>
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
+                            <button class="btn btn-outline-success" type="submit">Ir</button>
                     </form>
                 </div>
             </nav>
-            
+
             <table className=" table-dark table table-striped mt-5">
                 <thead>
                     <tr>
