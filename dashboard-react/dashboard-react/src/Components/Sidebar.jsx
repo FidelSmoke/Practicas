@@ -9,7 +9,7 @@ import { FaPowerOff } from "react-icons/fa";
 const Sidebar = () => {
       return (
             <div className="sidebar rounded-end">
-                  <h1 className='fs-4 pt-3 pb-4 text-center d-none d-sm-block mt-4 text-danger mb-4' >Master Barber</h1>
+                  <h1 className='text-center d-none d-sm-block mt-4 text-danger mb-4' >Master Barber</h1>
                   <div className='nave'>
                         <ul>
                               <li>

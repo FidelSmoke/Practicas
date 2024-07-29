@@ -3,7 +3,7 @@ import React from 'react'
 const addBarberos = () => {
     return (
         <div>
-            <p className='text-white'>Barberos</p>
+            <p className='text-white'></p>
         </div>
     )
 }
