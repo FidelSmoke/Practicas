@@ -1,6 +1,8 @@
 import React from 'react';
 import { Doughnut, Line, Bar } from 'react-chartjs-2';
-import { Chart } from 'chart.js/auto';
+import { Chart, registerables } from 'chart.js';
+
+Chart.register(...registerables);
 
 export default function Graficas({ tipo, data, options }) {
 

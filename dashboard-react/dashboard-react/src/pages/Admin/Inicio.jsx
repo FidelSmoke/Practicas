@@ -1,6 +1,8 @@
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-import Graficas from '../Components/Graficas'
+import Graficas from '../../Components/Graficas';
+import Sidebar from '../../Components/Sidebar';
+
 const Inicio = () => {
   const data = {
     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre'],
@@ -32,10 +34,14 @@ const Inicio = () => {
 
   };
   return (
-    <div>
-      <p className='mt-5 text-center pb-3 pt-3 text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL FORMULARIO DE VENTAS</p>
-
-      <Graficas data={data} options={options} tipo='line' className='mt-2' />
+    <div className='flex'>
+      <Sidebar />
+      <div className="w-100">
+        <div>
+          <p className='mt-5 text-center pb-3 pt-3 text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL FORMULARIO DE VENTAS</p>
+          <Graficas data={data} options={options} tipo='line' className='mt-2' />
+        </div>
+      </div>
     </div>
   )
 }
