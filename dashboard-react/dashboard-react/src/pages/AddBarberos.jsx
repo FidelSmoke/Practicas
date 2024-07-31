@@ -9,14 +9,14 @@ const addBarberos = () => {
                     <a class="navbar-brand text-white" href='#'>BARBEROS</a>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"></input>
-                        <button class="btn btn-outline-success" type="submit">Ir</button>
+                        <button class="btn btn-outline-danger" type="submit">Ir</button>
                     </form>
                 </div>
             </nav>
             <div className="d-flex justify-content-end mx-5 mt-5">
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
             </div>
-            <table class="table table-dark table-hover mt-4">
+            <table class="table table-dark table-hover mt-4 .col-md-4">
                 <thead>
                     <tr>
                         <th scope="col">Nombre Barbero</th>
@@ -30,7 +30,7 @@ const addBarberos = () => {
                         <th scope="row">Deiby</th>
                         <td>Esoecialista En......</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -59,7 +59,7 @@ const addBarberos = () => {
                         <th scope="row">Jeison</th>
                         <td>Especialista En....</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -88,7 +88,7 @@ const addBarberos = () => {
                         <th scope="row">Eduardo</th>
                         <td>Especialista En.......</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -117,7 +117,7 @@ const addBarberos = () => {
                         <th scope="row">Camilo</th>
                         <td>Especialista En.....</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -146,7 +146,7 @@ const addBarberos = () => {
                         <th scope="row">Cristian</th>
                         <td>Especialista En.....</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -175,7 +175,7 @@ const addBarberos = () => {
                         <th scope="row">Jorge</th>
                         <td>Especialista En...</td>
                         <td>@twitter</td>
-                        <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                        <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
                             <button className="btn btn-outline-danger mx-3" onClick={() => {
                                 Swal.fire({
                                     title: "¿Eliminar Barbero?",
@@ -222,9 +222,9 @@ const addBarberos = () => {
                                     <label for="recipient-name" class="col-form-label text-white">Descripcion</label>
                                     <input type="text" class="form-control" id="recipient-name" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label text-white">Imagen Barbero</label>
-                                    <input type="text" class="form-control" id="recipient-name" />
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="floatingInput" className='text-white'>Imagen</label>
+                                    <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
                                 </div>
                             </form>
                         </div>
@@ -285,9 +285,9 @@ const addBarberos = () => {
                                     <label for="recipient-name" class="col-form-label text-white">Descripcion</label>
                                     <input type="text" class="form-control" id="recipient-name" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label text-white">Imagen</label>
-                                    <input type="text" class="form-control" id="recipient-name" />
+                                <div className="col-12 mb-3">
+                                    <label htmlFor="floatingInput" className='text-white'>Imagen</label>
+                                    <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
                                 </div>
                             </form>
                         </div>

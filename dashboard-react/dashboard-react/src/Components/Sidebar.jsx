@@ -8,8 +8,8 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { FaPowerOff } from "react-icons/fa";
 const Sidebar = () => {
       return (
-            <div className="sidebar rounded-end ">
-                  <h1 className='text-center d-none d-sm-block mt-4 text-danger mb-4' >Master Barber</h1>
+            <div className="sidebar rounded-end col-4">
+                  <h1 className='text-center d-none d-sm-block mt-5 text-danger mb-4 '>Master Barber</h1>
                   <div className='nave'>
                         <ul>
                               <li>
@@ -26,11 +26,11 @@ const Sidebar = () => {
                               </li>
                         </ul>
                   </div>
-                  <div className="navbar d-flex justify-content-start">
-                        <small className='text-white mx-5 mt-5'>Hola, Administrador</small><FaPowerOff  className='mt-5 fs-5 text-danger'/>
+                  <div className="navbar d-flex align-items-end">
+                        <small className='text-white mx-5 fs-6"'>Hola, Administrador</small><FaPowerOff className='mt-5 fs-5 text-danger' />
                   </div>
-            </div>
 
+            </div>
       )
 }
 export default Sidebar

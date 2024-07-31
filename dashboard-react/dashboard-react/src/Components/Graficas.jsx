@@ -9,7 +9,11 @@ export default function Graficas({ tipo, data, options }) {
   } else if (tipo === 'line') {
     return <Line data={data} options={options} height={80} />;
   } else if (tipo === 'bar') {
-    return <Bar data={data} options={options} />;
+    return <Bar data={data} options={options} height={80} />;
+  } else if (tipo === 'bar') {
+    return <Bar data={data} options={options} height={80} />;
+  } else if (tipo === 'bar') {
+    return <Bar data={data} options={options} height={80} />;
   }
   return null;
 }

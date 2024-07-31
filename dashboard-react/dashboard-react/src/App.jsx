@@ -13,13 +13,14 @@ function App() {
       <div className='flex'>
         <Sidebar />
         <div className='content w-100'>
-        <Navbar />
+          <Navbar />
           <Routes>
             <Route exact path='*' element={<Navbar />}></Route>
             <Route exact path='/' element={<Inicio />}> </Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/addBarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
+            <Route exact path='/Login' element={<Login />}> </Route>
           </Routes>
         </div>
       </div>
