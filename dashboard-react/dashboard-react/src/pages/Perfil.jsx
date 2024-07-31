@@ -1,10 +1,9 @@
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-const Perfil = () => {
+export default function Perfil() {
     return (
-        <div>
+        <div className='text-white'>
+            <p>Perfil</p>
         </div>
     )
 }
-
-export default Perfil
