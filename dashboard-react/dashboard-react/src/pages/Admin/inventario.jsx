@@ -19,223 +19,225 @@ const inventario = () => {
             </form>
           </div>
         </nav>
-        <div className="d-flex justify-content-end mx-5 mt-3">
+        <div className="d-flex justify-content-end mx-5 mt-5">
           <button type="button" class="btn btn-danger .col-md-4" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
         </div>
-        <table class=" row table table-dark table-hover mt-3">
-          <thead className='container'>
-            <tr>
-              <th scope=".col-md-4 .ms-auto">IdProdu</th>
-              <th scope="col-8">Nombre</th>
-              <th scope="col-4">Descripcion</th>
-              <th scope="col-4">Cantidad</th>
-              <th scope="col-4">Id_CP</th>
-              <th scope="col-4">imagen</th>
-              <th scope="col-4">Precio</th>
-              <th scope="col-4">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="col-4">P1</th>
-              <td className='.col-4'>Camisetas Oversize</td>
-              <td className='.col-4'>Camisetas con estampado y horma grande</td>
-              <td className='.col-4'>20</td>
-              <td className='.col-4'>CP1</td>
-              <td className='.col-4'>@twitter</td>
-              <td className='.col-4'>78.000</td>
-              <td><button type="button" class="btn btn-outline-warning .col-md-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3 col" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Producto eliminado',
-                          text: 'El Producto fue eliminado correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+        <div className='table-responsive'>
+          <table class="table table-dark container p-5 mt-5">
+            <thead>
+              <tr>
+                <th scope="col">IdProdu</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Id_CP</th>
+                <th scope="col">imagen</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">P1</th>
+                <td className='.col'>Camisetas Oversize</td>
+                <td className='.col'>Camisetas con estampado y horma grande</td>
+                <td className='.col'>20</td>
+                <td className='.col'>CP1</td>
+                <td className='.col'>@twitter</td>
+                <td className='.col'>78.000</td>
+                <td><button type="button" class="btn btn-outline-warning .col-md-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3 col" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Producto eliminado',
+                            text: 'El Producto fue eliminado correctamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">P2</th>
-              <td>Gorras</td>
-              <td>Gorras con diferentes estilos y variados colores</td>
-              <td>10</td>
-              <td>CP2</td>
-              <td>@twitter</td>
-              <td>50.000</td>
-              <td className='col-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Producto eliminado',
-                          text: 'El Producto fue eliminado correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">P2</th>
+                <td>Gorras</td>
+                <td>Gorras con diferentes estilos y variados colores</td>
+                <td>10</td>
+                <td>CP2</td>
+                <td>@twitter</td>
+                <td>50.000</td>
+                <td className='col'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Producto eliminado',
+                            text: 'El Producto fue eliminado correctamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">P3</th>
-              <td>Aretes</td>
-              <td>Aretes, expaciones, simulaciones, etc.</td>
-              <td>50</td>
-              <td>CP2</td>
-              <td>@twitter</td>
-              <td>20.000</td>
-              <td className='col-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Producto eliminado',
-                          text: 'El Producto fue eliminado correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">P3</th>
+                <td>Aretes</td>
+                <td>Aretes, expaciones, simulaciones, etc.</td>
+                <td>50</td>
+                <td>CP2</td>
+                <td>@twitter</td>
+                <td>20.000</td>
+                <td className='col'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Producto eliminado',
+                            text: 'El Producto fue eliminado correctamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">P4</th>
-              <td>Mascarillas</td>
-              <td>Mascarillas para puntos negros e hidratantes</td>
-              <td>20</td>
-              <td>CP3</td>
-              <td>@twitter</td>
-              <td>15.000</td>
-              <td className='col-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Cliente elProducto',
-                          text: 'El cliente fue eliminado correProducto.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">P4</th>
+                <td>Mascarillas</td>
+                <td>Mascarillas para puntos negros e hidratantes</td>
+                <td>20</td>
+                <td>CP3</td>
+                <td>@twitter</td>
+                <td>15.000</td>
+                <td className='col'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Cliente elProducto',
+                            text: 'El cliente fue eliminado correProducto.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">P5</th>
-              <td>Talcos para texturas</td>
-              <td>Para un texturizado de cabello mas visible</td>
-              <td>10</td>
-              <td>CP3</td>
-              <td>@twitter</td>
-              <td>30.000</td>
-              <td className='col-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Producto eliminado',
-                          text: 'El Producto fue eliminado correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">P5</th>
+                <td>Talcos para texturas</td>
+                <td>Para un texturizado de cabello mas visible</td>
+                <td>10</td>
+                <td>CP3</td>
+                <td>@twitter</td>
+                <td>30.000</td>
+                <td className='col'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Producto eliminado',
+                            text: 'El Producto fue eliminado correctamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">P6</th>
-              <td>Pierncings</td>
-              <td>Piercings para la ceja, nariz, lengua, labio y de ...</td>
-              <td>60</td>
-              <td>CP2</td>
-              <td>@twitter</td>
-              <td>20.000</td>
-              <td className='col-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                <button className="btn btn-outline-danger mx-3" onClick={() => {
-                  Swal.fire({
-                    title: "¿Eliminar Producto?",
-                    text: "¡Se eliminara el Producto!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, eliminar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Producto eliminado',
-                          text: 'El Producto fue eliminado correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+              <tr>
+                <th scope="row">P6</th>
+                <td>Pierncings</td>
+                <td>Piercings para la ceja, nariz, lengua, labio y de ...</td>
+                <td>60</td>
+                <td>CP2</td>
+                <td>@twitter</td>
+                <td>20.000</td>
+                <td className='col'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                  <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    Swal.fire({
+                      title: "¿Eliminar Producto?",
+                      text: "¡Se eliminara el Producto!",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: "#3085d6",
+                      cancelButtonColor: "#d33",
+                      confirmButtonText: "¡Si, eliminar!",
+                      cancelButtonText: "Cancelar"
+                    }).then(
+                      (result) => {
+                        if (result.isConfirmed) {
+                          Swal.fire({
+                            title: 'Producto eliminado',
+                            text: 'El Producto fue eliminado correctamente.',
+                            icon: 'success',
+                            confirmButtonText: 'Hecho'
+                          })
+                        }
                       }
-                    }
-                  )
-                }}><i class="bi bi-trash-fill"></i></button></td>
-            </tr>
-          </tbody>
+                    )
+                  }}><i class="bi bi-trash-fill"></i></button></td>
+              </tr>
+            </tbody>
           </table>
+        </div>
 
         {/* MODAL EDITAR */}
 
@@ -322,6 +324,7 @@ const inventario = () => {
           <div class="modal-dialog">
             <div class="modal-content bg-dark">
               <div class="modal-header">
+                <h1 class="modal-title fs-5 text-white text-white" id="exampleModalLabel">AÑADIR</h1>
               </div>
               <div class="modal-body">
                 <form>

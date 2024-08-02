@@ -7,15 +7,10 @@ Chart.register(...registerables);
 export default function Graficas({ tipo, data, options }) {
 
   if (tipo === 'doughnut') {
-    return <Doughnut data={data} options={options} height={550} />;
+    return <Doughnut data={data} options={options} height={10} />;
   } else if (tipo === 'line') {
-    return <Line data={data} options={options} height={80} />;
+    return <Line data={data} options={options} height={40} />;
   } else if (tipo === 'bar') {
-    return <Bar data={data} options={options} height={80} />;
-  } else if (tipo === 'bar') {
-    return <Bar data={data} options={options} height={80} />;
-  } else if (tipo === 'bar') {
-    return <Bar data={data} options={options} height={80} />;
   }
   return null;
 }

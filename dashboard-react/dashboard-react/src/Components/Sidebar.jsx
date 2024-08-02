@@ -24,15 +24,13 @@ const Sidebar = () => {
                               <li>
                                     <NavLink to="/Perfil" exact className='rounded py-2 w-100 d-inline-block px-3 text-danger' activeClassName='active'><FaUserTie className='me-2' />Perfil</NavLink>
                               </li>
-                              {/* <li>
-                                    <NavLink to="/Login" exact className='rounded py-2 w-100 d-inline-block px-3 text-danger' activeClassName='active'><FaUserTie className='me-2' />Login</NavLink>
-                              </li> */}
                         </ul>
                   </div>
-                  <div className="navbar d-flex align-items-end">
-                        <small className='text-white mx-5 fs-6"'>Hola, Administrador</small><FaPowerOff className='mt-5 fs-5 text-danger' />
-                  </div>
-
+                  
+                        <div className="navbar d-flex align-items-end">
+                              <small className='text-white mx-5 fs-6"'>Hola, Administrador</small><FaPowerOff className='mt-5 fs-5 text-danger' />
+                        </div>
+            
             </div>
       )
 }
