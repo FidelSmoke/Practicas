@@ -23,7 +23,7 @@ const inventario = () => {
           <button type="button" class="btn btn-danger .col-md-4" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
         </div>
         <div className='table-responsive'>
-          <table class="table table-dark container p-5 mt-5">
+          <table class="table table-dark p-5 mt-5 col-12">
             <thead>
               <tr>
                 <th scope="col">IdProdu</th>
