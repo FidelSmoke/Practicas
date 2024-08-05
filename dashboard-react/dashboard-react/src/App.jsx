@@ -3,9 +3,10 @@ import AddBarberos from './pages/Admin/AddBarberos';
 import Inventario from './pages/Admin/inventario'
 import Perfil from './pages/Admin/Perfil';
 import Inicio from './pages/Admin/Inicio';
+import Login from './pages/Usuario/Login'
+import Index from './pages/Usuario/Index';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
-import Login from './pages/Usuario/Login'
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
+            <Route exact path='/Index' element={<Index />}></Route>
           </Routes>
         </div>
       </div>
