@@ -348,13 +348,13 @@ const inventario = () => {
                     <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
                     <input type="text" class="form-control" id="recipient-name" />
                   </div>
-                  <div className="col-12 mb-3">
-                    <label htmlFor="floatingInput" className='text-white'>Imagen</label>
-                    <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
-                  </div>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Precio:</label>
                     <input type="text" class="form-control" id="recipient-name" />
+                  </div>
+                  <div className="col-12 mb-3">
+                    <label htmlFor="floatingInput" className='text-white'>Imagen</label>
+                    <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
                   </div>
                 </form>
               </div>
