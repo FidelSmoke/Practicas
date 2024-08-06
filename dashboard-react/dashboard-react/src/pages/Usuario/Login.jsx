@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Login() {
     return (
-        
+       
         <div className="min-vh-100 p-5 align-content-center ">
             <div className='container p-5 w-50 border border- bg-white table-responsive border rounded '>
                 <h1 className='text-danger text-center anton mb-4'>¡Ingresa Ya!</h1>
