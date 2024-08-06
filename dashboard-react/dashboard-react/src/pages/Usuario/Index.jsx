@@ -3,9 +3,10 @@ import NavbarUsuario from '../../Components/NavbarUsuario'
 
 export default function Index() {
     return (
-        <div className=''>
+        <div>
             <NavbarUsuario />
-            <div className='container p-5 mt-5 img table-responsive'>
+            <div className="img position-absolute top-0 start-0"><img src="/LOGO.png" alt="" /></div>
+            <div className='container p-5 mt-5 table-responsive'>
                 <h1 className='text-white text-center display-1 anton '>MASTER BARBER</h1>
                 <h2 className='text-warning text-center mt-5 anton '>BOGOTA</h2>
                 <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
@@ -22,7 +23,6 @@ export default function Index() {
                     </h1>
                 </div>
             </div>
-
 
         </div>
     )

@@ -65,10 +65,15 @@ $gray: #e7e9eb;
 }
 
 .img {
-  background-image: url("../public/LOGO.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  position: 50%;
+  height: 100%;
+  right: 100%;
+  opacity: 0.5;
 }
+
+
 
 
 
