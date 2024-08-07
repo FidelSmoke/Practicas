@@ -39,10 +39,7 @@ export default function NavbarUsuario() {
                                     <a class="nav-link active mt-4" href="../login">Registrarme</a>
                                 </li>
                             </ul>
-                            <form class="d-flex mt-3" role="search">
-                                <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
-                                <button class=" btn bg-danger " type="submit">Search</button>
-                            </form>
+
                         </div>
                     </div>
                 </div>
