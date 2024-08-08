@@ -3,7 +3,7 @@ import React from 'react'
 export default function Login() {
     return (
         <div class="login">
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end ">
+            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
                 <div className='container p-5 w-50 border border- bg-white table-responsive border rounded '>
                     <div className="row">
                         <div className="col-6">
@@ -33,7 +33,7 @@ export default function Login() {
 
                             <p><a href="#" class="link-underline-light">¿Olvidaste tu contraseña?</a></p>
                             <div className=' text-center mt-4'>
-                                <button type="button" class="btn btn-danger .col-md-4">Continuar</button>
+                                <a href="/Index"><button type="button" class="btn btn-danger .col-md-4">Continuar</button></a>
                             </div>
                         </div>
 
