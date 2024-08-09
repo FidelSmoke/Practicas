@@ -30,9 +30,9 @@ const Inicio = () => {
       <Sidebar />
       <div className="w-100">
         <div className='col-100'>
-          <p className='bebas mt-4 text-center text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL FORMULARIO DE VENTAS</p>
+          <p className='mt-5 text-center pb-3 pt-3 text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL FORMULARIO DE VENTAS</p>
         </div>
-        <div className='container'>
+        <div className='container pt-3'>
           <div className="row g-4">
             <div className="text-center justify-content-center">
               <Graficas data={data} tipo='line' options={options} />
@@ -51,11 +51,11 @@ const Inicio = () => {
           <div className="container border border-2 border-secondary my-5 p-3">
             <div className="row w-100 justify-content-between">
               <h4 className="col-12 col-sm-10 text-white">Productos más vendidos</h4>
-              <select name="" id="" className="form-select bg-dark text-white col-12 col-sm mx-2">
-                <option value="" >Enero</option>
-                <option value="" >Febrero</option>
-                <option value="" >Marzo</option>
-                <option value="" >Abril</option>
+              <select name="" id="" className="form-select col-12 col-sm mx-2">
+                <option value="">Enero</option>
+                <option value="">Febrero</option>
+                <option value="">Marzo</option>
+                <option value="">Abril</option>
               </select>
             </div>
           </div>

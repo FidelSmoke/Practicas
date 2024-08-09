@@ -28,13 +28,13 @@ export default function Login() {
                                 <input type="text" class="form-control" placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="basic-addon2" />
                             </div>
                             <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-file-lock"></i></span>
-                            <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Contraseña'/>
+                                <span class="input-group-text"><i class="bi bi-file-lock"></i></span>
+                                <input type="text" class="form-control" placeholder='Contraseña' aria-label="Amount (to the nearest dollar)" />
                             </div>
 
                             <p><a href="#" class="link-underline-light">¿Olvidaste tu contraseña?</a></p>
                             <div className=' text-center mt-4'>
-                                <button type="button" class="btn btn-danger .col-md-4">Continuar</button>
+                                <a href="/Index"><button type="button" class="btn btn-danger .col-md-4">Continuar</button></a>
                             </div>
                         </div>
 
