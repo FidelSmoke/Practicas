@@ -78,3 +78,28 @@ $gray: #e7e9eb;
 .bebas {
   font-family: "Bebas Neue", sans-serif;
 }
+
+.welcome {
+  display: flex;
+  width: 100%;
+  margin-top: 1.5%;
+
+}
+
+.welcome-1 {
+  background-image: url("../public/MB1.PNG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  margin-top: 0%;
+  object-fit: cover;
+  
+}
+
+.welcome-2 {
+  width: 50%;
+  margin-top: 0%;
+  padding: 150px 250px 150px 100px;
+  background-color: #191919;
+}
