@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 export default function Login() {
     return (
-        <div class="login" id='Login'>
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end ">
+        <div class="login">
+            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
                 <div className='container p-5 w-50 border border- bg-white table-responsive border rounded '>
                     <div className="row">
                         <div className="col-6">
@@ -13,8 +14,8 @@ export default function Login() {
                             <h1 className='text-danger text-center anton mb-4'>¡Ingresa Ya!</h1>
 
                             <div class="text-center">
-                                <button class="btn btn  mb-3 border border rounded-circle" type="button"><i class="bi bi-google"></i></button>
-                                <button class="btn btn  mb-3 mx-3 border border rounded-circle" type="button"><i class="bi bi-facebook"></i></button>
+                                <button class="btn btn  mb-3 border border rounded-circle text-dark bg-white" type="button"> <i class="bi bi-google"></i> </button>
+                                <button class="btn btn  mb-3 mx-3 border border rounded-circle text-primary bg-white" type="button"><i class="bi bi-facebook"></i></button>
                             </div>
 
 
@@ -30,6 +31,7 @@ export default function Login() {
                             <span class="input-group-text"><i class="bi bi-file-lock"></i></span>
                             <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder='Contraseña'/>
                             </div>
+
                             <p><a href="#" class="link-underline-light">¿Olvidaste tu contraseña?</a></p>
                             <div className=' text-center mt-4'>
                                 <button type="button" class="btn btn-danger .col-md-4">Continuar</button>
