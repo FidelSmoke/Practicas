@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 export default function Login() {
     return (
         <div class="login">
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
+            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end bs-body-color bs-body-color-rgb">
                 <div className='container p-5 w-50 border border bg-body-secondary table-responsive border rounded-4 '>
                     <div className="row">
                         <div className="col-6">
