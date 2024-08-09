@@ -13,12 +13,12 @@ function App() {
       <div className='flex'>
         <div className='content w-100'>
           <Routes>
-            <Route exact path='/' element={<Inicio />}> </Route>
+            <Route exact path='/' element={<Index />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
-            <Route exact path='/Index' element={<Index />}></Route>
+            <Route exact path='/inicio' element={<Inicio />}> </Route>
           </Routes>
         </div>
       </div>

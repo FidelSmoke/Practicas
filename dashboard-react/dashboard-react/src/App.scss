@@ -14,7 +14,6 @@ body {
   font-family: "Rubik", sans-serif;
   background-color: #1f1f1f;
 }
-
 .login {
   background-color: $red-800;
 }
@@ -111,5 +110,47 @@ $gray: #e7e9eb;
 
 .card {
   width: 18rem;
-  left: 25%;
+  left: 30%;
+  letter-spacing: 100%;
+}
+
+.prices {
+  display: flex;
+}
+
+.prices-1 {
+  width: 90%;
+  padding: 10% 150px 10px;
+  background-color: #000000;
+}
+
+.prices-2 {
+  background-image: url("../public/MB2.JPG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+
+.table {
+  margin: 50px 0;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.ff {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #AFAFAF;
+  margin-bottom: 20px;
+}
+
+th {
+  background-color: #000000;
+  padding-bottom: 15px;
+}
+
+td {
+  color: #D7AA45;
 }
