@@ -74,3 +74,36 @@ $gray: #e7e9eb;
 .bebas {
   font-family: "Bebas Neue", sans-serif;
 }
+
+.welcome {
+  display: flex;
+  width: 100%;
+  margin-top: 1.5%;
+
+}
+
+.welcome-1 {
+  background-image: url("../public/MB1.PNG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  margin-top: 0%;
+  object-fit: contain;
+  padding: 110px 150px 10px;
+  
+}
+
+.welcome-2 {
+  width: 60%;
+  background-color: #000000;
+}
+
+.welcome-2 {
+  padding: 10%;
+  margin-bottom: 0%;
+}
+
+.card{
+  width: 18rem;
+}

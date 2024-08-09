@@ -6,7 +6,7 @@ export default function NavbarUsuario() {
         <div className="">
             <nav class="navbar navbar-dark fixed-top mx-3 mt-3" >
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><i class="bi bi-person-circle p-3 fs-1"></i></a>
+                    <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler border border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon "></span>
                     </button>

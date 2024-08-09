@@ -6,7 +6,7 @@ const addBarberos = () => {
     return (
         <div className='flex'>
             <Sidebar />
-            <div className="w-100">
+            <div className="w-100 table-responsive">
                 <nav class="navbar bg-dark">
                     <div class="container-fluid">
                         <a class="navbar-brand text-white" href='#'>BARBEROS</a>
