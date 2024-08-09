@@ -84,7 +84,7 @@ $gray: #e7e9eb;
 .welcome {
   display: flex;
   width: 100%;
-  margin-top: 1.5%;
+  margin-top: 15%;
 
 }
 
@@ -95,14 +95,21 @@ $gray: #e7e9eb;
   background-size: cover;
   width: 50%;
   margin-top: 0%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 110px 150px 10px;
 
 }
 
 .welcome-2 {
-  width: 50%;
-  margin-top: 0%;
-  padding: 150px 250px 150px 100px;
-  background-color: #191919;
+  width: 60%;
+  background-color: #000000;
+}
 
+.welcome-2 {
+  padding: 10%;
+}
+
+.card {
+  width: 18rem;
+  left: 25%;
 }
