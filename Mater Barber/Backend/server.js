@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     database: "master_barber"
 })
 
-app.post('/usuarios', (req, res) => {
+app.post('/login', (req, res) => {
     const sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
 
     db.query(sql, [req.body.email, req.body.contraseña], (err, data) => {
@@ -26,5 +26,5 @@ app.post('/usuarios', (req, res) => {
 })
 
 app.listen(8081, () => {
-    console.log("Listening...")
+    console.log("HOla")
 })
