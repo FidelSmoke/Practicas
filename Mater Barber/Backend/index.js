@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require('cors');
 
+
 const app = express();
 const port = 5000;
 
@@ -13,7 +14,9 @@ app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }));
+
 
 // conexión a la base de datos
 const db = mysql.createConnection({
@@ -22,6 +25,7 @@ const db = mysql.createConnection({
     password: '',
     database: 'master_barber',
     connectTimeout: 10000,
+    ssl: true
 });
 
 
@@ -33,7 +37,8 @@ app.post('/usuarios', (req, res) => {
         return res.status(400).send('ingresar email y contraseña');
     }
 
-    db.query('SELECT * FROM usuarios WHERE user_email = fideljoseespi10@gmail.com', [email], (err, results) => {
+    db.query('SELECT * FROM usuarios WHERE email = ?', [email], (err, results) => {
+
         if (err) {
             console.error('Error en la consulta:', err);
             return res.status(500).send('Error en el servidor');
@@ -43,6 +48,7 @@ app.post('/usuarios', (req, res) => {
             return res.status(400).send('Usuario no encontrado');
         }
 
+        const user = results[0];
   
     });
 });
