@@ -14,7 +14,7 @@ export default function Login() {
     return (
         <div class="login">
             <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
-                <div class="container" className='container p-5 w-50 border border-white table-responsive border rounded-4 bg-dark.bg-gradient '>
+                <div class="container" className='container p-5 w-50 border border-warning table-responsive border rounded-4 bg-dark.bg-gradient '>
                     <div className="row">
                         <div className="col-6">
                             <img src="/LOGO.png" alt="" className='img-fluid' />
