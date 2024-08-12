@@ -4,7 +4,14 @@ const cors = require ('cors');
 
 const app = express();
 app.use(express.json())
-app.use(cors());
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}));
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -13,18 +20,18 @@ const db = mysql.createConnection({
 })
 
 app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
+    const sql = "SELECT * FROM usuarios WHERE email = ? AND contraseña = ?";
 
-    db.query(sql, [req.body.email, req.body.contraseña], (err, data) => {
-        if(err) return res.json("Error");
+    db.query(sql, [req.body.email, req.body.password], (err, data) => {
+        if(err) return res.send("Error");
         if(data.length > 0) {
-            return res.json("Login Succesfully")
+            return res.send ("Login Succesfully")
         }else{
-            return res.json("No record")
+            return res.send ("No record")
         }
     })
 })
 
 app.listen(8081, () => {
-    console.log("HOla")
+    console.log("Hola")
 })
