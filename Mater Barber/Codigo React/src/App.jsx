@@ -5,6 +5,7 @@ import Perfil from './pages/Admin/Perfil';
 import Inicio from './pages/Admin/Inicio';
 import Login from './pages/Usuario/Login'
 import Index from './pages/Usuario/Index';
+import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className='flex'>
         <div className='content w-100'>
           <Routes>
+            <Route exact path='/Registro' element={<Registro />}></Route>
             <Route exact path='/' element={<Index />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
