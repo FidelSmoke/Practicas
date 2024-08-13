@@ -1,6 +1,6 @@
-const express = require ('express');
-const mysql = require ('mysql');
-const cors = require ('cors');
+const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json())
@@ -23,11 +23,11 @@ app.post('/login', (req, res) => {
     const sql = "SELECT * FROM usuarios WHERE email = ? AND contraseña = ?";
 
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
-        if(err) return res.send("Error");
-        if(data.length > 0) {
-            return res.send ("Login Succesfully")
-        }else{
-            return res.send ("No record")
+        if (err) return res.send("Error");
+        if (data.length > 0) {
+            return res.send("Login Succesfully")
+        } else {
+            return res.send("No record")
         }
     })
 })

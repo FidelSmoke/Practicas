@@ -23,7 +23,7 @@ export default function Index() {
                     </h1>
                 </div>
             </div>
-            <div className="container">
+            <div className="container mt-5 pt-5 ">
                 <div className="row col-sm-12">
                     <div className="col col-sm-12">
                         <section className='welcome'>
