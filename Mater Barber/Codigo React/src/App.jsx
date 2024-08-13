@@ -5,7 +5,7 @@ import Perfil from './pages/Admin/Perfil';
 import Inicio from './pages/Admin/Inicio';
 import Login from './pages/Usuario/Login'
 import Index from './pages/Usuario/Index';
-import indiceDos from './pages/Usuario/indiceDos';
+import IndiceDos from './pages/Usuario/IndiceDos';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 function App() {
@@ -14,13 +14,13 @@ function App() {
       <div className='flex'>
         <div className='content w-100'>
           <Routes>
-            <Route exact path='/index' element={<Index />}></Route>
-            <Route exact path='/indiceDos' element={<indiceDos/>}> </Route>
+            <Route exact path='/' element={<Index />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
             <Route exact path='/Inicio' element={<Inicio />}> </Route>
+            <Route exact path='/IndiceDos' element={<IndiceDos/>}></Route>
           </Routes>
         </div>
       </div>
