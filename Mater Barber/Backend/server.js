@@ -25,9 +25,9 @@ app.post('/login', (req, res) => {
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if(err) return res.send("Error");
         if(data.length > 0) {
-            return res.send ("Login Succesfully")
+            return res.send("Inicio sesion correctamente")
         }else{
-            return res.send ("No record")
+            return res.send ("No Registrado")
         }
     })
 })
