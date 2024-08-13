@@ -18,7 +18,7 @@ export default function IndiceDos() {
                         <div className="col col-sm-12">
                             <div className="row col col-sm-12">
                                 <div className="mx-3 d-flex p-5 mt-5">
-                                <h1 className='anton text-warning mx-5'>DIRRECION
+                                <h1 className='anton text-warning mx-5'>DIRRECIO
                                     <p className='bebas text-white'>cra 4 este #37-38</p>
                                 </h1>
                                 <h1 className='anton text-warning mx-5'>TELEFONO
