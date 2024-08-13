@@ -16,7 +16,7 @@ export default function Login() {
             axios.post("http://localhost:8081/login", { email, password })
                 .then(res => {
                     console.log(res)
-                    if (res.data === "Login Succesfully") {
+                    if (res.data === "Inicio sesion correctamente") {
                         Swal.fire({
                             position: "top-end",
                             icon: "success",
