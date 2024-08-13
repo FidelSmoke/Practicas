@@ -1,6 +1,6 @@
-const express = require ('express');
-const mysql = require ('mysql');
-const cors = require ('cors');
+const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json())
@@ -25,13 +25,13 @@ app.post('/login', (req, res) => {
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
         if(err) return res.send("Error");
         if(data.length > 0) {
-            return res.send ("Inicio sesion correctamente")
+            return res.send ("Login Succesfully")
         }else{
-            return res.send ("No Registrado")
+            return res.send ("No record")
         }
     })
 })
 
 app.listen(8081, () => {
-    console.log("Conectado")
+    console.log("Conexion exitosa:)")
 })

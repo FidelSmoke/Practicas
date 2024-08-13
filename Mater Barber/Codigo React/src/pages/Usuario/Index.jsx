@@ -6,12 +6,12 @@ export default function Index() {
         <div>
             <NavbarUsuario />
             <div className="img position-absolute top-50 start-50 translate-middle row h-100"><img src="/LOGO.png" alt="" className='col-12' /></div>
-            <div className='p-5 mt-5'>
+            <div className='container p-5 mt-5 table-responsive'>
                 <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER</h1>
                 <h2 className='text-warning text-center mt-5 anton fw-bold'>BOGOTA</h2>
                 <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
 
-                <div className="justify-content-start mx-3 d-flex p-5 mt-5">
+                <div className="row justify-content-start mx-3 d-flex p-5 mt-5 table-responsive">
                     <h1 className='anton text-warning mx-5 col'>DIRRECION
                         <p className='bebas text-white'>cra 4 este #37-38</p>
                     </h1>
@@ -23,14 +23,20 @@ export default function Index() {
                     </h1>
                 </div>
             </div>
-
-            <section className=' welcome row'>
-                <div className='welcome-1 col'></div>
-                <div className="welcome-2">
-                    <h1 className='anton text-danger text-center border-bottom' id='h1'>SOBRE MASTER BARBER</h1>
-                    <p className='text-white p-5 mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio libero expedita recusandae tempore porro minus non ullam nesciunt voluptatem odit pariatur, necessitatibus eaque eum natus aliquam. Doloribus voluptas ab possimus?</p>
+            <div className="container mt-5 pt-5 ">
+                <div className="row col-sm-12">
+                    <div className="col col-sm-12">
+                        <section className='welcome'>
+                            <div className='welcome-1 col'></div>
+                            <div className="welcome-2">
+                                <h1 className='anton text-danger text-center border-bottom' id='h1'>SOBRE MASTER BARBER</h1>
+                                <p className='text-white p-5 mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio libero expedita recusandae tempore porro minus non ullam nesciunt voluptatem odit pariatur, necessitatibus eaque eum natus aliquam. Doloribus voluptas ab possimus?</p>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-            </section>
+            </div>
+
 
             <section className='mt-5 pt-5'>
                 <h1 className='text-center text-white display-1 anton'>NUESTROS SERVICIOS</h1>
