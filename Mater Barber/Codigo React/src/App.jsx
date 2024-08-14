@@ -5,7 +5,7 @@ import Perfil from './pages/Admin/Perfil';
 import Inicio from './pages/Admin/Inicio';
 import Login from './pages/Usuario/Login'
 import Index from './pages/Usuario/Index';
-import IndiceDos from './pages/Usuario/IndiceDos';
+import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
             <Route exact path='/Inicio' element={<Inicio />}> </Route>
-            <Route exact path='/IndiceDos' element={<IndiceDos/>}></Route>
+            <Route exact path='/Registro' element={<Registro/>}></Route>
           </Routes>
         </div>
       </div>

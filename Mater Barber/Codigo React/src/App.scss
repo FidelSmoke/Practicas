@@ -84,7 +84,6 @@ $gray: #e7e9eb;
 
 .welcome {
   display: flex;
-  // width: 100%;
   margin-top: 15%;
 
 }
@@ -118,12 +117,15 @@ $gray: #e7e9eb;
 
 .prices {
   display: flex;
+  margin-top: 15px;
 }
 
 .prices-1 {
   width: 90%;
-  padding: 10% 150px 10px;
   background-color: #000000;
+}
+.prices-1 {
+  padding: 10%;
 }
 
 .prices-2 {
@@ -131,7 +133,10 @@ $gray: #e7e9eb;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50%;
+  width: 40%;
+  margin-top: 0%;
+  object-fit: contain;
+  padding: 120px 150px 10px;
 }
 
 .table {
