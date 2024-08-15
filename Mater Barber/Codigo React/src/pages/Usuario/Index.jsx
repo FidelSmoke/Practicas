@@ -10,7 +10,7 @@ export default function Index() {
                 <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER</h1>
                 <h2 className='text-warning text-center mt-5 anton fw-bold'>BOGOTA</h2>
                 <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
-                <div className="row border border-bottom">
+                <div className="row mt-5 pt-5">
                     <div className="col">
                         <div className="justify-content-start mx-3 d-flex p-2 mt-2">
                             <h1 className='anton text-warning mx-3 '>DIRRECION
@@ -27,7 +27,7 @@ export default function Index() {
                 </div>
             </div>
 
-            <div className="container mt-5 pt-5">
+            <div className="mt-5 pt-5">
                 <div className="row col-sm-12">
                     <div className="col col-sm-12">
                         <section className='welcome'>
@@ -47,59 +47,28 @@ export default function Index() {
                         <section className='mt-5 pt-5'>
                             <h1 className='text-center text-white display-1 anton'>NUESTROS SERVICIOS</h1>
                             <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
-
                         </section>
                     </div>
                 </div>
             </div>
 
-            <div className="container mt-5 pt-5">
+            <div className="container-fluid mt-5 pt-5">
                 <div className="row">
-                    <div className="col col-sm-12">
-                        <section class="prices">
-                            <div class="prices-2 col col-sm-12"></div>
-                            <div class="prices-1" id="precios">
-                                <h2 className='text-warning anton text-center display-5'>Lista de precios</h2>
-                                <p className='text-white mt-5 text-center'>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                    Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
-                                    dolorem laborum corrupti est officiis magni,
-                                    soluta nemo nobis eligendi repellat id!
-                                </p>
-                                <table class="table mt-5 pt-5">
-                                    <tbody >
-                                        <tr class="ff">
-                                            <th className='th'>Corte Basico</th>
-                                            <td>18.000</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Cejas</th>
-                                            <td>5.000</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Figuras</th>
-                                            <td className='text-warning'>5.000</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Mascarillas</th>
-                                            <td>25.000</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Barbas</th>
-                                            <td>12.000</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Tintes</th>
-                                            <td>Depende del tinte</td>
-                                        </tr>
-                                        <tr class="ff">
-                                            <th className='th'>Corte premium</th>
-                                            <td>55.000</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+                    <div class="col-12 col-sm-5">
+                        <img src="/MB2.JPG" alt="" />
+                    </div>
+                    <div class="col-12 col-sm-7 text-center p-5 mt-5 pt-5 ">
+                        <h2 className='text-warning anton display-5'>Lista de precios</h2>
+                        <p className='text-white mt-5'>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
+                            dolorem laborum corrupti est officiis magni,
+                            soluta nemo nobis eligendi repellat id!
+                        </p>
+                        <div className="border-bottom d-flex justify-content-between mt-5 pt-5">
+                            <p>ola</p>
+                            <p>ola</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,6 +77,6 @@ export default function Index() {
             <section className='mt-5 pt-5'>
 
             </section>
-        </div>
+        </div >
     )
 }

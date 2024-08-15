@@ -84,7 +84,7 @@ $gray: #e7e9eb;
 
 .welcome {
   display: flex;
-  margin-top: 15%;
+  margin-top: 10%;
 
 }
 
@@ -115,44 +115,12 @@ $gray: #e7e9eb;
   letter-spacing: 100%;
 }
 
-.prices {
-  display: flex;
-  margin-top: 15px;
-}
-
-.prices-1 {
-  width: 90%;
-  background-color: #000000;
-}
-.prices-1 {
-  padding: 10%;
-}
-
-.prices-2 {
-  background-image: url("../public/MB2.JPG");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 40%;
-  margin-top: 0%;
-  object-fit: contain;
-  padding: 120px 150px 10px;
-}
-
 .table {
   margin: 50px 0;
   width: 100%;
   text-align: left;
   border-collapse: collapse;
 }
-
-.ff {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #AFAFAF;
-  margin-bottom: 20px;
-}
-
 th {
   background-color: #000000;
   padding-bottom: 15px;
