@@ -115,7 +115,7 @@ export default function Registro() {
                                                 Acepta los terminos y condiciones
                                             </label>
                                             <div class="invalid-feedback">
-                                                You must agree before submitting.
+                                                Debes aceptar antes de enviar
                                             </div>
                                     </div>
                                 </div>
