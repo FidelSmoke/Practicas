@@ -23,11 +23,11 @@ app.post('/login', (req, res) => {
     const sql = "SELECT * FROM usuarios WHERE email = ? AND contraseña = ?";
 
     db.query(sql, [req.body.email, req.body.password], (err, data) => {
-        if(err) return res.send("Error");
-        if(data.length > 0) {
+        if (err) return res.send("Error");
+        if (data.length > 0) {
             return res.send("Inicio sesion correctamente")
-        }else{
-            return res.send ("No Registrado")
+        } else {
+            return res.send("No Registrado")
         }
     })
 })
