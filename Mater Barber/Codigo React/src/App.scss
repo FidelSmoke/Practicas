@@ -82,50 +82,10 @@ $gray: #e7e9eb;
   font-family: "Bebas Neue", sans-serif;
 }
 
-.welcome {
-  display: flex;
-  margin-top: 10%;
-
-}
-
-.welcome-1 {
-  background-image: url("../public/MB1.JPG");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 40%;
-  margin-top: 0%;
-  object-fit: contain;
-  padding: 110px 150px 10px;
-
+.welcome{
+  margin-top: 20%;
 }
 
 .welcome-2 {
-  width: 60%;
-  background-color: #000000;
-}
-
-.welcome-2 {
-  padding: 10%;
-}
-
-.card {
-  width: 18rem;
-  left: 30%;
-  letter-spacing: 100%;
-}
-
-.table {
-  margin: 50px 0;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-}
-th {
-  background-color: #000000;
-  padding-bottom: 15px;
-}
-
-td {
-  color: #D7AA45;
+  margin-top: 25%;
 }
