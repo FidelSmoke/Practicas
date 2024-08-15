@@ -26,7 +26,7 @@ export default function Index() {
                     </div>
                 </div>
             </div>
-            <div className="welcome bg-dark ">
+            <div className="welcome bg-dark">
                 <div className="container-fluid">
                     <div className="row">
                         <div class="col col-sm-6">
