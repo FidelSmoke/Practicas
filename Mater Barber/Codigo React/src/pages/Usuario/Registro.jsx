@@ -21,26 +21,25 @@ export default function Registro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8080/registro", { nombre_usuario, email, nit, telefono, contraseña, confirmar_contraseña })
-                .then(res => {
-                    console.log(res)
-                    if (res.data === "Registro Exitoso") {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Te Has Registrado correctamente",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate("/Login")
-                    }
-                    else {
-                        Swal.fire("gay");
-                    }
-                })
-                .catch(err => console.log(err))
-        } catch (err) {
-            console.log(err)
+            const res = await axios.post("http://localhost:8080/Registro", [nombre_usuario, email, nit, telefono, contraseña, confirmar_contraseña]);
+            if (res.status === 200) {
+                Swal.fire({
+                    title: 'Cuenta creada',
+                    text: 'Cuenta creada correctamente',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar'
+                });
+                navigate("/ingresar");
+            }
+        } catch (error) {
+            console.log(error);
+            if (error.response) {
+                Swal.fire({
+                    title: error.response.data || 'Credenciales incorrectas',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            }
         }
     }
     return (
@@ -122,6 +121,6 @@ export default function Registro() {
                 </div>
             </div>
         </div>
-
+        // nombre_usuario, email, nit, telefono, contraseña, confirmar_contraseña
     )
 }

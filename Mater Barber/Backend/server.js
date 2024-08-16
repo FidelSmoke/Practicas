@@ -6,12 +6,10 @@ const app = express();
 app.use(express.json())
 
 app.use(cors({
-    origin: '*',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }));
-
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -32,7 +30,7 @@ app.post('/login', (req, res) => {
     })
 });
 
-app.post('/registro'), (req, res) => {
+app.post('/Registro'), (req, res) => {
 
     const nombreusuario = req.body.nombre_usuario
     const email = req.body.email
