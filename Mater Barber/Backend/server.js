@@ -32,46 +32,56 @@ app.post('/login', (req, res) => {
     })
 });
 
+app.post('/registro'), (req, res) => {
 
+    const nombreusuario = req.body.nombre_usuario
+    const email = req.body.email
+    const nit = req.body.nit
+    const telefono = req.body.telefono
+    const contraseña = req.body.contraseña
+    const confirmarcontraseña = req.body.confirmarcontraseña
 
-
-
-app.post('/Registro', (req, res) => {
-    
-    const sql = "SELECT * FROM usuarios WHERE email = ?";
-
-    db.query(sql, [req.body.nombre_usuario,req.body.email, req.body.nit, req.body.telefono, req.body.password,req.body.confirmar_contraseña, req.body.id_rol], (err, data) => {
+    db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
 
         if (err) {
+            console.log(err)
             return res.status(500).send(err)
         }
 
         else if (result.length > 0) {
-            return res.status(400).send("Usuario Existente Intenta Iniciar Sesion")
+            return res.status(400).send("El usuario ya existe")
         }
 
-        else if (password !== confirmPassword) {
+        else if (contraseña !== confirmarcontraseña) {
             return res.status(400).send('Las contraseñas no coinciden');
         }
 
-        else if (password.length < 8) {
+        else if (contraseña.length < 8) {
             return res.status(400).send('La contraseña debe tener al menos 8 caracteres');
         }
 
-        else if (telefono !== telefono_usuario) {
-            return res.status(400).send('Este Numero Telefonico Ya Se Encuentra Registrado');
+        else {
+            const q = "INSERT INTO usuarios (id_usuario, nombre_usuario, email, nit, telefono ,contraseña, id_rol) VALUES (U4,?,?,?,?,?,R3)"
+            const values = [
+                nombreusuario,
+                email,
+                nit,
+                telefono,
+                contraseña
+            ]
+            db.query(q, values, (err) => {
+                if (err) {
+                    return res.status(500).send(err)
+                }
+                return res.status(200).send("Usuario creado con exito")
+            })
         }
-
-        if (data.length > 0) {
-            return res.status(500).send("Registrado correctamente");
-        }
-        
     })
-})
+};
 
 
 
-app.listen(8081, () => {
+app.listen(8080, () => {
     console.log("Conexion exitosa:)")
 });
 
