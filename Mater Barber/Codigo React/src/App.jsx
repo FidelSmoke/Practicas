@@ -4,7 +4,7 @@ import Inventario from './pages/Admin/inventario'
 import Perfil from './pages/Admin/Perfil';
 import Inicio from './pages/Admin/Inicio';
 import Login from './pages/Usuario/Login'
-import Index from './pages/Usuario/Index';
+import Index from './pages/default/Index';
 import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
@@ -20,7 +20,7 @@ function App() {
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
             <Route exact path='/Inicio' element={<Inicio />}> </Route>
-            <Route exact path='/Registro' element={<Registro/>}></Route>
+            <Route exact path='/Registro' element={<Registro />}></Route>
           </Routes>
         </div>
       </div>
