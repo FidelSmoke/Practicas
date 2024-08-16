@@ -8,8 +8,6 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Registro() {
 
-    axios.defaults.withCredentials = true
-    
     const [nombre_usuario, setNombre_usuario] = useState('')
     const [email, setEmail] = useState('')
     const [nit, setNit] = useState('')
@@ -37,7 +35,7 @@ export default function Registro() {
                         navigate("/Login")
                     }
                     else {
-                        Swal.fire("Error ", "Correo electronico o contraseña incorrectas!", "error");
+                        Swal.fire("");
                     }
                 })
                 .catch(err => console.log(err))

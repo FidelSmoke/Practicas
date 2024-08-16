@@ -37,6 +37,7 @@ app.post('/login', (req, res) => {
 
 
 app.post('/Registro', (req, res) => {
+    
     const sql = "SELECT * FROM usuarios WHERE email = ?";
 
     db.query(sql, [req.body.nombre_usuario,req.body.email, req.body.nit, req.body.telefono, req.body.password,req.body.confirmar_contraseña, req.body.id_rol], (err, data) => {
