@@ -61,6 +61,12 @@ app.post('/registrar', (req, res) => {
         else if (contraseña.length < 8) {
             return res.status(400).send('La contraseña debe tener al menos 8 caracteres');
         }
+        else if (nit.length > 10) {
+            return res.status(400).send('Tu numero de documento debe tener 10 caracteres');
+        }
+        else if (nit.length < 10) {
+            return res.status(400).send('Tu numero de documento debe tener 10 caracteres');
+        }
 
         else {
             const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contraseña, id_rol) VALUES (?,?,?,?,?,1)"

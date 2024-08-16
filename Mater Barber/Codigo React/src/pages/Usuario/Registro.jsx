@@ -105,9 +105,9 @@ export default function Registro() {
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
                                     <input type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
-                                </div> *
+                                </div> 
 
-                                <div class="col-12">
+                                <div class="col-12 col-sm-7 ">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
                                         <label class="form-check-label text-white" for="invalidCheck">
@@ -118,9 +118,17 @@ export default function Registro() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className=' text-center mt-4'>
-                                    <button type="submit" className="btn btn-outline-warning">Continuar</button>
+
+                                <div className='col-12 col-sm-5 text-end '>
+                                    <p className='text-white'>¿Ya ienes cuenta?<a className="link-offset-1 text-decoration-none" href="./login"> Inicia sesion</a></p>
+
                                 </div>
+                                <div className=' text-center mt-2'>
+                                        <button type="submit" className="btn btn-outline-warning">Continuar</button>
+                                </div>
+                                
+                                    
+                                
                             </form>
                         </div>
 
