@@ -5,11 +5,15 @@ const cors = require('cors');
 const app = express();
 app.use(express.json())
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOptions));
+
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -30,14 +34,14 @@ app.post('/login', (req, res) => {
     })
 });
 
-app.post('/Registro'), (req, res) => {
+app.post('/registrar', (req, res) => {
 
     const nombreusuario = req.body.nombre_usuario
     const email = req.body.email
     const nit = req.body.nit
     const telefono = req.body.telefono
     const contraseña = req.body.contraseña
-    const confirmarcontraseña = req.body.confirmarcontraseña
+    const confirmar_contraseña = req.body.confirmar_contraseña
 
     db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
 
@@ -50,7 +54,7 @@ app.post('/Registro'), (req, res) => {
             return res.status(400).send("El usuario ya existe")
         }
 
-        else if (contraseña !== confirmarcontraseña) {
+        else if (contraseña !== confirmar_contraseña) {
             return res.status(400).send('Las contraseñas no coinciden');
         }
 
@@ -59,7 +63,7 @@ app.post('/Registro'), (req, res) => {
         }
 
         else {
-            const q = "INSERT INTO usuarios (id_usuario, nombre_usuario, email, nit, telefono ,contraseña, id_rol) VALUES (U4,?,?,?,?,?,R3)"
+            const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contraseña, id_rol) VALUES (?,?,?,?,?,1)"
             const values = [
                 nombreusuario,
                 email,
@@ -75,7 +79,7 @@ app.post('/Registro'), (req, res) => {
             })
         }
     })
-};
+});
 
 
 

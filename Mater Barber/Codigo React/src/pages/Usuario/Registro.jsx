@@ -8,20 +8,27 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Registro() {
 
-    const [nombre_usuario, setNombre_usuario] = useState('')
-    const [email, setEmail] = useState('')
-    const [nit, setNit] = useState('')
-    const [telefono, setTelefono] = useState('')
-    const [contraseña, setPassword] = useState('')
-    const [confirmar_contraseña, setConfirmar_contraseña] = useState('')
+    const [user, setUser] = useState({
+        nombre_usuario: "",
+        email: "",
+        nit: "",
+        telefono: "",
+        contraseña: "",
+        confirmar_contraseña: ""
+
+    });
 
 
     const navigate = useNavigate()
 
+    const handleChange = (e) => {
+        setUser(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:8080/Registro", [nombre_usuario, email, nit, telefono, contraseña, confirmar_contraseña]);
+            const res = await axios.post("http://localhost:8081/registrar", user);
             if (res.status === 200) {
                 Swal.fire({
                     title: 'Cuenta creada',
@@ -29,7 +36,7 @@ export default function Registro() {
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 });
-                navigate("/ingresar");
+                navigate("/login");
             }
         } catch (error) {
             console.log(error);
@@ -61,42 +68,42 @@ export default function Registro() {
                                 <label for="validationCustom01" className="texto form-label text-white" htmlFor="floatingInput" >Nombre de usuario</label>
                                 <div className="input-group mb-3 ">
                                     <span className="input-group-text" id="basic-addon2"><i className="bi bi-person"></i></span>
-                                    <input type="text" className="form-control" name='nombre_usuario' placeholder="Introduce tu nombre de usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={e => setNombre_usuario(e.target.value)}
+                                    <input type="text" className="form-control" name='nombre_usuario' placeholder="Introduce tu nombre de usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Correo electronico</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text" id="basic-addon2"><i className="bi bi-envelope"></i></span>
-                                    <input type="email" className="form-control" name='email' placeholder="Ej: pepitoperez@gmail.com" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={e => setEmail(e.target.value)}
+                                    <input type="email" className="form-control" name='email' placeholder="Ej: pepitoperez@gmail.com" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Numero de identificacion</label>
                                 <div className="input-group mb-3 ">
                                     <span className="input-group-text"><i className="bi bi-person-vcard"></i></span>
-                                    <input type="text" className="form-control" name='nit' placeholder='Introduce tu numero de identificacion' aria-label="Amount (to the nearest dollar)" onChange={e => setNit(e.target.value)}
+                                    <input type="text" className="form-control" name='nit' placeholder='Introduce tu numero de identificacion' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Telefono</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-telephone-plus"></i></span>
-                                    <input type="text" className="form-control" name='telefono' placeholder='Introduce tu numero de celular' aria-label="Amount (to the nearest dollar)" onChange={e => setTelefono(e.target.value)}
+                                    <input type="text" className="form-control" name='telefono' placeholder='Introduce tu numero de celular' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={e => setPassword(e.target.value)}
+                                    <input type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Confima tu contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={e => setConfirmar_contraseña(e.target.value)}
+                                    <input type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div> *
 
