@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-08-2024 a las 17:57:42
+-- Tiempo de generación: 16-08-2024 a las 19:53:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `carrito_compras`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 16-08-2024 a las 16:44:35
 --
 
 CREATE TABLE `carrito_compras` (
@@ -70,7 +70,7 @@ INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
 --
 -- Estructura de tabla para la tabla `compra`
 --
--- Creación: 17-07-2024 a las 16:13:34
+-- Creación: 16-08-2024 a las 16:45:25
 --
 
 CREATE TABLE `compra` (
@@ -87,7 +87,7 @@ CREATE TABLE `compra` (
 --
 -- Estructura de tabla para la tabla `factura`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 16-08-2024 a las 16:45:32
 --
 
 CREATE TABLE `factura` (
@@ -145,7 +145,7 @@ CREATE TABLE `recordatorio` (
 --
 -- Estructura de tabla para la tabla `reserva_turno`
 --
--- Creación: 17-07-2024 a las 18:22:57
+-- Creación: 16-08-2024 a las 16:45:00
 --
 
 CREATE TABLE `reserva_turno` (
@@ -167,7 +167,7 @@ CREATE TABLE `reserva_turno` (
 --
 
 CREATE TABLE `rol` (
-  `id_rol` varchar(255) NOT NULL,
+  `id_rol` int(255) NOT NULL,
   `nombre_rol` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -176,9 +176,9 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`) VALUES
-('R1', 'Administrador'),
-('R2', 'Barbero'),
-('R3', 'Cliente');
+(1, 'Administrador'),
+(2, 'Barbero'),
+(3, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -208,7 +208,7 @@ INSERT INTO `tipo_pago` (`id_tipo_pago`, `TipoPago`) VALUES
 --
 -- Estructura de tabla para la tabla `tipo_servicio`
 --
--- Creación: 17-07-2024 a las 16:10:39
+-- Creación: 16-08-2024 a las 16:44:50
 --
 
 CREATE TABLE `tipo_servicio` (
@@ -224,11 +224,12 @@ CREATE TABLE `tipo_servicio` (
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 16-08-2024 a las 17:43:16
+-- Última actualización: 16-08-2024 a las 17:48:31
 --
 
 CREATE TABLE `usuarios` (
-  `id_usuario` varchar(255) NOT NULL,
+  `id_usuario` int(255) NOT NULL,
   `nombre_usuario` varchar(255) NOT NULL,
   `email` varchar(55) NOT NULL,
   `nit` int(55) NOT NULL,
@@ -242,8 +243,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefono`, `contraseña`, `id_rol`) VALUES
-('U1', 'Cristian Rueda', 'cristianrueda0313@gmail.com', 1014481682, 2147483647, 'Cris7777.', 'R1'),
-('U2', 'Fidel Espitia', 'fideljoseespi10@gmail.com', 1028662003, 2147483647, 'fidel7777.', 'R2');
+(1, 'cris', 'cristianrueda0313@gmail.com', 1014481681, 2147483647, '12345678', '1'),
+(2, 'cris', 'cristianrueda0313@gmail.co', 1014481681, 2147483647, '12345678', '1');
 
 --
 -- Índices para tablas volcadas
@@ -329,6 +330,16 @@ ALTER TABLE `usuarios`
   ADD KEY `id_rol` (`id_rol`);
 
 --
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -336,23 +347,20 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `carrito_compras`
 --
 ALTER TABLE `carrito_compras`
-  ADD CONSTRAINT `carrito_compras_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `carrito_compras_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `carrito_compras_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `compra`
 --
 ALTER TABLE `compra`
   ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `compra_ibfk_3` FOREIGN KEY (`id_tipo_pago`) REFERENCES `tipo_pago` (`id_tipo_pago`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `factura`
 --
 ALTER TABLE `factura`
-  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `factura_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto`
@@ -370,20 +378,7 @@ ALTER TABLE `recordatorio`
 -- Filtros para la tabla `reserva_turno`
 --
 ALTER TABLE `reserva_turno`
-  ADD CONSTRAINT `reserva_turno_ibfk_1` FOREIGN KEY (`id_tipo_servicio`) REFERENCES `tipo_servicio` (`id_tipo_servicio`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `reserva_turno_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tipo_servicio`
---
-ALTER TABLE `tipo_servicio`
-  ADD CONSTRAINT `tipo_servicio_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `reserva_turno_ibfk_1` FOREIGN KEY (`id_tipo_servicio`) REFERENCES `tipo_servicio` (`id_tipo_servicio`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
