@@ -20,6 +20,7 @@
     "sass": "^1.77.8",
     "sass-loader": "^15.0.0",
     "sweetalert2": "^11.12.3",
+    "swiper": "^11.1.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

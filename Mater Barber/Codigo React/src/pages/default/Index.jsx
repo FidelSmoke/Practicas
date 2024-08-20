@@ -1,28 +1,27 @@
 import React from 'react'
 import NavbarUsuario from '../../Components/NavbarUsuario'
+import Carrousel from '../../Components/Carrousel'
 
 export default function Index() {
     return (
         <div>
             <NavbarUsuario />
             <div className="img position-absolute top-50 start-50 translate-middle row h-100"><img src="/LOGO.png" alt="" className='' /></div>
-            <div className='container p-5 mt-5 table-responsive col col-sm-6'>
+            <div className='container p-5 mt-5 table-responsive col col-sm-12'>
                 <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER</h1>
                 <h2 className='text-warning text-center mt-5 anton fw-bold'>BOGOTA</h2>
                 <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
-                <div className="row mt-5 pt-5">
-                    <div className="col">
-                        <div className="justify-content-start mx-3 d-flex p-2 mt-2">
-                            <h1 className='anton text-warning mx-3 '>DIRRECION
-                                <p className='bebas text-white'>cra 4 este #37-38</p>
-                            </h1>
-                            <h1 className='anton text-warning mx-3 '>TELEFONO
-                                <p className='bebas text-start text-white '>3142758305</p>
-                            </h1>
-                            <h1 className='anton text-warning mx-3 '>HORARIO
-                                <p className='bebas  text-white'> 10am-8pm</p>
-                            </h1>
-                        </div>
+                <div className="mt-5 pt-5 d-flex justify-content-center">
+                    <div className="row mt-5 pt-5 d-flex col-sm-14">
+                        <h1 className='anton text-center text-warning mx-3 col'>DIRRECION
+                            <p className='bebas text-center text-white'>cra 4 este #37-38</p>
+                        </h1>
+                        <h1 className='anton text-warning text-center mx-5 col'>TELEFONO
+                            <p className='bebas text-center text-white '>3142758305</p>
+                        </h1>
+                        <h1 className='anton text-center text-warning mx-3 col'>HORARIO
+                            <p className='bebas text-white text-center'> 10am-8pm</p>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -160,7 +159,7 @@ export default function Index() {
                             </div>
 
                         </div>
-                        <div class="col-12 col-sm-5">
+                        <div class="row col col-sm-5">
                             <img src="/MB2.JPG" alt="" />
                         </div>
                     </div>
@@ -170,47 +169,21 @@ export default function Index() {
             <div className="welcome">
                 <h1 className='text-center text-white display-1 anton'>CONOCE A NUESTROS ESTILISTAS</h1>
                 <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
-
-                <div className="container"></div>
-                <div id="carouselExampleDark" class="carousel carousel-dark slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="/LOGO.PNG" class="d-block w-100" alt="..." />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5 className='display-1 text-white'>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="/LOGO.PNG" class="d-block w-100" alt="..." />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/LOGO.PNG" class="d-block w-100" alt="..." />
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
             </div>
+            <div className="mt-5 pt-4">
+                <Carrousel />
+            </div>
+
+
+
+            <div className="welcome">
+                <h1 className='text-center text-white display-1 anton'>¡¡MASTER SHOP!!</h1>
+                <Carrousel/>
+            </div>
+
+
         </div >
+
+
     )
 }
