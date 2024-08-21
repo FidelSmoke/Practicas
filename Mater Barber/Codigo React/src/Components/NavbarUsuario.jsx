@@ -18,22 +18,22 @@ export default function NavbarUsuario() {
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-4" href="#" type='submit'>Servicios</a>
+                                    <a class="nav-link active mt-4" href="#services" type='submit'>Servicios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-4" href="#">Precios</a>
+                                    <a class="nav-link active mt-4" href="#prices">Precios</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-4" href="#">Nuestros Barberos</a>
+                                    <a class="nav-link active mt-4" href="#barbers">Nuestros Barberos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-4" href="#">¡¡Master Shop!!</a>
+                                    <a class="nav-link active mt-4" href="#shop">¡¡Master Shop!!</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-4" href="#">¡¡Reserva Aqui!!</a>
+                                    <a class="nav-link active mt-4" href="#turno">¡¡Reserva Aqui!!</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active mt-4" href="../Registro">Registrarme</a>

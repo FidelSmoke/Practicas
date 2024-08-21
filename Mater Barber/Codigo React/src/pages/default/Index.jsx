@@ -2,13 +2,14 @@ import React from 'react'
 import NavbarUsuario from '../../Components/NavbarUsuario'
 import CarrouselBarbers from '../../Components/CarrouselBarbers'
 import CarrouselShop from '../../Components/CarrouselShop'
+import Sidebar from '../../Components/Sidebar'
 
 export default function Index() {
     return (
         <div>
             <NavbarUsuario />
             <div className="img position-absolute top-50 start-50 translate-middle row h-100"><img src="/LOGO.png" alt="" className='' /></div>
-            <div className='container p-5 mt-5 table-responsive col col-sm-12'>
+            <div className='container p-5 mt-5 table-responsive col col-sm-12' id='home'>
                 <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER</h1>
                 <h2 className='text-warning text-center mt-5 anton fw-bold'>BOGOTA</h2>
                 <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
@@ -48,7 +49,7 @@ export default function Index() {
 
 
 
-            <div className="welcome container">
+            <div className="welcome container" id='services'>
                 <h1 className='text-center text-white display-1 anton'>NUESTROS SERVICIOS</h1>
                 <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
                 <div className="row justify-content-center mt-5 pt-5">
@@ -117,7 +118,7 @@ export default function Index() {
 
 
 
-            <div className="welcome">
+            <div className="welcome" id='prices'>
                 <div className="container-fluid mt-5 pt-5">
                     <div className="row">
                         <div class="col-12 col-sm-7 text-center p-5 bg-dark">
@@ -167,21 +168,28 @@ export default function Index() {
                 </div>
             </div>
 
-            <div className="welcome">
+            <div className="welcome" id='barbers'>
                 <h1 className='text-center text-white display-1 anton'>CONOCE A NUESTROS ESTILISTAS</h1>
                 <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
             </div>
             <div className="mt-5 pt-4">
                 <CarrouselBarbers />
+
             </div>
 
 
 
-            <div className="welcome">
+            <div className="welcome" id='shop'>
                 <h1 className='text-center text-white display-1 anton'>¡¡MASTER SHOP!!</h1>
-                <CarrouselShop/>
+                <CarrouselShop />
             </div>
 
+
+
+            <div className="welcome" id='turno'>
+                <h1 className='text-center text-white display-1 anton'>RESERVA CON NOSOTROS</h1>
+
+            </div>
 
         </div >
 
