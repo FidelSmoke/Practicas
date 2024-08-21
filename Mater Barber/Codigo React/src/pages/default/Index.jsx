@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarUsuario from '../../Components/NavbarUsuario'
-import Carrousel from '../../Components/Carrousel'
+import CarrouselBarbers from '../../Components/CarrouselBarbers'
+import CarrouselShop from '../../Components/CarrouselShop'
 
 export default function Index() {
     return (
@@ -171,14 +172,14 @@ export default function Index() {
                 <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
             </div>
             <div className="mt-5 pt-4">
-                <Carrousel />
+                <CarrouselBarbers />
             </div>
 
 
 
             <div className="welcome">
                 <h1 className='text-center text-white display-1 anton'>¡¡MASTER SHOP!!</h1>
-                <Carrousel/>
+                <CarrouselShop/>
             </div>
 
 

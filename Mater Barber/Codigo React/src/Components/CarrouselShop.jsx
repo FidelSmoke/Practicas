@@ -6,12 +6,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/effect-creative';
 
-export default function Carrousel() {
+export default function CarrouselShop() {
     function card() {
         return (
             <div className="card text-center bg-dark">
                 <div className="card-body">
-                    <img src="/LOGO.PNG" alt="" />
+                    <img src="/logo512.png" alt="" />
                     <h5 className="card-title text-white"></h5>
                     <p className="card-text text-white"></p>
                     <a href="#" className="btn btn-danger">Ver</a>
