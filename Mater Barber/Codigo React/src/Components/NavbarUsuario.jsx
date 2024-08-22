@@ -36,8 +36,12 @@ export default function NavbarUsuario() {
                                     <a class="nav-link active mt-4" href="#turno">¡¡Reserva Aqui!!</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link active mt-4" href="#ubicacion">Ubicacion</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link active mt-4" href="../Registro">Registrarme</a>
                                 </li>
+
                             </ul>
 
                         </div>

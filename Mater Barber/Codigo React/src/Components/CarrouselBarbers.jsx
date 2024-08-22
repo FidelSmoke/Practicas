@@ -11,7 +11,7 @@ export default function CarrouselBarbers() {
         return (
             <div className="card text-center bg-dark">
                 <div className="card-body">
-                    <img src="/LOGO.PNG" alt="" />
+                    <img className='col-sm-12 col' src="/LOGO.PNG" alt="" />
                     <h5 className="card-title text-white"></h5>
                     <p className="card-text text-white"></p>
                     <a href="#" className="btn btn-danger">Ver</a>

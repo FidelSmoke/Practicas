@@ -13,7 +13,7 @@ const Sidebar = () => {
                         <div className='nave'>
                               <ul>
                                     <li>
-                                          <NavLink to="/inicio" exact className=' rounded py-2 w-100 d-inline-block px-3 text-danger mt-3' activeClassName='active'><faIncons.FaHome className='me-2' /><span className='d-none d-sm-flex col-sm-12'>Inicio</span></NavLink>
+                                          <NavLink to="/inicioAdmin" exact className=' rounded py-2 w-100 d-inline-block px-3 text-danger mt-3' activeClassName='active'><faIncons.FaHome className='me-2' /><span className='d-none d-sm-flex col-sm-12'>Inicio</span></NavLink>
                                     </li>
                                     <li>
                                           <NavLink to="/AddBarberos" exact className=' rounded py-2 w-100 d-inline-block px-3 text-danger' activeClassName='active'><IoPersonAddSharp className='me-2' /> <span className='d-none d-sm-flex col-sm-12'>add barbers</span></NavLink>

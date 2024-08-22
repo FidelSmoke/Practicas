@@ -2,7 +2,7 @@ import React from 'react'
 import NavbarUsuario from '../../Components/NavbarUsuario'
 import CarrouselBarbers from '../../Components/CarrouselBarbers'
 import CarrouselShop from '../../Components/CarrouselShop'
-import Sidebar from '../../Components/Sidebar'
+import CarrouselGaleria from '../../Components/CarrouselGaleria'
 
 export default function Index() {
     return (
@@ -171,24 +171,31 @@ export default function Index() {
             <div className="welcome" id='barbers'>
                 <h1 className='text-center text-white display-1 anton'>CONOCE A NUESTROS ESTILISTAS</h1>
                 <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
+                
             </div>
-            <div className="mt-5 pt-4">
-                <CarrouselBarbers />
+                
 
-            </div>
 
 
 
             <div className="welcome" id='shop'>
-                <h1 className='text-center text-white display-1 anton'>¡¡MASTER SHOP!!</h1>
+                <h1 className='text-center text-danger display-1 bebas'>¡¡MASTER SHOP!!</h1>
                 <CarrouselShop />
             </div>
 
 
 
-            <div className="welcome" id='turno'>
-                <h1 className='text-center text-white display-1 anton'>RESERVA CON NOSOTROS</h1>
+            <div className="welcome" id='Galeria'>
+            <h1 className='text-center text-warning display-1 anton'>GALERIA DE MASTER BARBER</h1>
+            <div className="mt-5 pt-5 col-sm-12 col">
+            <CarrouselGaleria />
+            </div>
+            </div>
 
+
+            <div className="welcome" id='ubicacion'>
+                <h1 className='text-center text-white display-1 anton'>ESTAMOS UBICADOS</h1>
+                <iframe class="col-sm-12 col-12 bg-dark"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="500px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </div >
