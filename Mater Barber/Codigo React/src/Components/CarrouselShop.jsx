@@ -7,19 +7,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-creative';
 
 export default function CarrouselShop() {
-    function card() {
-        return (
-            <div className="card text-center bg-dark">
-                <div className="card-body">
-                    <img className='col-sm-12 col' src="/logo512.png" alt="" />
-                    <h5 className="card-title text-white"></h5>
-                    <p className="card-text text-white"></p>
-                    <a href="#" className="btn btn-danger">Ver</a>
-                </div>
-            </div>
-        )
-    }
-    return (
+    return  (
         <Swiper
             grabCursor={true}
             effect={'creative'}
@@ -46,13 +34,38 @@ export default function CarrouselShop() {
             }}
             className="mySwiper2 mt-5 pt-5 "
         >
-            <SwiperSlide>{card()}</SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
-            <SwiperSlide>{card()} </SwiperSlide>
+            <SwiperSlide><div className="card text-center bg-dark">
+                <div className="card-body">
+                    <img className='col-sm-12 col' src="/logo512.png" alt="" />
+                    <h5 className="card-title text-white"></h5>
+                    <p className="card-text text-white"></p>
+                    <a href="#" className="btn btn-danger">Ver</a>
+                </div>
+            </div></SwiperSlide>
+            <SwiperSlide><div className="card text-center bg-dark">
+                <div className="card-body">
+                    <img className='col-sm-12 col' src="/logo512.png" alt="" />
+                    <h5 className="card-title text-white"></h5>
+                    <p className="card-text text-white"></p>
+                    <a href="#" className="btn btn-danger">Ver</a>
+                </div>
+            </div></SwiperSlide>
+            <SwiperSlide><div className="card text-center bg-dark">
+                <div className="card-body">
+                    <img className='col-sm-12 col' src="/logo512.png" alt="" />
+                    <h5 className="card-title text-white"></h5>
+                    <p className="card-text text-white"></p>
+                    <a href="#" className="btn btn-danger">Ver</a>
+                </div>
+            </div></SwiperSlide>
+            <SwiperSlide><div className="card text-center bg-dark">
+                <div className="card-body">
+                    <img className='col-sm-12 col' src="/logo512.png" alt="" />
+                    <h5 className="card-title text-white"></h5>
+                    <p className="card-text text-white"></p>
+                    <a href="#" className="btn btn-danger">Ver</a>
+                </div>
+            </div></SwiperSlide>
 
         </Swiper>
     )

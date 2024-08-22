@@ -1,6 +1,5 @@
 import React from 'react'
 import NavbarUsuario from '../../Components/NavbarUsuario'
-import CarrouselBarbers from '../../Components/CarrouselBarbers'
 import CarrouselShop from '../../Components/CarrouselShop'
 import CarrouselGaleria from '../../Components/CarrouselGaleria'
 
@@ -170,12 +169,85 @@ export default function Index() {
 
             <div className="welcome" id='barbers'>
                 <h1 className='text-center text-white display-1 anton'>CONOCE A NUESTROS ESTILISTAS</h1>
-                <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
-                
+                <p className='text-white mt-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
+                <div className="container mt-5 pt-5">
+                    <div class="row row-cols-1 row-cols-md-3">
+                        <div class="col">
+                            <div class="card bg-dark">
+                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark">
+                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark">
+                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark mt-5">
+                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card bg-dark mt-5">
+                                <img src="./LOGO.PNG" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-dark mt-5">
+                                <img src="./LOGO.PNG" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-body-white text-white">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-                
-
-
 
 
             <div className="welcome" id='shop'>
@@ -183,19 +255,23 @@ export default function Index() {
                 <CarrouselShop />
             </div>
 
-
-
-            <div className="welcome" id='Galeria'>
-            <h1 className='text-center text-warning display-1 anton'>GALERIA DE MASTER BARBER</h1>
-            <div className="mt-5 pt-5 col-sm-12 col">
-            <CarrouselGaleria />
+            <div className='welcome' id='turno'>
+                <h1 className='text-center text-danger display-1 bebas'>¿PORQUE RESERVAR CON NOSOTROS?</h1>
             </div>
+
+
+
+            <div className="welcome" id='galeria'>
+                <h1 className='text-center text-warning display-1 anton'>GALERIA DE MASTER BARBER</h1>
+                <div className="mt-5 pt-5 col-sm-12 col">
+                    <CarrouselGaleria />
+                </div>
             </div>
 
 
             <div className="welcome" id='ubicacion'>
                 <h1 className='text-center text-white display-1 anton'>ESTAMOS UBICADOS</h1>
-                <iframe class="col-sm-12 col-12 bg-dark"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="500px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="col-sm-12 col-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="500px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </div >
