@@ -62,7 +62,7 @@ export default function Registro() {
 
                             <form className='row g-1' onSubmit={handleSubmit}>
                                 <div className="text-center ">
-                                    <button className="btn btn  mb-3 border border rounded-circle text-primary bg-white" type="button"> <i className="bi bi-google"></i> </button>
+                                    <button className="btn btn  mb-3 border border rounded-circle text-primary bg-white" type="button"> <i class="bi bi-google"></i> </button>
                                     <button className="btn btn  mb-3 mx-3 border border rounded-circle text-primary bg-white" type="button"><i className="bi bi-facebook"></i></button>
                                 </div>
                                 <label for="validationCustom01" className="texto form-label text-white" htmlFor="floatingInput" >Nombre de usuario</label>
@@ -105,7 +105,7 @@ export default function Registro() {
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
                                     <input type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
-                                </div> 
+                                </div>
 
                                 <div class="col-12 col-sm-7 ">
                                     <div class="form-check">
@@ -124,11 +124,11 @@ export default function Registro() {
 
                                 </div>
                                 <div className=' text-center mt-2'>
-                                        <button type="submit" className="btn btn-outline-warning">Continuar</button>
+                                    <button type="submit" className="btn btn-outline-warning">Continuar</button>
                                 </div>
-                                
-                                    
-                                
+
+
+
                             </form>
                         </div>
 
