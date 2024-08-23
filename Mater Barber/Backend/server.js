@@ -33,7 +33,6 @@ app.post('/login', (req, res) => {
         }
     })
 });
-
 app.post('/registrar', (req, res) => {
 
     const nombreusuario = req.body.nombre_usuario
