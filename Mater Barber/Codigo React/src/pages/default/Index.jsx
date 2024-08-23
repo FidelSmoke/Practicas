@@ -121,7 +121,7 @@ export default function Index() {
                 <div className="container-fluid mt-5 pt-5">
                     <div className="row">
                         <div class="col-12 col-sm-7 text-center p-5 bg-dark">
-                            <h2 className='text-warning anton display-5'>Lista de precios</h2>
+                            <h2 className='text-white anton display-5'>Lista de precios</h2>
                             <p className='text-white mt-5'>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                 Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
@@ -174,9 +174,9 @@ export default function Index() {
                     <div class="row row-cols-1 row-cols-md-3">
                         <div class="col">
                             <div class="card bg-dark">
-                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <img src="./B1.JPG" class="card-img-top p-4" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <h5 class="card-title text-danger text-center bebas">DEIBY</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                                 </div>
                                 <div class="card-footer">
@@ -186,9 +186,9 @@ export default function Index() {
                         </div>
                         <div class="col">
                             <div class="card bg-dark">
-                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <img src="./B2.JPG" class="card-img-top p-4" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <h5 class="card-title text-danger text-center bebas">JEISON</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                                 </div>
                                 <div class="card-footer">
@@ -198,9 +198,9 @@ export default function Index() {
                         </div>
                         <div class="col">
                             <div class="card bg-dark">
-                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <img src="./B3.JPG" class="card-img-top p-4" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
+                                    <h5 class="card-title text-danger text-center bebas">NOMBRE BARBERO</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                                 </div>
                                 <div class="card-footer">
@@ -256,13 +256,13 @@ export default function Index() {
             </div>
 
             <div className='welcome' id='turno'>
-                <h1 className='text-center text-danger display-1 bebas'>¿PORQUE RESERVAR CON NOSOTROS?</h1>
+                <h1 className='text-center text-white display-1 bebas'>¿PORQUE RESERVAR CON NOSOTROS?</h1>
             </div>
 
 
 
             <div className="welcome" id='galeria'>
-                <h1 className='text-center text-warning display-1 anton'>GALERIA DE MASTER BARBER</h1>
+                <h1 className='text-center text-danger display-1 anton'>GALERIA DE MASTER BARBER</h1>
                 <div className="mt-5 pt-5 col-sm-12 col">
                     <CarrouselGaleria />
                 </div>
