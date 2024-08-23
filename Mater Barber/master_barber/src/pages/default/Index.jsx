@@ -57,7 +57,7 @@ export default function Index() {
                             <div class="card h-100 bg-dark">
                                 <div class="card-body">
                                     <div className="text-center">
-                                        <img src="/LOGO.PNG" class="w-50" alt="..." />
+                                        <img src="/LOGO.png" class="w-50" alt="..." />
                                     </div>
                                     <h5 class="card-title text-danger text-center bebas mt-2">Servicio 1</h5>
                                     <p class="card-text text-center text-white mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta at reprehenderit saepe debitis dolorum doloremque eligendi eveniet quis fuga nam, eos minima consequatur culpa ex, excepturi accusantium, doloribus illo laborum.</p>
@@ -85,7 +85,7 @@ export default function Index() {
                         <div class="col w-50">
                             <div class="card h-100 bg-dark">
                                 <div className="text-center">
-                                    <img src="/LOGO.PNG" class="w-50" alt="..." />
+                                    <img src="/LOGO.png" class="w-50" alt="..." />
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas">Servicio 2</h5>
@@ -210,7 +210,7 @@ export default function Index() {
                         </div>
                         <div class="col">
                             <div class="card bg-dark mt-5">
-                                <img src="./LOGO.PNG" class="card-img-top img-fluid" alt="..." />
+                                <img src="./LOGO.png" class="card-img-top img-fluid" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -223,7 +223,7 @@ export default function Index() {
 
                         <div class="col">
                             <div class="card bg-dark mt-5">
-                                <img src="./LOGO.PNG" class="card-img-top" alt="..." />
+                                <img src="./LOGO.png" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -235,7 +235,7 @@ export default function Index() {
                         </div>
                         <div class="col">
                             <div class="card bg-dark mt-5">
-                                <img src="./LOGO.PNG" class="card-img-top" alt="..." />
+                                <img src="./LOGO.png" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas mt-3">NOMBRE BARBERO</h5>
                                     <p class="card-text text-white text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
