@@ -27,9 +27,6 @@ const Sidebar = () => {
                               </ul>
                         </div>
 
-                        {/* <div className="navbar d-flex align-items-end">
-                              <small className='text-white mx-5 fs-6"'>Hola, Administrador</small><FaPowerOff className='mt-5 fs-5 text-danger' />
-                        </div> */}
 
                   </div>
 
