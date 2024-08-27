@@ -25,7 +25,6 @@ const flowTuto = addKeyword(['tutorial', 'tuto']).addAnswer(
     ],
     null,
     null,
-    [flowSecundario]
 )
 
 const flowGracias = addKeyword(['gracias', 'grac']).addAnswer(
@@ -34,19 +33,16 @@ const flowGracias = addKeyword(['gracias', 'grac']).addAnswer(
     ],
     null,
     null,
-    [flowSecundario]
 )
 
 const flowDiscord = addKeyword(['discord']).addAnswer(
     ['🤪 Únete al discord', 'https://link.codigoencasa.com/DISCORD', '\n*2* Para siguiente paso.'],
     null,
     null,
-    [flowSecundario]
 )
 
 const flowHolamvd = addKeyword(['hola mvd']).addAnswer(
     ['Hola Guapa ¿Como Estas? , ¿Me Extrañaste Mucho?']
-    [flowSecundario]
 )
 
 const flowPrincipal = addKeyword(['ole', 'alo','buenas',])
