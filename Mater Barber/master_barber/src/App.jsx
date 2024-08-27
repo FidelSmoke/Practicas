@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom'
 import AddBarberos from './pages/Admin/AddBarberos';
-import Inventario from './pages/Admin/inventario'
+import Inventario from './pages/Admin/inventario';
 import Perfil from './pages/Admin/Perfil';
 import InicioAdmin from './pages/Admin/InicioAdmin';
 import Login from './pages/Usuario/Login'

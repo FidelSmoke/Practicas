@@ -2,6 +2,7 @@ import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
 import Graficas from '../../Components/Graficas';
 import Sidebar from '../../Components/Sidebar';
+import CarrouselShop from '../../Components/CarrouselShop';
 
 const Inicio = () => {
   const data = {
@@ -30,7 +31,7 @@ const Inicio = () => {
       <Sidebar />
       <div className="w-100">
         <div className='col-100'>
-          <p className='mt-5 text-center pb-3 pt-3 text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL FORMULARIO DE VENTAS</p>
+          <p className='mt-5 text-center pb-3 pt-3 text-white'>BIENVENIDO ADMINISTRADOR | ESTE ES EL ANALISIS DE VENTAS</p>
         </div>
         <div className='container pt-3'>
           <div className="row g-4">
@@ -51,6 +52,7 @@ const Inicio = () => {
           <div className="container border border-2 border-secondary my-5 p-3">
             <div className="row w-100 justify-content-between">
               <h4 className="col-12 col-sm-10 text-white">Productos más vendidos</h4>
+
               <select name="" id="" className="form-select col-12 col-sm mx-2">
                 <option value="">Enero</option>
                 <option value="">Febrero</option>

@@ -26,7 +26,8 @@ const Sidebar = () => {
                                     </li>
                               </ul>
                         </div>
-
+                  <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="bi bi-person-square "></i>
+                        <ul class="dropdown-menu show bg-dark" data-bs-popper="static"><li><a class="dropdown-item text-warning" href="/InicioAdmin">Mi perfil</a></li><li><a class="dropdown-item text-warning" href="/InicioAdmin">Configuración</a></li><li><a class="dropdown-item text-danger" href="/InicioAdmin"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a></li></ul></button>
 
                   </div>
 
