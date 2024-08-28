@@ -26,7 +26,7 @@ const inventario = () => {
 
 
 
-        <div className=' text-center row col col-sm-12'>
+        <div className='container-fluid text-center row col col-sm-12'>
           <div className="table-responsive">
             <table class="table table-dark p-5 mt-5">
               <thead>
