@@ -7,7 +7,7 @@ export default function Dashboard() {
     return (
         <div>
             <NavbarAdmin />
-            <SidebarAdmin/>
-        </div>
+    </div>
+        
     )
 }
