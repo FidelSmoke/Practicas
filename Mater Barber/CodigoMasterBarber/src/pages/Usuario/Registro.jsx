@@ -68,42 +68,42 @@ export default function Registro() {
                                 <label for="validationCustom01" className="texto form-label text-white" htmlFor="floatingInput" >Nombre de usuario</label>
                                 <div className="input-group mb-3 ">
                                     <span className="input-group-text" id="basic-addon2"><i className="bi bi-person"></i></span>
-                                    <input type="text" className="form-control" name='nombre_usuario' placeholder="Introduce tu nombre de usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
+                                    <input required type="text" className="form-control" name='nombre_usuario' placeholder="Introduce tu nombre de usuario" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Correo electronico</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text" id="basic-addon2"><i className="bi bi-envelope"></i></span>
-                                    <input type="email" className="form-control" name='email' placeholder="Ej: pepitoperez@gmail.com" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
+                                    <input required type="email" className="form-control" name='email' placeholder="Ej: pepitoperez@gmail.com" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Numero de identificacion</label>
                                 <div className="input-group mb-3 ">
                                     <span className="input-group-text"><i className="bi bi-person-vcard"></i></span>
-                                    <input type="text" className="form-control" name='nit' placeholder='Introduce tu numero de identificacion' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="text" className="form-control" name='nit' placeholder='Introduce tu numero de identificacion' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Telefono</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-telephone-plus"></i></span>
-                                    <input type="text" className="form-control" name='telefono' placeholder='Introduce tu numero de celular' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="text" className="form-control" name='telefono' placeholder='Introduce tu numero de celular' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
                                 <label for="validationCustom01" className="texto form-label text-white">Confima tu contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="password" className="form-control" name='confirmar_contraseña' placeholder='Confirma tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 

@@ -8,6 +8,7 @@ import Index from './pages/default/Index';
 import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
+import Dashboard from './pages/AdminDos/Dashboard';
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ function App() {
         <div className='content w-100'>
           <Routes>
             <Route exact path='/' element={<Index />}></Route>
+            <Route exact path='/Dashboard' element={<Dashboard />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>
