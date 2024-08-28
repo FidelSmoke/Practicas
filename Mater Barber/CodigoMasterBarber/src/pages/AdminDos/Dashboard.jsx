@@ -1,13 +1,13 @@
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-import Sidebar from '../../Components/Sidebar'
+import NavbarAdmin from '../../Components/NavbarAdmin'
+import SidebarAdmin from '../../Components/SidebarAdmin'
 
 export default function Dashboard() {
     return (
-        <div className='flex'>
-            <div className="w-100">
-                <h2 className='text-white'>holamundo</h2>
-            </div>
+        <div>
+            <NavbarAdmin />
+            <SidebarAdmin/>
         </div>
     )
 }
