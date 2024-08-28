@@ -13,26 +13,39 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            axios.post("http://localhost:8081/login", { email, password })
-                .then(res => {
-                    console.log(res)
-                    if (res.data === "Inicio sesion correctamente") {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Has ingresado correctamente",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate("/")
-                    }
-                    else {
-                        Swal.fire("Error ", "Correo electronico o contraseña incorrectas!", "error");
-                    }
-                })
-                .catch(err => console.log(err))
-        } catch (err) {
-            console.log(err)
+            const res = await axios.post(`http://localhost:8081/login`, { email, password });
+            if (res.status === 200) {
+                Swal.fire({
+                    title: 'Iniciaste sesión',
+                    text: 'Has iniciado sesión correctamente',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar'
+                });
+                navigate("/");
+            }
+        } catch (error) {
+            console.log(error);
+            if (error.response) {
+                Swal.fire({
+                    title: error.response.data || 'Credenciales incorrectas',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            } else if (error.request) {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'No se pudo conectar con el servidor. Inténtalo de nuevo más tarde.',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ocurrió un error al procesar tu solicitud.',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            }
         }
     }
     return (
@@ -56,13 +69,13 @@ export default function Login() {
 
                                 <div className="input-group mb-3">
                                     <span className="input-group-text" id="basic-addon2"><i className="bi bi-envelope"></i></span>
-                                    <input type="email" className="form-control" name='email' placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                    <input required type="email" className="form-control" name='email' placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="basic-addon2"
                                         onChange={e => setEmail(e.target.value)}
                                     />
                                 </div>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input type="password" className="form-control" name='password' placeholder='Contraseña' aria-label="Amount (to the nearest dollar)"
+                                    <input required type="password" className="form-control" name='password' placeholder='Contraseña' aria-label="Amount (to the nearest dollar)"
                                         onChange={e => setPassword(e.target.value)}
                                     />
                                 </div>

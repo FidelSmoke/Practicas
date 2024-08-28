@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
 
 const app = express();
 app.use(express.json())
@@ -22,17 +23,38 @@ const db = mysql.createConnection({
 })
 
 app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM usuarios WHERE email = ? AND contraseña = ?";
 
-    db.query(sql, [req.body.email, req.body.password], (err, data) => {
-        if (err) return res.send("Error");
-        if (data.length > 0) {
-            return res.send("Inicio sesion correctamente")
-        } else {
-            return res.send("No Registrado")
+    const email = req.body.email
+    const contraseña = req.body.password
+
+    db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
+
+        if (err) {
+            console.log(err)
+            return res.status(500).send(err)
+        }
+
+        else if (result.length > 0) {
+            console.log(result[0])
+            bcrypt.compare(contraseña, result[0].contrasena, (err, result) => {
+                if (err) {
+                    console.log(err)
+                    return res.status(500).send(err)
+                }
+                else if (result) {
+                    return res.status(200).send("Inicio sesion correctamente")
+                }
+                else {
+                    return res.status(400).send("Contraseña incorrecta")
+                }
+            })
+        }
+        else {
+            return res.status(400).send("El usuario no existe")
         }
     })
-});
+})
+
 app.post('/registrar', (req, res) => {
 
     const nombreusuario = req.body.nombre_usuario
@@ -68,13 +90,14 @@ app.post('/registrar', (req, res) => {
         }
 
         else {
-            const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contraseña, id_rol) VALUES (?,?,?,?,?,1)"
+            const hashpassword = bcrypt.hashSync(contraseña, 10)
+            const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contrasena, id_rol) VALUES (?,?,?,?,?,1)"
             const values = [
                 nombreusuario,
                 email,
                 nit,
                 telefono,
-                contraseña
+                hashpassword
             ]
             db.query(q, values, (err) => {
                 if (err) {
