@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2024 a las 19:53:56
+-- Tiempo de generación: 29-08-2024 a las 20:07:01
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `carrito_compras`
 --
--- Creación: 16-08-2024 a las 16:44:35
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `carrito_compras` (
@@ -48,7 +48,7 @@ INSERT INTO `carrito_compras` (`id_carrito_compras`, `id_producto`, `id_usuario`
 --
 -- Estructura de tabla para la tabla `categoria_producto`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `categoria_producto` (
@@ -70,7 +70,7 @@ INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
 --
 -- Estructura de tabla para la tabla `compra`
 --
--- Creación: 16-08-2024 a las 16:45:25
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `compra` (
@@ -87,7 +87,7 @@ CREATE TABLE `compra` (
 --
 -- Estructura de tabla para la tabla `factura`
 --
--- Creación: 16-08-2024 a las 16:45:32
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `factura` (
@@ -102,7 +102,7 @@ CREATE TABLE `factura` (
 --
 -- Estructura de tabla para la tabla `producto`
 --
--- Creación: 17-07-2024 a las 18:38:29
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `producto` (
@@ -131,7 +131,7 @@ INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion_P`, `cantidad`, `i
 --
 -- Estructura de tabla para la tabla `recordatorio`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `recordatorio` (
@@ -145,7 +145,7 @@ CREATE TABLE `recordatorio` (
 --
 -- Estructura de tabla para la tabla `reserva_turno`
 --
--- Creación: 16-08-2024 a las 16:45:00
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `reserva_turno` (
@@ -163,7 +163,7 @@ CREATE TABLE `reserva_turno` (
 --
 -- Estructura de tabla para la tabla `rol`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `rol` (
@@ -185,7 +185,7 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`) VALUES
 --
 -- Estructura de tabla para la tabla `tipo_pago`
 --
--- Creación: 17-07-2024 a las 16:02:54
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `tipo_pago` (
@@ -208,7 +208,7 @@ INSERT INTO `tipo_pago` (`id_tipo_pago`, `TipoPago`) VALUES
 --
 -- Estructura de tabla para la tabla `tipo_servicio`
 --
--- Creación: 16-08-2024 a las 16:44:50
+-- Creación: 23-08-2024 a las 16:59:21
 --
 
 CREATE TABLE `tipo_servicio` (
@@ -224,8 +224,8 @@ CREATE TABLE `tipo_servicio` (
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
--- Creación: 16-08-2024 a las 17:43:16
--- Última actualización: 16-08-2024 a las 17:48:31
+-- Creación: 28-08-2024 a las 16:20:12
+-- Última actualización: 29-08-2024 a las 16:58:52
 --
 
 CREATE TABLE `usuarios` (
@@ -234,7 +234,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(55) NOT NULL,
   `nit` int(55) NOT NULL,
   `telefono` int(55) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
   `id_rol` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -242,9 +242,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefono`, `contraseña`, `id_rol`) VALUES
-(1, 'cris', 'cristianrueda0313@gmail.com', 1014481681, 2147483647, '12345678', '1'),
-(2, 'cris', 'cristianrueda0313@gmail.co', 1014481681, 2147483647, '12345678', '1');
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefono`, `contrasena`, `id_rol`) VALUES
+(1, 'FIDEL ESPITIA', 'fideljoseespi10@gmail.com', 1028662003, 2147483647, '$2a$10$Pply84z.7cmWQ174b.1tW.XgfSVP9IKfWOH7C/I//GjxBuf0BQenW', '1');
 
 --
 -- Índices para tablas volcadas
@@ -337,7 +336,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
