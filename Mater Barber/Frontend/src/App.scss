@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Roboto&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --swiper-theme-color: #ffffff !important;
+}
+
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #1f1f1f;
+}
+
+.login {
+  background-color: #000000;
+}
+
+
+.Registro {
+  background-color: #000000;
+}
+
+.texto {
+  margin-bottom: -3px;
+}
+
+
+$light: #ffffff;
+$gray: #e7e9eb;
+
+.flex {
+  display: flex;
+}
+
+.Texto {
+  font-family: "Bebas Neue", sans-serif;
+}
+// SIDEBARPARAADMIN
+.sidebar2{
+  width: 13rem;
+        a {
+          text-decoration: none;
+  
+          &.active {
+            background-color: #e9c706;
+          }
+        }
+}
+
+
+
+
+.sidebar {
+  background-color: #4a4b4d;
+  font-family: "Bebas Neue", sans-serif;
+  width: 20rem;
+  height: calc(110vh);
+
+  ul {
+    list-style: none;
+    padding: 2rem 2rem;
+
+    li {
+      margin-bottom: 2rem;
+
+      a {
+        text-decoration: none;
+
+        &.active {
+          background-color: $gray;
+        }
+      }
+    }
+  }
+}
+
+.nave {
+  margin-top: 9%;
+}
+
+.anton {
+  letter-spacing: 5px;
+  font-family: "Anton SC", sans-serif;
+}
+
+.bg-warning {
+  color: #ffc107;
+  ;
+}
+
+.img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.2;
+  width: 50%;
+}
+
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.welcome {
+  margin-top: 20%;
+}
+
+.welcome-2 {
+  margin-top: 25%;
+}
+
