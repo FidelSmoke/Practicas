@@ -1,7 +1,5 @@
 import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
-import { FaEdit } from "react-icons/fa"
-import { MdDelete } from "react-icons/md"
 import Sidebar from '../../Components/Sidebar'
 import Swal from 'sweetalert2'
 

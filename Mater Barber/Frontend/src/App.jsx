@@ -13,6 +13,7 @@ import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
 import Inicio2 from './pages/AdminDos/Inicio2';
 import Inventario2 from './pages/AdminDos/Inventario2';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
+import Ventas from './pages/AdminDos/Ventas';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <div className='content w-100'>
           <Routes>
             <Route exact path='/' element={<Index />}></Route>
+            <Route exact path='/Ventas' element={<Ventas />}></Route>
             <Route exact path='/Inicio2' element={<Inicio2/>}></Route>
             <Route exact path='/Inventario2' element={<Inventario2/>}></Route>
             <Route exact path='/HrsBarberos' element={<HrsBarberos/>}></Route>

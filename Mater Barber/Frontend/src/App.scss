@@ -43,16 +43,18 @@ $gray: #e7e9eb;
 .Texto {
   font-family: "Bebas Neue", sans-serif;
 }
+
 // SIDEBARPARAADMIN
-.sidebar2{
-  width: 13rem;
-        a {
-          text-decoration: none;
-  
-          &.active {
-            background-color: #e9c706;
-          }
-        }
+.sidebar2 {
+  width: 12vw;
+
+  a {
+    text-decoration: none;
+
+    &.active {
+      background-color: #e9c706;
+    }
+  }
 }
 
 
@@ -114,4 +116,3 @@ $gray: #e7e9eb;
 .welcome-2 {
   margin-top: 25%;
 }
-
