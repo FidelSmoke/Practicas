@@ -13,7 +13,6 @@ import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
 import Inicio2 from './pages/AdminDos/Inicio2';
 import Inventario2 from './pages/AdminDos/Inventario2';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
-import Ventas from './pages/AdminDos/Ventas';
 function App() {
   return (
     <BrowserRouter>
@@ -33,6 +32,7 @@ function App() {
             <Route exact path='/Login' element={<Login />}></Route>
             <Route exact path='/InicioAdmin' element={<InicioAdmin />}> </Route>
             <Route exact path='/Registro' element={<Registro />}></Route>
+            <Route exact path='/ResetPass' element={<ResetPass />}></Route>
 
           </Routes>
         </div>

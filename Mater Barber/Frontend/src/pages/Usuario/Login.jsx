@@ -80,7 +80,11 @@ export default function Login() {
                                     />
                                 </div>
 
-                                <p><a href="#" className="link-underline-light text-decoration-none text-warning">¿Olvidaste tu contraseña?</a></p>
+                                <p><a href="./resetpass" className="link-underline-light text-decoration-none text-warning">¿Olvidaste tu contraseña?</a></p>
+                                <div className=''>
+                                    <p className='text-white'>¿No tienes cuenta?<a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
+
+                                </div>
                                 <div className=' text-center mt-4'>
                                     <button type="submit" className="btn btn-outline-warning">Continuar</button>
                                 </div>
