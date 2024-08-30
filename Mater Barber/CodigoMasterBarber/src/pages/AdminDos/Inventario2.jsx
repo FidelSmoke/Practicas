@@ -1,14 +1,12 @@
-import 'bootstrap/scss/bootstrap.scss'
 import React from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 
-export default function Dashboard() {
+export default function Inventario2() {
     return (
-        <div>
+        <div className='' >
             <NavbarAdmin />
             <SidebarAdmin />
         </div>
-
     )
 }

@@ -9,8 +9,10 @@ import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 import Dashboard from './pages/AdminDos/Dashboard';
-import Ini from './pages/AdminDos/ini';
 import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
+import Inicio2 from './pages/AdminDos/Inicio2';
+import Inventario2 from './pages/AdminDos/Inventario2';
+import HrsBarberos from './pages/AdminDos/HrsBarberos';
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +20,9 @@ function App() {
         <div className='content w-100'>
           <Routes>
             <Route exact path='/' element={<Index />}></Route>
-            <Route exact path='/Ini' element={<Ini/>}></Route>
+            <Route exact path='/Inicio2' element={<Inicio2/>}></Route>
+            <Route exact path='/Inventario2' element={<Inventario2/>}></Route>
+            <Route exact path='/HrsBarberos' element={<HrsBarberos/>}></Route>
             <Route exact path='/GestionarBarberos' element={<GestionarBarberos />}></Route>
             <Route exact path='/Dashboard' element={<Dashboard />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
