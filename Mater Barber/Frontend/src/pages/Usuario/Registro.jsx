@@ -96,7 +96,7 @@ export default function Registro() {
                                 <label for="validationCustom01" className="texto form-label text-white">Contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input required type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="password" className="form-control" name='contrasena' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
@@ -120,7 +120,7 @@ export default function Registro() {
                                 </div>
 
                                 <div className='col-12 col-sm-5 text-end '>
-                                    <p className='text-white'>¿Ya ienes cuenta?<a className="link-offset-1 text-decoration-none" href="./login"> Inicia sesion</a></p>
+                                    <p className='text-white'>¿Ya tienes cuenta?<a className="link-offset-1 text-decoration-none" href="./login"> Inicia sesion</a></p>
 
                                 </div>
                                 <div className=' text-center mt-2'>

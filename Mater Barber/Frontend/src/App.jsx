@@ -14,6 +14,7 @@ import Inicio2 from './pages/AdminDos/Inicio2';
 import Inventario2 from './pages/AdminDos/Inventario2';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
 import ResetPass from './pages/Usuario/resetpass';
+import Ventas from './pages/AdminDos/Ventas';
 function App() {
   return (
     <BrowserRouter>
