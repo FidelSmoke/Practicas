@@ -13,6 +13,7 @@ import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
 import Inicio2 from './pages/AdminDos/Inicio2';
 import Inventario2 from './pages/AdminDos/Inventario2';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
+import ResetPass from './pages/Usuario/resetpass';
 function App() {
   return (
     <BrowserRouter>
