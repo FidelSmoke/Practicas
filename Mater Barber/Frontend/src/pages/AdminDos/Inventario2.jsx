@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
+import Swal from 'sweetalert2'
 
 export default function Inventario2() {
     return (

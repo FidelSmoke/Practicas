@@ -4,6 +4,7 @@ import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
 
 
+
 export default function GestionarBarberos() {
   return (
     <div>
