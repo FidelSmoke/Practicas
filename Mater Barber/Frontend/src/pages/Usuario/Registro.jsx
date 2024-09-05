@@ -51,13 +51,13 @@ export default function Registro() {
     }
     return (
         <div className="Registro">
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
-                <div className='container p-5 w-46 border border-4 border-white border table-responsive border rounded-4 bg-dark.bg-gradient'>
-                    <div className="row">
-                        <div className="col-6 bi-text-center mt-5 pt-4">
+            <div className="min-vh-100 align-content-center mx-5 justify-content-end">
+                <div className='container px-3 p-sm-5 border border-4 border-white border table-responsive border rounded-4 bg-dark.bg-gradient'>
+                    <div className="row justify-content-center align-items-center">
+                        <div className="col-12 col-sm-6 bi-text-center mt-5">
                             <img src="/LOGO.png" alt="" className='img-fluid' />
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-sm-6">
                             <h1 className='text-white text-center anton mb-4'>¡Registrate Aqui!</h1>
 
                             <form className='row g-1' onSubmit={handleSubmit}>
@@ -96,7 +96,7 @@ export default function Registro() {
                                 <label for="validationCustom01" className="texto form-label text-white">Contraseña</label>
                                 <div className="input-group mb-3">
                                     <span className="input-group-text"><i className="bi bi-file-lock"></i></span>
-                                    <input required type="password" className="form-control" name='contrasena' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
+                                    <input required type="password" className="form-control" name='contraseña' placeholder='Crea tu contraseña' aria-label="Amount (to the nearest dollar)" onChange={handleChange}
                                     />
                                 </div>
 
@@ -120,7 +120,7 @@ export default function Registro() {
                                 </div>
 
                                 <div className='col-12 col-sm-5 text-end '>
-                                    <p className='text-white'>¿Ya tienes cuenta?<a className="link-offset-1 text-decoration-none" href="./login"> Inicia sesion</a></p>
+                                    <p className='text-white text-center'>¿Ya tienes cuenta? <br className='d-block d-sm-none'/><a className="link-offset-1 text-decoration-none" href="./login"> Inicia sesion</a></p>
 
                                 </div>
                                 <div className=' text-center mt-2'>
