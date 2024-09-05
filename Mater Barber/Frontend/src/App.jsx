@@ -8,13 +8,12 @@ import Index from './pages/default/Index';
 import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
-import Dashboard from './pages/AdminDos/Dashboard';
 import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
-import Inicio2 from './pages/AdminDos/Inicio2';
 import Inventario2 from './pages/AdminDos/Inventario2';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
 import ResetPass from './pages/Usuario/resetpass';
 import Ventas from './pages/AdminDos/Ventas';
+import InicioAdmin2 from './pages/AdminDos/InicioAdmin2';
 function App() {
   return (
     <BrowserRouter>
@@ -23,11 +22,10 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Index />}></Route>
             <Route exact path='/Ventas' element={<Ventas />}></Route>
-            <Route exact path='/Inicio2' element={<Inicio2/>}></Route>
+            <Route exact path='/InicioAdmin2' element={<InicioAdmin2/>}></Route>
             <Route exact path='/Inventario2' element={<Inventario2/>}></Route>
             <Route exact path='/HrsBarberos' element={<HrsBarberos/>}></Route>
             <Route exact path='/GestionarBarberos' element={<GestionarBarberos />}></Route>
-            <Route exact path='/Dashboard' element={<Dashboard />}></Route>
             <Route exact path='/Inventario' element={<Inventario />}> </Route>
             <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
             <Route exact path='/Perfil' element={<Perfil />}> </Route>

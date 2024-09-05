@@ -11,7 +11,7 @@ export default function SidebarAdmin() {
                   <div className='min-vh-100 bg-dark border-end sidebar2 position-fixed shadow px-3 text-center justify-content-center'>
 
                               <li className='text-center align-items-center justify-content-center'>
-                                    <NavLink to="/inicio2" exact className=' rounded d-block text-white fw-bold w-100 mt-4' activeClassName='active'><faIncons.FaHome className='me-2' /><span className='d-none d-lg-block'>Inicio</span></NavLink>
+                                    <NavLink to="/inicioAdmin2" exact className=' rounded d-block text-white fw-bold w-100 mt-4' activeClassName='active'><faIncons.FaHome className='me-2' /><span className='d-none d-lg-block'>Inicio</span></NavLink>
                               </li>
                               <li>
                                     <NavLink to="/GestionarBarberos" exact className='rounded d-inline-block  text-white fw-bold w-100 mt-3' activeClassName='active'><IoPersonAddSharp className='me-2' /> <span className='d-none d-lg-block'>Add Barberos</span></NavLink>

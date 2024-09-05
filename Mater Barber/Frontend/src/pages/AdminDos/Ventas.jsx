@@ -9,7 +9,7 @@ export default function Ventas() {
         datasets: [
             {
                 label: 'Ventas',
-                data: [65, 59, 580, 81, 56, 55, 67, 100, 306, 100, 300, 600]
+                data: [65, 59, 580, 81, 56, 55, 67, 100, 306, 100, 300, 6000]
             },
             {
                 label: 'Gastos',

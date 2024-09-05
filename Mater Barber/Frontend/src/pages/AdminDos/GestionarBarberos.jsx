@@ -10,7 +10,7 @@ export default function GestionarBarberos() {
     <div>
       <NavbarAdmin />
       <SidebarAdmin />
-      <div className='contenido'>
+      <div className='contenido2'>
         <p className='text-center  mt-5 text-white display-6 bebas col-sm-12 col'>HOLA, <span className='text-danger'>ADMINISTRADOR</span> |AQUI PODRAS EDITAR, AÑADIR Y ELIMINAR BARBEROS</p>
 
         <div className="d-flex justify-content-end mt-3 p-5 mx-5">
