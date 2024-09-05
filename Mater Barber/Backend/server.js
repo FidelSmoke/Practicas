@@ -91,7 +91,7 @@ app.post('/registrar', (req, res) => {
 
         else {
             const hashpassword = bcrypt.hashSync(contraseña, 10)
-            const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contrasena, id_rol) VALUES (?,?,?,?,?,1)"
+            const q = "INSERT INTO usuarios (nombre_usuario, email, nit, telefono ,contrasena, id_rol) VALUES (?,?,?,?,?,3)"
             const values = [
                 nombreusuario,
                 email,
