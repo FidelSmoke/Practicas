@@ -9,8 +9,9 @@ export default function Inventario2() {
             <NavbarAdmin />
             <SidebarAdmin />
             <div>
-                <p className='text-center pb-3 pt-3 text-white mx-5'>BIENVENIDO ADMINISTRADOR | ESTE ES EL ANALISIS DE VENTAS</p>
                 <div className='contenido'>
+                    <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA <span className='text-danger'>ADMINISTRADOR</span>| ESTE ES EL INVENTARIO DE PRODUCTOS</p>
+
                     <div className="d-flex justify-content-end mx-5 mt-5">
                         <button type="button" class="btn btn-danger .col-md-4" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
                     </div>
@@ -328,10 +329,10 @@ export default function Inventario2() {
                                 </div>
                                 <div class="modal-body">
                                     <form>
-                                        <div class="mb-3">
+                                        {/* <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
-                                        </div>
+                                        </div> */}
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
@@ -344,18 +345,20 @@ export default function Inventario2() {
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
                                         </div>
-                                        <div class="mb-3">
+                                        {/* <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
-                                        </div>
+                                        </div> */}
                                         <div className="col-12 mb-3">
                                             <label htmlFor="floatingInput" className='text-white'>Imagen</label>
                                             <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
                                         </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label text-white">Precio:</label>
+                                            <input type="text" class="form-control" id="recipient-name" />
+                                        </div>
+                                       
                                     </form>
                                 </div>
                                 <div class="modal-footer">
