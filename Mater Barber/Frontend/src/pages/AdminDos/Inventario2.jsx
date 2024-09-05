@@ -10,7 +10,7 @@ export default function Inventario2() {
             <SidebarAdmin />
             <div>
                 <p className='text-center pb-3 pt-3 text-white mx-5'>BIENVENIDO ADMINISTRADOR | ESTE ES EL ANALISIS DE VENTAS</p>
-                <div>
+                <div className='contenido'>
                     <div className="d-flex justify-content-end mx-5 mt-5">
                         <button type="button" class="btn btn-danger .col-md-4" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
                     </div>
@@ -18,7 +18,7 @@ export default function Inventario2() {
 
 
 
-                    <div className='container text-center col col-sm-12'>
+                    <div className='container text-center'>
                         <div className="table-responsive">
                             <table class="table table-dark mt-5">
                                 <thead>
