@@ -53,7 +53,7 @@ export default function Login() {
             <div className="min-vh-100 align-content-center mx-5 justify-content-end">
                 <div className='container px-3 p-sm-5 w-50 border border-4 border-white table-responsive border rounded-4 bg-dark.bg-gradient '>
                     <div className="row justify-content-center align-items-center">
-                        <div className="col-12 col-xl-6 bi-text-center ">
+                        <div className="col-12 col-lg-6 bi-text-lg-center ">
                             <img src="/LOGO.png" alt="" className='img-fluid' />
                         </div>
                         <div className="col-12 col-lg-6">
@@ -77,11 +77,11 @@ export default function Login() {
                                         onChange={e => setPassword(e.target.value)}
                                     />
                                 </div>
-                                <div className='col-12 col-sm-12 text'>
-                                <p><a href="./resetpass" className="link-underline-light text-decoration-none text-warning text-center text-sm-start">¿Olvidaste tu contraseña?</a></p>
+                                <div className=' text-center'>
+                                    <p><a href="./resetpass" className="link-underline-light text-decoration-none text-warning text-sm-center">¿Olvidaste tu contraseña?</a></p>
                                 </div>
-                                <div className='col-12 col-sm-12 text-center'>
-                                    <p className='text-white text-center text-sm-start'>¿No tienes cuenta? <br className='d-none d-sm-none'/><a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
+                                <div className='text-center'>
+                                    <p className='text-white text-center'>¿No tienes cuenta? <br className='d-none d-sm-none' /><a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
 
                                 </div>
                                 <div className=' text-center mt-4 mb-4 text-sm-center'>
