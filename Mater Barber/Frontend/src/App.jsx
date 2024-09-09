@@ -1,19 +1,16 @@
 import { BrowserRouter as Router, Route, BrowserRouter, Routes } from 'react-router-dom'
-import AddBarberos from './pages/Admin/AddBarberos';
-import Inventario from './pages/Admin/inventario';
-import Perfil from './pages/Admin/Perfil';
-import InicioAdmin from './pages/Admin/InicioAdmin';
 import Login from './pages/Usuario/Login'
 import Index from './pages/default/Index';
 import Registro from './pages/Usuario/Registro';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss'
 import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
-import Inventario2 from './pages/AdminDos/Inventario2';
+import Inventario from './pages/AdminDos/Inventario';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
 import ResetPass from './pages/Usuario/resetpass';
-import Ventas from './pages/AdminDos/Ventas';
-import InicioAdmin2 from './pages/AdminDos/InicioAdmin2';
+import InicioAdmin from './pages/AdminDos/InicioAdmin';
+import Analisisdeventas from './pages/AdminDos/Analisisdeventas';
+import Gestiondeventas from './pages/AdminDos/Gestiondeventas';
 function App() {
   return (
     <BrowserRouter>
@@ -21,18 +18,15 @@ function App() {
         <div className='content w-100'>
           <Routes>
             <Route exact path='/' element={<Index />}></Route>
-            <Route exact path='/Ventas' element={<Ventas />}></Route>
-            <Route exact path='/InicioAdmin2' element={<InicioAdmin2/>}></Route>
-            <Route exact path='/Inventario2' element={<Inventario2/>}></Route>
-            <Route exact path='/HrsBarberos' element={<HrsBarberos/>}></Route>
+            <Route exact path='/analisisdeventas' element={<Analisisdeventas />}></Route>
+            <Route exact path='/InicioAdmin' element={<InicioAdmin />}></Route>
+            <Route exact path='/Inventario' element={<Inventario />}></Route>
+            <Route exact path='/HrsBarberos' element={<HrsBarberos />}></Route>
             <Route exact path='/GestionarBarberos' element={<GestionarBarberos />}></Route>
-            <Route exact path='/Inventario' element={<Inventario />}> </Route>
-            <Route exact path='/Addbarberos' element={<AddBarberos />}> </Route>
-            <Route exact path='/Perfil' element={<Perfil />}> </Route>
             <Route exact path='/Login' element={<Login />}></Route>
-            <Route exact path='/InicioAdmin' element={<InicioAdmin />}> </Route>
             <Route exact path='/Registro' element={<Registro />}></Route>
             <Route exact path='/ResetPass' element={<ResetPass />}></Route>
+            <Route exact path='/Gestiondeventas' element={<Gestiondeventas />}></Route>
 
           </Routes>
         </div>

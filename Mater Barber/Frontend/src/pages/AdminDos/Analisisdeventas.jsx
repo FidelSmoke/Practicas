@@ -3,17 +3,17 @@ import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Graficas from '../../Components/Graficas';
 
-export default function Ventas() {
+export default function Analisisdeventas() {
     const data = {
         labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
         datasets: [
             {
                 label: 'Ventas',
-                data: [65, 59, 580, 81, 56, 55, 67, 100, 306, 100, 300, 6000]
+                data: [65, 59, 580, 81, 56, 55, 67, 100, 36, 10, 30, 60]
             },
             {
                 label: 'Gastos',
-                data: [28, 48, 40, 19, 86, 27, 72, 30, 0, 300, 300, 700]
+                data: [28, 48, 40, 19, 86, 27, 72, 30, 0, 30, 39, 70]
             },
 
         ],
