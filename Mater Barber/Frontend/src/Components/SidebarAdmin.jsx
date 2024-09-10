@@ -7,8 +7,7 @@ import { IoPersonAddSharp } from "react-icons/io5";
 
 export default function SidebarAdmin() {
       return (
-            <div className='position-relative'>
-                  <div className='min-vh-100 bg-dark border-end sidebar2 position-fixed shadow px-3 text-center justify-content-center'>
+                  <div className='min-vh-100 bg-dark border-end sidebar2 position-fixed px-1 text-center justify-content-center'>
 
                         <li className='text-center align-items-center justify-content-center'>
                               <NavLink to="/inicioAdmin" exact className=' rounded d-block text-white fw-bold w-100 mt-5' activeClassName='active'><faIncons.FaHome className='me-2' /><span className='d-none d-lg-block'>Inicio</span></NavLink>
@@ -31,7 +30,7 @@ export default function SidebarAdmin() {
                         </li>
 
                   </div>
-            </div>
+                  
 
       )
 }

@@ -7,7 +7,7 @@ import 'bootstrap/scss/bootstrap.scss'
 import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
 import Inventario from './pages/AdminDos/Inventario';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
-import ResetPass from './pages/Usuario/resetpass';
+import ResetPass from './pages/default/resetpass';
 import InicioAdmin from './pages/AdminDos/InicioAdmin';
 import Analisisdeventas from './pages/AdminDos/Analisisdeventas';
 import Gestiondeventas from './pages/AdminDos/Gestiondeventas';
