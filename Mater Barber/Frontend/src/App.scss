@@ -128,3 +128,16 @@ $gray: #e7e9eb;
 .contenido2 {
   margin-left: 15%;
 }
+
+.zoomhover:hover {
+  transform: scale(4.10);
+}
+
+.zoomhover2:hover {
+  transform: scale(1.1);
+}
+
+.containerzoom {
+  overflow: hidden;
+  transition: all 500ms;
+}

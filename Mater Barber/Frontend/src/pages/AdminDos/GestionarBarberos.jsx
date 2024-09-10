@@ -21,20 +21,20 @@ export default function GestionarBarberos() {
           <div className="table-responsive">
             <table class="table table-dark table-hover mt-4 container p-5">
               <thead>
-                <tr>
-                  <th scope="col">Nombre Barbero</th>
-                  <th scope="col">Descripcion</th>
-                  <th scope="col">imagen Barbero</th>
-                  <th scope="col">Acciones</th>
+                <tr className='bg-white'>
+                  <th scope="col" className='p-2 display-6 bebas'>Nombre</th>
+                  <th scope="col" className='p-2 display-6 bebas w-50'>Descripcion</th>
+                  <th scope="col" className='p-2 display-6 bebas'>imagen Barbero</th>
+                  <th scope="col" className='p-2 text-warning display-6 bebas'>Acciones</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className='p-5'>
                 <tr>
-                  <th scope="row">Deiby</th>
-                  <td>Esoecialista En......</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>DEIBY</th>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/B1.JPG" alt="" srcset="" className='zoomhover containerzoom col-md-2 col-sm-12 mt-3 img-fluid' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",
@@ -59,11 +59,11 @@ export default function GestionarBarberos() {
                     }}><i class="bi bi-trash-fill"></i></button></td>
                 </tr>
                 <tr>
-                  <th scope="row">Jeison</th>
-                  <td>Especialista En....</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>JEISON</th>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/B2.JPG" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom ' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",
@@ -88,11 +88,11 @@ export default function GestionarBarberos() {
                     }}><i class="bi bi-trash-fill"></i></button></td>
                 </tr>
                 <tr>
-                  <th scope="row">Eduardo</th>
-                  <td>Especialista En.......</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>NIXON</th>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/B3.JPG" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom ' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",
@@ -117,11 +117,11 @@ export default function GestionarBarberos() {
                     }}><i class="bi bi-trash-fill"></i></button></td>
                 </tr>
                 <tr>
-                  <th scope="row">Camilo</th>
-                  <td>Especialista En.....</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>CAMILO</th>
+                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",
@@ -146,11 +146,11 @@ export default function GestionarBarberos() {
                     }}><i class="bi bi-trash-fill"></i></button></td>
                 </tr>
                 <tr>
-                  <th scope="row">Cristian</th>
-                  <td>Especialista En.....</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>CRISTIAN</th>
+                  <td className='col-md-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",
@@ -175,11 +175,11 @@ export default function GestionarBarberos() {
                     }}><i class="bi bi-trash-fill"></i></button></td>
                 </tr>
                 <tr>
-                  <th scope="row">Jorge</th>
-                  <td>Especialista En...</td>
-                  <td>@twitter</td>
+                  <th scope="row" className='display-6 bebas'>JORGE</th>
+                  <td >Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
+                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
                   <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-3" onClick={() => {
+                    <button className="btn btn-outline-danger mx-2" onClick={() => {
                       Swal.fire({
                         title: "¿Eliminar Barbero?",
                         text: "¡Se eliminara el Barbero!",

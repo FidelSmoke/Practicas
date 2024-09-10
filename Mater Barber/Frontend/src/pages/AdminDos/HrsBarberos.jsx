@@ -7,8 +7,8 @@ export default function HrsBarberos() {
     <div>
       <NavbarAdmin />
       <SidebarAdmin />
-      <div className='contenido'>
-        <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA <span className='text-danger'>ADMINISTRADOR</span>| ESTAS SON LAS HORAS DE LOS BARBEROS</p>
+      <div className='contenido p-5'>
+        <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| ESTAS SON LAS HORAS DE LOS BARBEROS</p>
         <div className="container mt-5 pt-5 contenido">
           <div class="row row-cols-1 row-cols-md-3">
             <div class="col">
@@ -19,7 +19,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="/Horasdeiby" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                <button class="btn btn-warning" type="button"><i class="bi bi-alarm mx-2"></i>VER HORAS EXTRAS</button>
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a> 
                 </div>
               </div>
             </div>

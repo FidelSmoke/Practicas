@@ -10,7 +10,7 @@ export default function Inventario2() {
             <SidebarAdmin />
             <div>
                 <div className='contenido'>
-                    <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA <span className='text-danger'>ADMINISTRADOR</span>| ESTE ES EL INVENTARIO DE PRODUCTOS</p>
+                    <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| ESTE ES EL INVENTARIO DE PRODUCTOS</p>
 
                     <div className="d-flex justify-content-end mx-5 mt-5">
                         <button type="button" class="btn btn-danger .col-md-4" data-bs-toggle="modal" data-bs-target="#AñadirModal" data-bs-whatever="@mdo" >Añadir</button>
@@ -30,7 +30,7 @@ export default function Inventario2() {
                                         <th >Cantidad</th>
                                         <th >Id_CP</th>
                                         <th>imagen</th>
-                                        <th >Precio</th>
+                                        <th >PrecioUnitario</th>
                                         <th >Acciones</th>
                                     </tr>
                                 </thead>
@@ -41,10 +41,10 @@ export default function Inventario2() {
                                         <td>Camisetas con estampado y horma grande</td>
                                         <td>20</td>
                                         <td>CP1</td>
-                                        <td >@twitter</td>
+                                        <td ><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td >78.000</td>
-                                        <td><button type="button" class="btn btn-outline-warning .col-md-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                        <td><button type="button" class="btn btn-outline-warning .col-md-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",
@@ -74,10 +74,10 @@ export default function Inventario2() {
                                         <td>Gorras con diferentes estilos y variados colores</td>
                                         <td>10</td>
                                         <td>CP2</td>
-                                        <td>@twitter</td>
+                                        <td><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td>50.000</td>
                                         <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",
@@ -107,10 +107,10 @@ export default function Inventario2() {
                                         <td>Aretes, expaciones, simulaciones, etc.</td>
                                         <td>50</td>
                                         <td>CP2</td>
-                                        <td>@twitter</td>
+                                        <td><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td>20.000</td>
                                         <td ><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",
@@ -140,10 +140,10 @@ export default function Inventario2() {
                                         <td>Mascarillas para puntos negros e hidratantes</td>
                                         <td>20</td>
                                         <td>CP3</td>
-                                        <td>@twitter</td>
+                                        <td><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td>15.000</td>
                                         <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",
@@ -173,10 +173,10 @@ export default function Inventario2() {
                                         <td>Para un texturizado de cabello mas visible</td>
                                         <td>10</td>
                                         <td>CP3</td>
-                                        <td>@twitter</td>
+                                        <td><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td>30.000</td>
                                         <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",
@@ -206,10 +206,10 @@ export default function Inventario2() {
                                         <td>Piercings para la ceja, nariz, lengua, labio y de ...</td>
                                         <td>60</td>
                                         <td>CP2</td>
-                                        <td>@twitter</td>
+                                        <td><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
                                         <td>20.000</td>
                                         <td><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                            <button className="btn btn-outline-danger mx-3" onClick={() => {
+                                            <button className="btn btn-outline-danger mt-1" onClick={() => {
                                                 Swal.fire({
                                                     title: "¿Eliminar Producto?",
                                                     text: "¡Se eliminara el Producto!",

@@ -7,7 +7,7 @@ export default function Gestiondeventas() {
             <NavbarAdmin />
             <SidebarAdmin />
             <div className='contenido'>
-                <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA <span className='text-danger'>ADMINISTRADOR</span>| AQUI PODRAS AÑADIR, ELIMINAR Y MODIFICAR VENTAS</p>
+                <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| AQUI PODRAS AÑADIR, ELIMINAR Y MODIFICAR VENTAS</p>
             </div>
         </div>
     )
