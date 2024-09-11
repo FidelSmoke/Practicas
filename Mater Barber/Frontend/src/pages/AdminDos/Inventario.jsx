@@ -5,10 +5,7 @@ import Swal from 'sweetalert2'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function Inventario2() {
-    const [products, setProducts] = useState([])
-    
-
+export default function Inventario() {
     return (
         <div>
             <NavbarAdmin />
@@ -238,7 +235,7 @@ export default function Inventario2() {
                                                 )
                                             }}><i class="bi bi-trash-fill"></i></button></td>
                                     </tr>
-                                    
+
                                 </tbody>
                             </table>
                         </div>
@@ -358,12 +355,12 @@ export default function Inventario2() {
                                             <label htmlFor="floatingInput" className='text-white'>Imagen</label>
                                             <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
                                         </div>
-                                        
+
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
                                         </div>
-                                       
+
                                     </form>
                                 </div>
                                 <div class="modal-footer">

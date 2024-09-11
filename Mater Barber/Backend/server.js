@@ -166,8 +166,9 @@ app.post('/resetpass', (req, res) => {
     });
 });
 
-app.post('/iventario', (req, res) => {
-    
+app.delete('/inventario', (req, res) => {
+          
+
 })
 
 
