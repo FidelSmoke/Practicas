@@ -154,7 +154,7 @@ app.post('/resetpass', (req, res) => {
                 html: `
                 <div class="Parrafos">
                     <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>
-                    <p>El Código De Verificación Fue Enviado En La Fecha: <b>${expirationDate}</b></p>
+                    <p>El Código De Verificación Fue Enviado A La Fecha Y Hora: <b>${expirationDate}</b></p>
                 </div>
                 `,
             };
@@ -179,7 +179,7 @@ app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
 
-{/* <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>   */}
-{/* <p>El Código De Verificación Fue Enviado En La Fecha: <b>${expirationDate}</b></p> */}
+{/* <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>
+<p>El Código De Verificación Fue Enviado A La Fecha Y Hora: <b>${expirationDate}</b></p> */}
 
 
