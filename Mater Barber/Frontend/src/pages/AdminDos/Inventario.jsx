@@ -2,8 +2,13 @@ import React from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Inventario2() {
+    const [products, setProducts] = useState([])
+    
+
     return (
         <div>
             <NavbarAdmin />
@@ -24,12 +29,12 @@ export default function Inventario2() {
                             <table class="table table-dark mt-5">
                                 <thead>
                                     <tr>
-                                        <th >IdProdu</th>
+                                        <th >Id Producto</th>
                                         <th >Nombre</th>
                                         <th >Descripcion</th>
                                         <th >Cantidad</th>
-                                        <th >Id_CP</th>
-                                        <th>imagen</th>
+                                        <th >Categoria producto</th>
+                                        <th>Imagen</th>
                                         <th >PrecioUnitario</th>
                                         <th >Acciones</th>
                                     </tr>

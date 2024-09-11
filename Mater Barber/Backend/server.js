@@ -166,6 +166,10 @@ app.post('/resetpass', (req, res) => {
     });
 });
 
+app.post('/iventario', (req, res) => {
+    
+})
+
 
 
 app.listen(8081, () => {

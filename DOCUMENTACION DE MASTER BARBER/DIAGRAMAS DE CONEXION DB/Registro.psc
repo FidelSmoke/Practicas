@@ -1,5 +1,5 @@
 Algoritmo Registro
-	Definir nombre, email, nit, telefono, CONTRASEÑA, ConfirmacionContraseña Como Cadena
+	Definir nombre, email, nit, telefono, CONTRASENA, CONFIRMACIONCONTRASENA Como Cadena
 	Definir nombre_usuario, email_usuario, nit_usuario, telefono_usuario, pass_usuario Como Cadena
 	nombre_usuario <- 'Fidel'
 	email_usuario <- 'fideljoseespi10@gmail.com'
@@ -15,24 +15,24 @@ Algoritmo Registro
 	Escribir 'Ingrese Numero De Telefono'
 	Leer telefono
 	Escribir 'Ingresar Contraseña'
-	Leer CONTRASEÑA
+	Leer CONTRASENA
 	Escribir 'Confirmar Contraseña'
-	Leer ConfirmacionContraseña
+	Leer CONFIRMACIONCONTRASENA
 	Si email=email_usuario Entonces
 		Escribir 'Usuario Existente'
 	SiNo
-		Si CONTRASEÑA<>ConfirmacionContraseña Entonces
+		Si CONTRASENA<>CONFIRMACIONCONTRASENA Entonces
 			Escribir 'Las Contraseñas No Coinciden'
 		SiNo
 			Si Longitud(CONTRASENA)<8 Entonces
 				Escribir 'La contraseña debe tener minimo 8 caracteres'
 			SiNo
-				si telefono=telefono_usuario Entonces
-				Escribir 'Este Numero de celular ya existe'
-			SiNo
-				Escribir 'El Usuario A Sido Registrado Con Exito'
+				Si telefono=telefono_usuario Entonces
+					Escribir 'Este Numero de celular ya existe'
+				SiNo
+					Escribir 'El Usuario A Sido Registrado Con Exito'
+				FinSi
 			FinSi
 		FinSi
-	FinSi
 	FinSi
 FinAlgoritmo
