@@ -30,8 +30,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
+        user: 'cristianrueda0313@gmail.com',
+        pass: 'ryke ekks cwbx rstg',
     }
 });
 
@@ -142,32 +142,17 @@ app.post('/resetpass', (req, res) => {
 
         const user = results[0];
         const verificationCode = generateVerificationCode();
-        const expirationDate = moment().add(1, 'hour').format('YYYY-MM-DD HH:mm:ss'); // Fecha de expiración en 1 hora
+        const expirationDate = moment().add(1, 'hour').format('YYYY-MM-DD HH:mm:ss');
 
-        // Guardar el código y la fecha de expiración en la base de datos
         db.query('UPDATE usuarios SET user_reset_code = ?, user_reset_code_expiration = ? WHERE id_usuario = ?', [verificationCode, expirationDate, user.id_usuario], (err) => {
             if (err) return res.status(500).json({ message: 'Error al guardar el código de verificación' + err });
 
-            // Enviar el código de verificación por correo
             const mailOptions = {
-                from: 'fideljoseespi10@gmail.com',
+                from: 'cristianrueda0313@gmail.com',
                 to: email,
                 subject: 'Código de verificación para restablecer contraseña || Master Barber',
                 html: `
-                <div class="container" style="background-color: #212529; color: #fff; padding: 80px;">
-                    <div class="imagen" style="text-align: center;">
-                        <img src="LOGO.png" alt=""
-                            style="width: 20%; height: 20%;">
-                    </div>
-                    <h1>Recuperación de Contraseña</h1>
-                    <p style="font-size: 25px;">Tu código de verificación es:</p>
-                    <h2 style="font-size: 40px; font-weight: bold; color: #FFC107;">${verificationCode}</h2>
-                    <p>Por favor, ingrésalo en el formulario de recuperación de contraseña.</p>
-                    <p>Este código caducará en 1 hora.</p>
-                    <p>Si no solicitaste este cambio, ignora este mensaje.</p>
-                    <p>Gracias,</p>
-                    <p>El equipo de soporte</p>
-                </div>
+                    <p>Para restablecer tu contraseña, introduce este código de verificación en la página de restablecer contraseña: <b>b></p>
                 `,
             };
 
@@ -187,4 +172,5 @@ app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
 
+// ${ verificationCode }
 
