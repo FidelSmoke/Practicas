@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-export default function ResetPass() {
+export default function EnvEmail() {
 
     const navigate = useNavigate();
     const [user, setUser] = useState({

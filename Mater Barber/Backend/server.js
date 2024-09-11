@@ -150,12 +150,18 @@ app.post('/resetpass', (req, res) => {
             const mailOptions = {
                 from: 'cristianrueda0313@gmail.com',
                 to: email,
-                subject: 'Código de verificación para restablecer contraseña || Master Barber',
+                subject: 'Código De Verificación Para Restablecer Tu Contraseña',
                 html: `
-                <div class="Parrafos">
-                    <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>
-                    <p>El Código De Verificación Fue Enviado A La Fecha Y Hora: <b>${expirationDate}</b></p>
-                </div>
+                <div class="container" style="background-color: #212529; color: #fff; padding: 80px;">
+                    <div style="text-align: center;">
+                        <img src="" alt=""
+                    </div>
+                    <h1 style="color:#e9c706; text-align: center; font-weight: bold; font-size: 40px;">Recuperación De Contraseña</h1>
+                    <p style="font-size: 20px; text-align: center;">Tu Codigo Para Restalecer La Contraseña Es</p>
+                    <h2 style="font-size: 50px; font-weight: bolder; color: #ff2f2f ; text-align: center;">${verificationCode}</h2>
+                    <h3 ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
+                    <h3">Este Código Caducará En 1 Hora.</h3>
+                    <h3>Gracias Por Confiar En Master Barber</h2>
                 `,
             };
 
@@ -179,7 +185,6 @@ app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
 
-{/* <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>
-<p>El Código De Verificación Fue Enviado A La Fecha Y Hora: <b>${expirationDate}</b></p> */}
+// style="width: 20%; height: 20%;">
 
 

@@ -7,10 +7,10 @@ import 'bootstrap/scss/bootstrap.scss'
 import GestionarBarberos from './pages/AdminDos/GestionarBarberos';
 import Inventario from './pages/AdminDos/Inventario';
 import HrsBarberos from './pages/AdminDos/HrsBarberos';
-import ResetPass from './pages/default/resetpass';
 import InicioAdmin from './pages/AdminDos/InicioAdmin';
 import Analisisdeventas from './pages/AdminDos/Analisisdeventas';
 import Gestiondeventas from './pages/AdminDos/Gestiondeventas';
+import EnvEmail from './pages/default/EnvEmail';
 function App() {
   return (
     <BrowserRouter>
@@ -25,7 +25,7 @@ function App() {
             <Route exact path='/GestionarBarberos' element={<GestionarBarberos />}></Route>
             <Route exact path='/Login' element={<Login />}></Route>
             <Route exact path='/Registro' element={<Registro />}></Route>
-            <Route exact path='/ResetPass' element={<ResetPass />}></Route>
+            <Route exact path='/EnvEmail' element={<EnvEmail />}></Route>
             <Route exact path='/Gestiondeventas' element={<Gestiondeventas />}></Route>
 
           </Routes>
