@@ -24,7 +24,7 @@ export default function ResetPass() {
             const res = await axios.post("http://localhost:8081/resetpass", user);
             if (res.status === 200) {
                 Swal.fire({
-                    title: 'Email enviado',
+                    title: 'El Codigo Fue Enviado A Tu Correo',
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 });
@@ -34,7 +34,7 @@ export default function ResetPass() {
             console.log(error);
             if (error.response) {
                 Swal.fire({
-                    title: error.response.data || 'Algo salio mal',
+                    title: error.response.data || 'Algo salio mal Al Enviar El Codigo',
                     icon: 'error',
                     confirmButtonText: 'Intentar de nuevo'
                 });
