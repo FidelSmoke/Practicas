@@ -152,7 +152,10 @@ app.post('/resetpass', (req, res) => {
                 to: email,
                 subject: 'Código de verificación para restablecer contraseña || Master Barber',
                 html: `
-                    <p>Para restablecer tu contraseña, introduce este código de verificación en la página de restablecer contraseña: <b>b></p>
+                <div class="Parrafos">
+                    <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>
+                    <p>El Código De Verificación Fue Enviado En La Fecha: <b>${expirationDate}</b></p>
+                </div>
                 `,
             };
 
@@ -167,7 +170,7 @@ app.post('/resetpass', (req, res) => {
 });
 
 app.post('/iventario', (req, res) => {
-    
+
 })
 
 
@@ -176,5 +179,7 @@ app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
 
-// ${ verificationCode }
+{/* <p>El Código Para Restablecer Tu Contraseña Es: <b>${verificationCode}</b></p>   */}
+{/* <p>El Código De Verificación Fue Enviado En La Fecha: <b>${expirationDate}</b></p> */}
+
 
