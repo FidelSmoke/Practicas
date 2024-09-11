@@ -169,7 +169,7 @@ app.post('/resetpass', (req, res) => {
     });
 });
 
-app.post('/iventario', (req, res) => {
+app.post('/inventario', (req, res) => {
     
 })
 
