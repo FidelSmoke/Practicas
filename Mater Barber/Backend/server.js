@@ -122,7 +122,7 @@ app.post('/registrar', (req, res) => {
     })
 });
 
-app.post('/resetpass', (req, res) => {
+app.post('/EnvEmail', (req, res) => {
     const email = req.body.email;
 
     function generateVerificationCode() {
