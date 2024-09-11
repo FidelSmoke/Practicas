@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2024 a las 17:38:04
+-- Tiempo de generación: 11-09-2024 a las 18:36:39
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `carrito_compras`
 --
--- Creación: 09-09-2024 a las 15:49:53
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `carrito_compras` (
@@ -40,7 +40,7 @@ CREATE TABLE `carrito_compras` (
 --
 -- Estructura de tabla para la tabla `categoria_producto`
 --
--- Creación: 29-08-2024 a las 18:09:52
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `categoria_producto` (
@@ -53,7 +53,7 @@ CREATE TABLE `categoria_producto` (
 --
 -- Estructura de tabla para la tabla `compra`
 --
--- Creación: 09-09-2024 a las 15:50:11
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `compra` (
@@ -70,7 +70,7 @@ CREATE TABLE `compra` (
 --
 -- Estructura de tabla para la tabla `factura`
 --
--- Creación: 09-09-2024 a las 15:50:19
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `factura` (
@@ -85,7 +85,7 @@ CREATE TABLE `factura` (
 --
 -- Estructura de tabla para la tabla `producto`
 --
--- Creación: 09-09-2024 a las 15:50:26
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `producto` (
@@ -102,7 +102,7 @@ CREATE TABLE `producto` (
 --
 -- Estructura de tabla para la tabla `recordatorio`
 --
--- Creación: 09-09-2024 a las 15:50:35
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `recordatorio` (
@@ -116,7 +116,7 @@ CREATE TABLE `recordatorio` (
 --
 -- Estructura de tabla para la tabla `reserva_turno`
 --
--- Creación: 09-09-2024 a las 15:50:41
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `reserva_turno` (
@@ -134,7 +134,7 @@ CREATE TABLE `reserva_turno` (
 --
 -- Estructura de tabla para la tabla `rol`
 --
--- Creación: 29-08-2024 a las 18:09:52
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `rol` (
@@ -156,7 +156,7 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`) VALUES
 --
 -- Estructura de tabla para la tabla `tipo_pago`
 --
--- Creación: 29-08-2024 a las 18:09:52
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `tipo_pago` (
@@ -169,7 +169,7 @@ CREATE TABLE `tipo_pago` (
 --
 -- Estructura de tabla para la tabla `tipo_servicio`
 --
--- Creación: 09-09-2024 a las 15:50:55
+-- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `tipo_servicio` (
@@ -185,7 +185,8 @@ CREATE TABLE `tipo_servicio` (
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
--- Creación: 09-09-2024 a las 15:51:05
+-- Creación: 11-09-2024 a las 15:44:44
+-- Última actualización: 11-09-2024 a las 16:32:11
 --
 
 CREATE TABLE `usuarios` (
@@ -196,8 +197,16 @@ CREATE TABLE `usuarios` (
   `telefono` varchar(55) NOT NULL,
   `contrasena` varchar(255) NOT NULL,
   `id_rol` int(255) NOT NULL,
-  `code` varchar(7) NOT NULL
+  `user_reset_code` varchar(7) DEFAULT NULL,
+  `user_reset_code_expiration` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefono`, `contrasena`, `id_rol`, `user_reset_code`, `user_reset_code_expiration`) VALUES
+(5, 'Fidel Espitia ', 'fideljoseespi10@gmail.com', 1028662003, '3142758305', '$2a$10$ESGSZvbeLXYdHNs3P2500.CCehdNkbjbkSoNW.m8nikMw7qV5LWES', 3, '259243', '2024-09-11 11:32:11');
 
 --
 -- Índices para tablas volcadas
@@ -314,7 +323,7 @@ ALTER TABLE `recordatorio`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
