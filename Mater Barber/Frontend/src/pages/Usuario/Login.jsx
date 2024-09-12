@@ -56,7 +56,7 @@ export default function Login() {
                         <div className="col-12 col-lg-6 bi-text-lg-center ">
                             <img src="/LOGO.png" alt="" className='img-fluid' />
                         </div>
-                        <div className="col-12 col-lg-6">
+                        <div className="col-12 col-lg-6 mt-5">
                             <h1 className='text-white text-center anton mb-4'>¡Ingresa Ya!</h1>
 
                             <form className='row g-1' onSubmit={handleSubmit}>
@@ -78,14 +78,14 @@ export default function Login() {
                                     />
                                 </div>
                                 <div className=' text-center'>
-                                    <p><a href="./resetpass" className="link-underline-light text-decoration-none text-warning text-sm-center">¿Olvidaste tu contraseña?</a></p>
+                                    <p><a href="./EnvEmail" className="link-underline-light text-decoration-none text-warning text-sm-center antonparabackend mt-5">¿Olvidaste tu contraseña?</a></p>
                                 </div>
                                 <div className='text-center'>
-                                    <p className='text-white text-center'>¿No tienes cuenta? <br className='d-none d-sm-none' /><a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
+                                    <p className='text-white text-center antonparabackend'>¿No tienes cuenta? <br className='d-none d-sm-none' /><a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
 
                                 </div>
                                 <div className=' text-center mt-4 mb-4 text-sm-center'>
-                                    <button type="submit" className="btn btn-outline-warning">Continuar</button>
+                                    <button type="submit" className="btn btn-outline-warning antonparabackend">Continuar</button>
                                 </div>
                             </form>
                         </div>
