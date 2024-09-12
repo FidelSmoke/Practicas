@@ -28,7 +28,7 @@ export default function EnvEmail() {
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 });
-                navigate("/");
+                navigate("/Cambiarpasscod");
             }
         } catch (error) {
             console.log(error);
