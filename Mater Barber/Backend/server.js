@@ -7,6 +7,7 @@ const moment = require('moment');
 
 const app = express();
 app.use(express.json())
+app.use(cors(corsOptions));
 
 const corsOptions = {
     origin: '*',
@@ -14,7 +15,6 @@ const corsOptions = {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     optionSuccessStatus: 200
 }
-app.use(cors(corsOptions));
 
 
 const db = mysql.createConnection({
@@ -154,14 +154,14 @@ app.post('/EnvEmail', (req, res) => {
                 html: `
                 <div class="container" style="background-color: #212529; color: #fff; padding: 80px;">
                     <div style="text-align: center;">
-                        <img src="../Frontend/public/LOGO.png" alt=""/>
+                        <img src="" alt=""
                     </div>
                     <h1 style="color:#e9c706; text-align: center; font-weight: bold; font-size: 40px;">Recuperación De Contraseña</h1>
                     <p style="font-size: 20px; text-align: center;">Tu Codigo Para Restalecer La Contraseña Es</p>
                     <h2 style="font-size: 50px; font-weight: bolder; color: #ff2f2f ; text-align: center;">${verificationCode}</h2>
-                    <h3  style="text-align: center; ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
-                    <h3 style="text-align: center; ">Este Código Caducará En 1 Hora.</h3>
-                    <h3 style="text-align: center; ">Gracias Por Confiar En Master Barber</h2>
+                    <h3 ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
+                    <h3">Este Código Caducará En 1 Hora.</h3>
+                    <h3>Gracias Por Confiar En Master Barber</h2>
                 `,
             };
 
@@ -175,8 +175,30 @@ app.post('/EnvEmail', (req, res) => {
     });
 });
 
-app.post('/inventario', (req, res) => {
 
+app.get('/inventario', (req, res) => {
+   const q = "SELECT * FROM inventario"
+   db.query(q, (err, data) => {
+       if (err) return res.json(err)
+        return res.json(data)
+   }) 
+})
+
+app.post ('/inventario', (req, res) => {
+    const q = "INSERT INTO inventario (id_producto, nombre, descripcion_P, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?)"
+
+    const values = [
+        req.body.producto,
+        req.body.nombre,
+        req.body.descripcion,
+        req.body.cantidad,
+        req.body.categoria,
+        req.body.precio
+    ]
+    db.query(q, [values], (err, data) => {
+        if (err) return res.json(err)
+        return res.json("se ha creado correctamente")
+    })
 })
 
 

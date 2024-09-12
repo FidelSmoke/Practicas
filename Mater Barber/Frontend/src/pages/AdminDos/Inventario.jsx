@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
@@ -6,6 +6,47 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Inventario() {
+    const[nombre, setNombre] = useState('')
+    const [descripcion, setDescripcion] = useState('')
+    const[cantidad, setCantidad] = useState('')
+    const [imagen, setImagen] = useState('')
+    const[precio, setPrecio] = useState('')
+
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const res = await axios.post("http://localhost:8081/inventario", { producto, nombre, descripcion, cantidad, imagen, categoria, precio });
+            if (res.status === 200) {
+                Swal.fire({
+                    title: 'Añadido',
+                    text: 'Producto creado correctamente',
+                    icon: 'success',
+                    confirmButtonText: 'Añadir'
+                });
+                navigate("/inventario");
+            }
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        const fetchInventario = async () => {
+            try {
+                const res = await axios.get ("http://localhost:8081/inventario")
+                setInventario(res.data)
+                console.log(res)
+            }catch (err){
+                console.log(err)
+            }
+        }
+        fetchInventario()
+    }, []) 
+
+    
+    
     return (
         <div>
             <NavbarAdmin />
@@ -240,7 +281,7 @@ export default function Inventario() {
                             </table>
                         </div>
 
-                    </div>
+                    </div>  
 
                     {/* MODAL EDITAR */}
 
@@ -252,34 +293,34 @@ export default function Inventario() {
                                     <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form onSubmit={handleSubmit}>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="producto" id="recipient-name" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="nombre" id="recipient-name" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="descripcion" id="recipient-name"/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="cantidad"id="recipient-name"/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="categoria" id="recipient-name" />
                                         </div>
                                         <div className="col-12 mb-3">
                                             <label htmlFor="floatingInput" className='text-white'>Imagen</label>
-                                            <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
+                                            <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='imagen' required/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" name="precio" id="recipient-name"/>
                                         </div>
                                     </form>
                                 </div>
@@ -330,22 +371,22 @@ export default function Inventario() {
                                     <h1 class="modal-title fs-5 text-white text-white" id="exampleModalLabel">AÑADIR</h1>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form onChange={handleSubmit}>
                                         {/* <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
                                         </div> */}
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" id="recipient-name"  name='nombre' onChange={e => setNombre (e.target.value)}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={e => setDescripcion (e.target.value)}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" id="recipient-name" name='cantidad' onChange={e => setCantidad (e.target.value)}/>
                                         </div>
                                         {/* <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
@@ -353,12 +394,12 @@ export default function Inventario() {
                                         </div> */}
                                         <div className="col-12 mb-3">
                                             <label htmlFor="floatingInput" className='text-white'>Imagen</label>
-                                            <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
+                                            <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='imagen' required onChange={e => setImagen (e.target.value)}/>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
+                                            <input type="text" class="form-control" id="recipient-name" name='precio' onChange={e => setPrecio (e.target.value)}/>
                                         </div>
 
                                     </form>
@@ -394,7 +435,8 @@ export default function Inventario() {
                                             title: "Se Ah Añadido Correctamente",
                                             showConfirmButton: false,
                                             timer: 1500
-                                        })
+                                        
+                                        });
                                     }}>Añadir</button>
                                 </div>
                             </div>
