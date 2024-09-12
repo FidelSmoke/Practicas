@@ -71,6 +71,14 @@ $gray: #e7e9eb;
   font-family: "Anton SC", sans-serif;
 }
 
+.antonparabackend {
+  letter-spacing: 2px;
+  font-family: "Anton SC", sans-serif;
+}
+.antonpararecuperar {
+  font-family: "Anton SC", sans-serif;
+}
+
 .bg-warning {
   color: #ffc107;
   ;
@@ -116,8 +124,22 @@ $gray: #e7e9eb;
   transition: all 500ms;
 }
 
-// Estilos Para El Backend
+.otp-area {
+  width: 70%;
+  margin-left: 14%;
+  display: flex;
+  justify-content: center;
+}
 
-.Parrafos {
-  font-family: "Bebas Neue", sans-serif;
+.inputcod {
+  height: 60px;
+  width: 60px;
+  outline: none;
+  text-align: center;
+  font-size: 1.5rem;
+
+
+  &:focus {
+    border: 2px solid #ff0000;
+  }
 }

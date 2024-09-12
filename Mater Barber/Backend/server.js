@@ -154,14 +154,14 @@ app.post('/EnvEmail', (req, res) => {
                 html: `
                 <div class="container" style="background-color: #212529; color: #fff; padding: 80px;">
                     <div style="text-align: center;">
-                        <img src="" alt=""
+                        <img src="../Frontend/public/LOGO.png" alt=""/>
                     </div>
                     <h1 style="color:#e9c706; text-align: center; font-weight: bold; font-size: 40px;">Recuperación De Contraseña</h1>
                     <p style="font-size: 20px; text-align: center;">Tu Codigo Para Restalecer La Contraseña Es</p>
                     <h2 style="font-size: 50px; font-weight: bolder; color: #ff2f2f ; text-align: center;">${verificationCode}</h2>
-                    <h3 ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
-                    <h3">Este Código Caducará En 1 Hora.</h3>
-                    <h3>Gracias Por Confiar En Master Barber</h2>
+                    <h3  style="text-align: center; ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
+                    <h3 style="text-align: center; ">Este Código Caducará En 1 Hora.</h3>
+                    <h3 style="text-align: center; ">Gracias Por Confiar En Master Barber</h2>
                 `,
             };
 
@@ -176,7 +176,7 @@ app.post('/EnvEmail', (req, res) => {
 });
 
 app.post('/inventario', (req, res) => {
-    
+
 })
 
 

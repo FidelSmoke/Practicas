@@ -11,6 +11,7 @@ import InicioAdmin from './pages/AdminDos/InicioAdmin';
 import Analisisdeventas from './pages/AdminDos/Analisisdeventas';
 import Gestiondeventas from './pages/AdminDos/Gestiondeventas';
 import EnvEmail from './pages/default/EnvEmail';
+import Cambiarpasscod from './pages/default/Cambiarpasscod';
 function App() {
   return (
     <BrowserRouter>
@@ -27,7 +28,7 @@ function App() {
             <Route exact path='/Registro' element={<Registro />}></Route>
             <Route exact path='/EnvEmail' element={<EnvEmail />}></Route>
             <Route exact path='/Gestiondeventas' element={<Gestiondeventas />}></Route>
-
+            <Route exact path='/cambiarpasscod' element={<Cambiarpasscod/>}></Route>
           </Routes>
         </div>
       </div>
