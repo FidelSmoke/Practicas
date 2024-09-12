@@ -1,12 +1,56 @@
-import React from 'react'
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Cambiarpasscod() {
+    const navigate = useNavigate();
+    const [user, setUser] = useState({
+        nuevacontrasena: "",
+        confirmarcontrasena:""
+    });
 
+    const handleChange = (e) => {
+        setUser(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:8081/Cambiarpasscod", user);
+            if (res.status === 200) {
+                Swal.fire({
+                    title: 'Contraseña Restablecida',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar'
+                });
+                navigate("/Login");
+            }
+        } catch (error) {
+            console.log(error);
+            if (error.response) {
+                Swal.fire({
+                    title: error.response.data || 'Codigo Invalido',
+                    icon: 'error',
+                    confirmButtonText: 'Intentar de nuevo'
+                });
+            }
+        }
+    };
+
+
+
+
+
+
+
+    // Codigo Para Cuadros De Codigo De Verificacion
     const [otp, setOtp] = useState(new Array(6).fill(""))
 
-    function handleChange(e, index) {
+    function Inputcode (e, index) {
         if (isNaN(e.target.value)) return false
 
         setOtp([...otp.map((data, i) => {
@@ -29,19 +73,19 @@ export default function Cambiarpasscod() {
                         <div className="col col-lg-12 ">
                             <h1 className="text-center text-warning antonparabackend mb-4 ">Cambiar Contraseña</h1>
                         </div>
-                        <form className='row g-1'>
+                        <form className='row g-1' onSubmit={handleSubmit}>
                             <div class="input-group mb-1 w-75 mx-auto ">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" required />
-                                    <label for="floatingInputGroup1" className='antonpararecuperar'>Ingresa una nueva contraseña</label>
+                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" onChange={handleChange} required />
+                                    <label for="floatingInputGroup1" className='antonpararecuperar'>Nueva contraseña</label>
                                 </div>
                             </div>
                             <div class="input-group mb-4 mt-2 w-75 mx-auto">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" required />
-                                    <label for="floatingInputGroup1" className='antonpararecuperar'>Confrimar nueva contraseña</label>
+                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" onChange={handleChange} required />
+                                    <label for="floatingInputGroup1" className='antonpararecuperar'>Confrimar contraseña</label>
                                 </div>
                             </div>
 
@@ -57,7 +101,7 @@ export default function Cambiarpasscod() {
                                             size={1}
                                             value={data}
                                             maxLength={1}
-                                            onChange={(e) => handleChange(e, i)} />
+                                            onChange={(e) => Inputcode(e, i)} />
                                     }
 
                                     )

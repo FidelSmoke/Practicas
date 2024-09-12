@@ -7,7 +7,6 @@ const moment = require('moment');
 
 const app = express();
 app.use(express.json())
-app.use(cors(corsOptions));
 
 const corsOptions = {
     origin: '*',
@@ -15,6 +14,9 @@ const corsOptions = {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     optionSuccessStatus: 200
 }
+
+app.use(cors(corsOptions));
+
 
 
 const db = mysql.createConnection({
@@ -201,6 +203,29 @@ app.post ('/inventario', (req, res) => {
     })
 })
 
+app.post('/Cambiarpasscod', (req, res) => {
+    const nuevacontrasena = req.body.nuevacontrasena
+    const confirmar_contrasena = req.body.confirmar_contrasena
+
+    db.query("SELECT * FROM usuarios WHERE contrasena = ?", [nuevacontrasena], (err, results) => {
+
+        if (err) {
+            console.error('Error en la consulta:', err);
+            return res.status(500).send('Error en el servidor');
+        }
+
+        else if (nuevacontrasena !== confirmar_contrasena) {
+            return res.status(400).send('Las contraseñas no coinciden');
+        }
+
+        else if (nuevacontrasena !== confirmar_contrasena.length < 8) {
+            return res.status(400).send('La contraseña debe tener al menos 8 caracteres');
+        }
+
+        const user = results[0];
+        
+        });
+    });
 
 
 app.listen(8081, () => {
