@@ -8,7 +8,7 @@ export default function Horasdeiby() {
             <NavbarAdmin />
             <SidebarAdmin />
             <div className='contenido'>
-                <p className='text-center text-white mt-5 display-3 bebas mx-3 '>MASTER <span className='text-danger'>BARBER</span>| INICIO </p>
+                <p className='text-center text-white mt-5 display-3 bebas mx-3 '>HORAS <span className='text-danger'>EXTRAS</span> TRABAJADAS</p>
 
             </div>
 
