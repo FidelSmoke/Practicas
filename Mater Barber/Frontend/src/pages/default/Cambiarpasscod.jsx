@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Cambiarpasscod() {
     const navigate = useNavigate();
     const [user, setUser] = useState({
+        verificarCode:"",
         nuevacontrasena: "",
         confirmarcontrasena: "",
     });
