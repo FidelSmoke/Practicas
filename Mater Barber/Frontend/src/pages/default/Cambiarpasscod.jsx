@@ -10,7 +10,7 @@ export default function Cambiarpasscod() {
     const navigate = useNavigate();
     const [user, setUser] = useState({
         nuevacontrasena: "",
-        confirmarcontrasena:""
+        confirmarcontrasena: "",
     });
 
     const handleChange = (e) => {
@@ -50,7 +50,7 @@ export default function Cambiarpasscod() {
     // Codigo Para Cuadros De Codigo De Verificacion
     const [otp, setOtp] = useState(new Array(6).fill(""))
 
-    function Inputcode (e, index) {
+    function Inputcode(e, index) {
         if (isNaN(e.target.value)) return false
 
         setOtp([...otp.map((data, i) => {
@@ -77,14 +77,14 @@ export default function Cambiarpasscod() {
                             <div class="input-group mb-1 w-75 mx-auto ">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" onChange={handleChange} required />
+                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" name="nuevacontrasena" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Nueva contraseña</label>
                                 </div>
                             </div>
                             <div class="input-group mb-4 mt-2 w-75 mx-auto">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" onChange={handleChange} required />
+                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" name="confirmarcontrasena" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Confrimar contraseña</label>
                                 </div>
                             </div>
@@ -110,12 +110,12 @@ export default function Cambiarpasscod() {
 
                             <div className=' text-center mt-5'>
                                 <button type="submit" className="btn btn-outline-warning text-white border-2" >Verificar</button>
-                            </div> 
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-// onClick = {() => alert(otp.join(""))
+        // onClick = {() => alert(otp.join(""))
     )
 }

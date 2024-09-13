@@ -4,9 +4,13 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const moment = require('moment');
+const bodyParser = require('body-parser');
 
 const app = express();
-app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const corsOptions = {
     origin: '*',
@@ -156,10 +160,11 @@ app.post('/EnvEmail', (req, res) => {
                 html: `
                 <div class="container" style="background-color: #212529; color: #fff; padding: 80px;">
                     <div style="text-align: center;">
-                        <img src="" alt=""
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipNNaFwUx_VedoGhL9IvGzv7J-L4D5Fgp4lAdLZ1=s680-w680-h510" alt=""
+                        style="width: 20%; height: 20%;">
                     </div>
                     <h1 style="color:#e9c706; text-align: center; font-weight: bold; font-size: 40px;">Recuperación De Contraseña</h1>
-                    <p style="font-size: 20px; text-align: center;">Tu Codigo Para Restalecer La Contraseña Es</p>
+                    <p style="font-size: 20px; text-align: center;">Tu Cod      igo Para Restalecer La Contraseña Es</p>
                     <h2 style="font-size: 50px; font-weight: bolder; color: #ff2f2f ; text-align: center;">${verificationCode}</h2>
                     <h3 ">El Código De Verificación Fue Enviado A Las: <b>${expirationDate}</b></h3>
                     <h3">Este Código Caducará En 1 Hora.</h3>
@@ -179,77 +184,56 @@ app.post('/EnvEmail', (req, res) => {
 
 
 app.get('/inventario', (req, res) => {
-   const q = "SELECT * FROM inventario"
-   db.query(q, (err, data) => {
-       if (err) return res.json(err)
+    const q = "SELECT * FROM inventario"
+    db.query(q, (err, data) => {
+        if (err) return res.json(err)
         return res.json(data)
-   }) 
+    })
 })
 
 app.post ('/inventario', (req, res) => {
-    
-        const nombre= req.body.nombre;
-        const descripcion= req.body.descripcion;
-        const cantidad= req.body.cantidad;
-        const categoria= req.body.id_categoria_producto;
-        const precio= req.body.precio;
-        
-        
-    if (!nombre || !descripcion || !cantidad || !categoria || !precio) {
-        return res.status(400).send('Todos los campos son obligatorios');
-    }
+    const q = "INSERT INTO inventario (id_producto, nombre, descripcion_P, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?)"
 
-    const verificarNombre = "SELECT * FROM inventario WHERE nombre = ?";
-    db.query(verificarNombre, [nombre], (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send('Error en el servidor');
-        }
-        if (results.length > 0) {
-            return res.status(400).send('El nombre ya existe');
-        }
-        else {
-            const q = "INSERT INTO inventario (nombre, descripcion,cantidad, categoria, precio) VALUES (?, ?, ?, ?, ?)";
-            db.query(q, [nombre, descripcion, cantidad, categoria, precio], (err, results) => {
-                if (err) {
-                    console.log(err);
-                    return res.status(500).send('Error en el servidor');
-                }
-                else {
-                    return res.status(200).send('se ha creado correctamente');
-                }
-            });
-        }
-    });
-
-
-}
-
-)
+    const values = [
+        req.body.producto,
+        req.body.nombre,
+        req.body.descripcion,
+        req.body.cantidad,
+        req.body.categoria,
+        req.body.precio
+    ]
+    db.query(q, [values], (err, data) => {
+        if (err) return res.json(err)
+        return res.json("se ha creado correctamente")
+    })
+})
 
 app.post('/Cambiarpasscod', (req, res) => {
+
+    
+    //VERIFICACION DE LAS CONTRASENAS
+
     const nuevacontrasena = req.body.nuevacontrasena
-    const confirmar_contrasena = req.body.confirmar_contrasena
+    const confirmar_contrasena = req.body.confirmarcontrasena
 
-    db.query("SELECT * FROM usuarios WHERE contrasena = ?", [nuevacontrasena], (err, results) => {
+    // Verificar que las nuevas contrasenas coincidan
+    if (nuevacontrasena !== confirmar_contrasena) {
+        return res.status(400).send('Las contrasenas no coinciden');
+    }
 
-        if (err) {
-            console.error('Error en la consulta:', err);
-            return res.status(500).send('Error en el servidor');
-        }
+    // Verificar que la nueva contrasena tenga al menos 6 caracteres
+    if (nuevacontrasena.length < 8) {
+        return res.status(400).send('La nueva contrasena debe tener al menos 8 caracteres');
+    }
 
-        else if (nuevacontrasena !== confirmar_contrasena) {
-            return res.status(400).send('Las contraseñas no coinciden');
-        }
+    // Verificar que la nueva contrasena no contenga espacios en blancores
+    if (nuevacontrasena.includes(' ')) {
+        return res.status(400).send('La nueva contrasena no debe contener espacios en blancores');
+    }
 
-        else if (nuevacontrasena !== confirmar_contrasena.length < 8) {
-            return res.status(400).send('La contraseña debe tener al menos 8 caracteres');
-        }
+    res.status(200).send('Contrasena cambiada correctamente');
 
-        const user = results[0];
-        
-        });
-    });
+})
 
 
 app.listen(8081, () => {
