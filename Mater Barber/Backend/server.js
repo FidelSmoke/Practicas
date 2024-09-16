@@ -41,6 +41,10 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+
+
+
+
 app.post('/login', (req, res) => {
 
     const email = req.body.email
@@ -73,6 +77,9 @@ app.post('/login', (req, res) => {
         }
     })
 })
+
+
+
 
 app.post('/registrar', (req, res) => {
 
@@ -127,6 +134,9 @@ app.post('/registrar', (req, res) => {
         }
     })
 });
+
+
+
 
 app.post('/EnvEmail', (req, res) => {
     const email = req.body.email;
@@ -183,6 +193,8 @@ app.post('/EnvEmail', (req, res) => {
 });
 
 
+
+
 app.get('/inventario', (req, res) => {
     const q = "SELECT * FROM inventario"
     db.query(q, (err, data) => {
@@ -208,6 +220,9 @@ app.post('/inventario', (req, res) => {
     })
 })
 
+
+
+
 app.post('/Cambiarpasscod', (req, res) => {
     //VERIFICACION DE LAS CONTRASENAS
     const verificarCode = req.body.verificarCode;
@@ -228,15 +243,15 @@ app.post('/Cambiarpasscod', (req, res) => {
                 return res.status(400).send('Las contrasenas no coinciden');
             }
 
-            // // Verificar que la nueva contrasena tenga al menos 6 caracteres
-            // if (nuevacontrasena.length < 8) {
-            //     return res.status(400).send('La nueva contrasena debe tener al menos 8 caracteres');
-            // }
+            // Verificar que la nueva contrasena tenga al menos 6 caracteres
+            if (nuevacontrasena.length < 8) {
+                return res.status(400).send('La nueva contrasena debe tener al menos 8 caracteres');
+            }
 
-            // // Verificar que la nueva contrasena no contenga espacios en blancores
-            // if (nuevacontrasena.includes(' ')) {
-            //     return res.status(400).send('La nueva contrasena no debe contener espacios en blancores');
-            // }
+            // Verificar que la nueva contrasena no contenga espacios en blancores
+            if (nuevacontrasena.includes(' ')) {
+                return res.status(400).send('La nueva contrasena no debe contener espacios en blancores');
+            }
 
             else if (results.length === 0) {
                 return res.status(400).send('Código De Verificación Invalido O Expirado');
@@ -247,7 +262,7 @@ app.post('/Cambiarpasscod', (req, res) => {
             const hashPassword = bcrypt.hashSync(nuevacontrasena, 10);
 
             // Actualizar la contrasena en la base de datos
-            
+
             db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario], (err) => {
 
                 if (err) return res.status(500).send('Hubo Un Error Al Actualizar La Contraseña')
