@@ -225,27 +225,31 @@ app.post('/inventario', (req, res) => {
 
 
 app.post('/Cambiarpasscod', (req, res) => {
-    const verificationCode = req.body.verificationCode;
-    const newPassword = req.body.newPassword
-    const confirmPassword = req.body.confirmPassword
-    const fechaActual = moment().format('YYYY-MM-DD HH:mm:ss');
+    const verificaCode = req.body.verificaCode;
+    const newContrasena = req.body.newcontrasena
+    const confirmContra= req.body.confirmcontra
+    const fecha = moment().format('YYYY-MM-DD HH:mm:ss');
 
-    db.query('SELECT * FROM usuarios WHERE user_reset_code = ? AND user_reset_code_expiration > ?', [verificationCode, fechaActual], (err, results) => {
+    db.query('SELECT * FROM usuarios WHERE user_reset_code = ? AND user_reset_code_expiration > ?', [verificaCode, fecha], (err, results) => {
         if (err) {
             console.error('Error en la consulta:', err);
             return res.status(500).send('Error en el servidor');
         }
 
-        else if (newPassword !== confirmPassword) {
+        else if (newContrasena !== confirmContra) {
             return res.status(400).send('Las contraseñas no coinciden');
         }
 
+        else if (newContrasena.length < 8) {
+            return res.status(400).send('La contraseña debe tener al menos 8 caracteres');
+        }
+
         else if (results.length === 0) {
-            return res.status(400).send('Código de verificación inválido, expirado o usuario no encontrado');
+            return res.status(400).send('Código de verificación invalido o expirado');
         }
 
         const user = results[0];
-        const hashPassword = bcrypt.hashSync(newPassword, 10)
+        const hashPassword = bcrypt.hashSync(newContrasena, 10)
 
         db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario   ], (err) => {
             if (err) return res.status(500).send('Error al actualizar la contraseña');

@@ -10,9 +10,9 @@ export default function Cambiarpasscod() {
 
 
     const [user, setUser] = useState({
-        newPassword: "",
-        confirmPassword: "",
-        verificationCode: ""
+        newContrasena: "",
+        confirmContra: "",
+        verificaCode: ""
     });
 
     const [code, setCode] = useState(new Array(6).fill(''));
@@ -27,7 +27,7 @@ export default function Cambiarpasscod() {
         const { value } = event.target;
         const newCode = [...code];
 
-        if (/^[0-9]$/.test(value) || value === "") {
+        if (/\d/.test(value) || value === "") {
             newCode[index] = value;
             setCode(newCode);
 
@@ -45,15 +45,12 @@ export default function Cambiarpasscod() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const verificationCode = code.join('');
+        const verificaCode = code.join('');
         try {
-            const res = await axios.post(`http://localhost:8081/cambiarpasscod`, {
-                ...user,
-                verificationCode
-            });
+            const res = await axios.post(`http://localhost:8081/cambiarpasscod`, {...user,verificaCode});
             if (res.status === 200) {
                 Swal.fire({
-                    title: 'Contraseña restaurada',
+                    title: 'Se a restablecido la contraseña exitosamente',
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 });
@@ -86,14 +83,14 @@ export default function Cambiarpasscod() {
                             <div class="input-group mb-1 w-75 mx-auto ">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" placeholder="password" name="newPassword" onChange={handleChange} required />
+                                    <input type="password" class="form-control" placeholder="password" name="newcontrasena" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Nueva contraseña</label>
                                 </div>
                             </div>
                             <div class="input-group mb-4 mt-2 w-75 mx-auto">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" placeholder="password" name="confirmPassword" onChange={handleChange} required />
+                                    <input type="password" class="form-control" placeholder="password" name="confirmcontra" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Confrimar contraseña</label>
                                 </div>
                             </div>
@@ -105,7 +102,7 @@ export default function Cambiarpasscod() {
                                         key={index}
                                         className="cuadros text-center text-white antonpararecuperar"
                                         type="text"
-                                        name="verificarCode"
+                                        name="verificaCode"
                                         maxLength={1}
                                         value={code[index]}
                                         ref={(el) => (inputRefs.current[index] = el)}
