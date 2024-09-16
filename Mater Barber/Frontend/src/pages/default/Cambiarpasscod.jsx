@@ -26,7 +26,7 @@ export default function Cambiarpasscod() {
                 Swal.fire({
                     title: 'Contraseña Restablecida',
                     icon: 'success',
-                    confirmButtonText: 'Continuar'
+                    confirmButtonText: 'iniciar Sesion'
                 });
                 navigate("/Login");
             }
