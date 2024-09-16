@@ -15,7 +15,7 @@ export default function Cambiarpasscod() {
         verificaCode: ""
     });
 
-    const [code, setCode] = useState(new Array(6).fill(''));
+    const [iNPU, setCode] = useState(new Array(6).fill(''));
     const inputRefs = useRef([]);
 
 
@@ -25,7 +25,7 @@ export default function Cambiarpasscod() {
 
     const codeInput = (event, index) => {
         const { value } = event.target;
-        const newCode = [...code];
+        const newCode = [...iNPU];
 
         if (/\d/.test(value) || value === "") {
             newCode[index] = value;
@@ -45,7 +45,7 @@ export default function Cambiarpasscod() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const verificaCode = code.join('');
+        const verificaCode = iNPU.join('');
         try {
             const res = await axios.post(`http://localhost:8081/cambiarpasscod`, {...user,verificaCode});
             if (res.status === 200) {
@@ -104,7 +104,7 @@ export default function Cambiarpasscod() {
                                         type="text"
                                         name="verificaCode"
                                         maxLength={1}
-                                        value={code[index]}
+                                        value={iNPU[index]}
                                         ref={(el) => (inputRefs.current[index] = el)}
                                         onChange={(e) => codeInput(e, index)}
                                     />
