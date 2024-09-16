@@ -73,7 +73,7 @@ app.post('/login', (req, res) => {
             })
         }
         else {
-            return res.status(400).send("El usuario no existe")
+            return res.status(400).send("El usuario no existe , por favor registrese")
         }
     })
 })
@@ -217,6 +217,7 @@ app.post('/inventario', (req, res) => {
     db.query(q, [values], (err, data) => {
         if (err) return res.json(err)
         return res.json("se ha creado correctamente")
+
     })
 })
 
@@ -224,56 +225,35 @@ app.post('/inventario', (req, res) => {
 
 
 app.post('/Cambiarpasscod', (req, res) => {
-    //VERIFICACION DE LAS CONTRASENAS
-    const verificarCode = req.body.verificarCode;
-    const nuevacontrasena = req.body.nuevacontrasena
-    const confirmar_contrasena = req.body.confirmarcontrasena
-    const fechaExp = moment().format('YYYY-MM-DD HH:mm:ss')
+    const verificationCode = req.body.verificationCode;
+    const newPassword = req.body.newPassword
+    const confirmPassword = req.body.confirmPassword
+    const fechaActual = moment().format('YYYY-MM-DD HH:mm:ss');
 
-    db.query('SELECT * FROM usuarios WHERE user_reset_code = ? AND user_reset_code_expiration > ?',
-        [verificarCode, fechaExp], (err, results) => {
+    db.query('SELECT * FROM usuarios WHERE user_reset_code = ? AND user_reset_code_expiration > ?', [verificationCode, fechaActual], (err, results) => {
+        if (err) {
+            console.error('Error en la consulta:', err);
+            return res.status(500).send('Error en el servidor');
+        }
 
-            if (err) {
-                console.error('Error en la consulta:', err);
-                return res.status(500).send('Error en el servidor');
-            }
+        else if (newPassword !== confirmPassword) {
+            return res.status(400).send('Las contraseñas no coinciden');
+        }
 
-            // Verificar que las nuevas contrasenas coincidan
-            else if (nuevacontrasena !== confirmar_contrasena) {
-                return res.status(400).send('Las contrasenas no coinciden');
-            }
+        else if (results.length === 0) {
+            return res.status(400).send('Código de verificación inválido, expirado o usuario no encontrado');
+        }
 
-            // Verificar que la nueva contrasena tenga al menos 6 caracteres
-            if (nuevacontrasena.length < 8) {
-                return res.status(400).send('La nueva contrasena debe tener al menos 8 caracteres');
-            }
+        const user = results[0];
+        const hashPassword = bcrypt.hashSync(newPassword, 10)
 
-            // Verificar que la nueva contrasena no contenga espacios en blancores
-            if (nuevacontrasena.includes(' ')) {
-                return res.status(400).send('La nueva contrasena no debe contener espacios en blancores');
-            }
-
-            else if (results.length === 0) {
-                return res.status(400).send('Código De Verificación Invalido O Expirado');
-            }
-
-            const user = results[0];
-
-            const hashPassword = bcrypt.hashSync(nuevacontrasena, 10);
-
-            // Actualizar la contrasena en la base de datos
-
-            db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario], (err) => {
-
-                if (err) return res.status(500).send('Hubo Un Error Al Actualizar La Contraseña')
-                res.status(200).send('Contraseña restablecida')
-
-            });
+        db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario   ], (err) => {
+            if (err) return res.status(500).send('Error al actualizar la contraseña');
+            res.status(200).send('Contraseña restablecida con éxito');
         });
+    });
 
-})
-
-
+});
 
 app.listen(8081, () => {
     console.log("Conexion exitosa:)")

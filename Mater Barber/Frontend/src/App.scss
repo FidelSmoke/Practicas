@@ -75,6 +75,7 @@ $gray: #e7e9eb;
   letter-spacing: 2px;
   font-family: "Anton SC", sans-serif;
 }
+
 .antonpararecuperar {
   font-family: "Anton SC", sans-serif;
 }
@@ -124,22 +125,27 @@ $gray: #e7e9eb;
   transition: all 500ms;
 }
 
-.otp-area {
-  width: 70%;
-  margin-left: 14%;
+
+
+.clase-codigo-verificacion{
+  margin-top: 30px;
   display: flex;
   justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 15px;
+  padding-bottom: 40px;
 }
 
-.inputcod {
-  height: 60px;
+.cuadros{
+  border: 1px solid #fbff12;
+  background-color: #000000;
   width: 60px;
-  outline: none;
+  height: 60px;
+  margin: 9px 5px;
+  font-size: 25px;
   text-align: center;
-  font-size: 1.5rem;
-
-
-  &:focus {
-    border: 2px solid #ff0000;
-  }
+  border-radius: 15px;
+  transition: 0.3s;
+  border-radius: 100px;
 }

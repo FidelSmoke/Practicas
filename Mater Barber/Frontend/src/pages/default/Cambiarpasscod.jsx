@@ -1,32 +1,61 @@
-import React from "react";
+import React, { useState, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 export default function Cambiarpasscod() {
     const navigate = useNavigate();
+
+
     const [user, setUser] = useState({
-        verificarCode:"",
-        nuevacontrasena: "",
-        confirmarcontrasena: "",
+        newPassword: "",
+        confirmPassword: "",
+        verificationCode: ""
     });
 
-    const handleChange = (e) => {
-        setUser(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const [code, setCode] = useState(new Array(6).fill(''));
+    const inputRefs = useRef([]);
+
+
+    const handleChange = (event) => {
+        setUser(prev => ({ ...prev, [event.target.name]: event.target.value }));
     }
+
+    const codeInput = (event, index) => {
+        const { value } = event.target;
+        const newCode = [...code];
+
+        if (/^[0-9]$/.test(value) || value === "") {
+            newCode[index] = value;
+            setCode(newCode);
+
+            if (value !== '') {
+                if (inputRefs.current[index + 1]) {
+                    inputRefs.current[index + 1].focus();
+                }
+            } else {
+                if (inputRefs.current[index - 1]) {
+                    inputRefs.current[index - 1].focus();
+                }
+            }
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const verificationCode = code.join('');
         try {
-            const res = await axios.post("http://localhost:8081/Cambiarpasscod", user);
+            const res = await axios.post(`http://localhost:8081/cambiarpasscod`, {
+                ...user,
+                verificationCode
+            });
             if (res.status === 200) {
                 Swal.fire({
-                    title: 'Contraseña Restablecida',
+                    title: 'Contraseña restaurada',
                     icon: 'success',
-                    confirmButtonText: 'iniciar Sesion'
+                    confirmButtonText: 'Continuar'
                 });
                 navigate("/Login");
             }
@@ -34,7 +63,7 @@ export default function Cambiarpasscod() {
             console.log(error);
             if (error.response) {
                 Swal.fire({
-                    title: error.response.data || 'Codigo Invalido',
+                    title: error.response.data || 'Algo salió mal',
                     icon: 'error',
                     confirmButtonText: 'Intentar de nuevo'
                 });
@@ -45,27 +74,6 @@ export default function Cambiarpasscod() {
 
 
 
-
-
-
-    // Codigo Para Cuadros De Codigo De Verificacion
-    const [otp, setOtp] = useState(new Array(6).fill(""))
-
-    function Inputcode(e, index) {
-        if (isNaN(e.target.value)) return false
-
-        setOtp([...otp.map((data, i) => {
-            if (i === index) {
-                return e.target.value
-            }
-            return data
-        })])
-
-        if (e.target.value && index !== 5) {
-            e.target.nextElementSibling.focus()
-        }
-
-    }
     return (
         <div className="resetpass">
             <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
@@ -78,38 +86,35 @@ export default function Cambiarpasscod() {
                             <div class="input-group mb-1 w-75 mx-auto ">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" name="nuevacontrasena" onChange={handleChange} required />
+                                    <input type="password" class="form-control" placeholder="password" name="newPassword" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Nueva contraseña</label>
                                 </div>
                             </div>
                             <div class="input-group mb-4 mt-2 w-75 mx-auto">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="password" name="confirmarcontrasena" onChange={handleChange} required />
+                                    <input type="password" class="form-control" placeholder="password" name="confirmPassword" onChange={handleChange} required />
                                     <label for="floatingInputGroup1" className='antonpararecuperar'>Confrimar contraseña</label>
                                 </div>
                             </div>
 
                             <h3 className='text-center text-white antonparabackend fs-5 mt-3 mb-2'>Ingresa aqui el codigo que recisbiste por correo</h3>
-                            <div className="otp-area">
-
-                                {
-                                    otp.map((data, i) => {
-                                        return <input type='text' className='inputcod mx-3 mt-4 border-warning border rounded text-center bg-dark text-white bebas '
-                                            placeholder='0'
-                                            inputMode='numeric'
-                                            required
-                                            size={1}
-                                            value={data}
-                                            maxLength={1}
-                                            onChange={(e) => Inputcode(e, i)} />
-                                    }
-
-                                    )
-                                }
+                            <div className="clase-codigo-verificacion">
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <input
+                                        key={index}
+                                        className="cuadros text-center text-white antonpararecuperar"
+                                        type="text"
+                                        name="verificarCode"
+                                        maxLength={1}
+                                        value={code[index]}
+                                        ref={(el) => (inputRefs.current[index] = el)}
+                                        onChange={(e) => codeInput(e, index)}
+                                    />
+                                ))}
                             </div>
 
-                            <div className=' text-center mt-5'>
+                            <div className=' text-center'>
                                 <button type="submit" className="btn btn-outline-warning text-white border-2" >Verificar</button>
                             </div>
                         </form>
@@ -117,6 +122,5 @@ export default function Cambiarpasscod() {
                 </div>
             </div>
         </div>
-        // onClick = {() => alert(otp.join(""))
     )
 }
