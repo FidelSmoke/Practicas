@@ -7,7 +7,13 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export default function Inventario() {
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState({
+        nombre: '',
+        descripcion: '',
+        cantidad: '',
+        categoria: '',
+        PrecioUnitario: ''
+    });
 
 
     const navigate = useNavigate()
@@ -15,23 +21,17 @@ export default function Inventario() {
     const handleChange = (e) => {
         setItem(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
+    
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
         try {
-            const res = await axios.post("http://localhost:8081/inventario", {
-                nombre,
-                descripcion,
-                cantidad,
-                categoria,
-                precio
-            })
-
+            const res = await axios.post("http://localhost:8081/inventario", item);
             if (res.status === 200) {
                 Swal.fire({
-                    title: 'Ingresado Correctamente',
+                    title: 'producto creado correctamente',
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 })
@@ -178,19 +178,19 @@ export default function Inventario() {
                                         </div> */}
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='nombre' />
+                                            <input type="text" class="form-control" id="recipient-name" name='nombre' onChange={handleChange}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' />
+                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={handleChange}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='cantidad' />
+                                            <input type="text" class="form-control" id="recipient-name" name='cantidad' onChange={handleChange}/>
                                         </div >
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Categoria:</label>
-                                            <select name="categoria" class="form-select" id="" >
+                                            <select name="categoria" class="form-select" id="" onChange={handleChange}>
                                                 <option selected disabled>Categoria</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -199,14 +199,14 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='precio' />
+                                            <input type="text" class="form-control" id="recipient-name" name='precio' onChange={handleChange}/>
                                         </div>
 
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger">Añadir</button>
+                                    <button type="submit" class="btn btn-danger" onClick={handleC}>Añadir</button>
                                 </div>
                             </div>
                         </div>

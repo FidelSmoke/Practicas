@@ -193,7 +193,14 @@ app.post('/EnvEmail', (req, res) => {
 });
 
 
-
+// app.post('/inventario', (req, res) => {
+//     const { nombre, descripcion,cantidad,categoria, precio } = req.body;
+//     const query = 'INSERT INTO items (nombre, descripcion_P, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?, ?)';
+//     db.query(query, [nombre, descripcion, cantidad, categoria, precio], (err, result) => {
+//         if (err) throw err;
+//         res.json({ id: result.insertId, nombre, descripcion,cantidad,categoria,precio });
+//     });
+// });
 
 app.get('/inventario', (req, res) => {
     const q = "SELECT * FROM inventario"
@@ -220,7 +227,43 @@ app.post('/inventario', (req, res) => {
 
     })
 })
+app.post('/inventario') = (req, res) => {
+    const producto = req.body.id_producto;
+    const nombre = req.body.nombre;
+    const descripcion = req.body.descripcion_P;
+    const cantidad = req.body.cantidad;
+    const categoria = req.body.id_categoria_producto;
+    const precio = req.body.PrecioUnitario;
 
+    if (!producto || !nombre || !descripcion || cantidad || !categoria || !precio) {
+        return res.status(400).send('Todos los campos son obligatorios');
+    }
+
+    const verificarNombre = "SELECT * FROM inventario WHERE nombre = ?";
+    db.query(verificarNombre, [nombre], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        if (results.length > 0) {
+            return res.status(400).send('El nombre ya existe');
+        }
+        else {
+            const q = "INSERT INTO inventario (nombre, descripcion_P, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?, ?, ?, ?, ? )";
+            db.query(q, [nombre, categoria, cantidad, fechaIngreso, fechaVencimiento, cantidadMinima, proveedor], (err, result) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(500).send('Error en el servidor');
+                }
+                else {
+                    return res.status(200).send('Producto creado exitosamente');
+                }
+            });
+        }
+    });
+
+
+}
 
 
 
