@@ -51,7 +51,7 @@ export default function Inventario() {
     useEffect(() => {
         const fetchInventario = async () => {
             try {
-                const res = await axios.get("http://localhost:8081/inventario")
+                const res = await axios.get("http://localhost:8081/mostrar");
                 setInventario(res.data)
                 console.log(res)
             } catch (err) {
@@ -206,7 +206,7 @@ export default function Inventario() {
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger" onClick={handleC}>Añadir</button>
+                                    <button type="submit" class="btn btn-danger" onChange={handleSubmit}>Añadir</button>
                                 </div>
                             </div>
                         </div>
