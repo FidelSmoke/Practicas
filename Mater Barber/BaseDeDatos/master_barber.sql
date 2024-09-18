@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-09-2024 a las 18:36:39
+-- Tiempo de generación: 18-09-2024 a las 17:46:24
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,8 +26,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `carrito_compras`
 --
--- Creación: 11-09-2024 a las 15:40:12
---
 
 CREATE TABLE `carrito_compras` (
   `id_carrito_compras` int(255) NOT NULL,
@@ -40,26 +38,31 @@ CREATE TABLE `carrito_compras` (
 --
 -- Estructura de tabla para la tabla `categoria_producto`
 --
--- Creación: 11-09-2024 a las 15:40:12
---
 
 CREATE TABLE `categoria_producto` (
   `id_categoria_producto` int(255) NOT NULL,
   `categoria` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `categoria_producto`
+--
+
+INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
+(1, 'Ropa'),
+(2, 'Accesorios'),
+(3, 'Productos de cuidado personal');
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `compra`
 --
--- Creación: 11-09-2024 a las 15:40:12
---
 
 CREATE TABLE `compra` (
   `id_compra` int(255) NOT NULL,
   `descripcion_C` varchar(255) NOT NULL,
-  `precio_total` varchar(255) NOT NULL,
+  `precio_total` int(255) NOT NULL,
   `id_tipo_pago` int(255) NOT NULL,
   `id_producto` int(255) NOT NULL,
   `id_usuario` int(255) NOT NULL
@@ -69,8 +72,6 @@ CREATE TABLE `compra` (
 
 --
 -- Estructura de tabla para la tabla `factura`
---
--- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `factura` (
@@ -83,26 +84,22 @@ CREATE TABLE `factura` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
---
--- Creación: 11-09-2024 a las 15:40:12
+-- Estructura de tabla para la tabla `inventario`
 --
 
-CREATE TABLE `producto` (
+CREATE TABLE `inventario` (
   `id_producto` int(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `descripcion_P` varchar(255) NOT NULL,
   `cantidad` int(255) NOT NULL,
   `id_categoria_producto` int(255) NOT NULL,
-  `PrecioUnitario` varchar(255) NOT NULL
+  `PrecioUnitario` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `recordatorio`
---
--- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `recordatorio` (
@@ -115,8 +112,6 @@ CREATE TABLE `recordatorio` (
 
 --
 -- Estructura de tabla para la tabla `reserva_turno`
---
--- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `reserva_turno` (
@@ -133,8 +128,6 @@ CREATE TABLE `reserva_turno` (
 
 --
 -- Estructura de tabla para la tabla `rol`
---
--- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `rol` (
@@ -156,8 +149,6 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`) VALUES
 --
 -- Estructura de tabla para la tabla `tipo_pago`
 --
--- Creación: 11-09-2024 a las 15:40:12
---
 
 CREATE TABLE `tipo_pago` (
   `id_tipo_pago` int(255) NOT NULL,
@@ -168,8 +159,6 @@ CREATE TABLE `tipo_pago` (
 
 --
 -- Estructura de tabla para la tabla `tipo_servicio`
---
--- Creación: 11-09-2024 a las 15:40:12
 --
 
 CREATE TABLE `tipo_servicio` (
@@ -184,9 +173,6 @@ CREATE TABLE `tipo_servicio` (
 
 --
 -- Estructura de tabla para la tabla `usuarios`
---
--- Creación: 11-09-2024 a las 15:44:44
--- Última actualización: 11-09-2024 a las 16:32:11
 --
 
 CREATE TABLE `usuarios` (
@@ -206,7 +192,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefono`, `contrasena`, `id_rol`, `user_reset_code`, `user_reset_code_expiration`) VALUES
-(5, 'Fidel Espitia ', 'fideljoseespi10@gmail.com', 1028662003, '3142758305', '$2a$10$ESGSZvbeLXYdHNs3P2500.CCehdNkbjbkSoNW.m8nikMw7qV5LWES', 3, '259243', '2024-09-11 11:32:11');
+(5, 'Fidel Espitia ', 'fideljoseespi10@gmail.com', 1028662003, '3142758305', '$2a$10$Wu5aatNss9/D/N/DQ5v2uuvP9BhDL09q8/v8XQHUHUvjqCxQ6rCKG', 3, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -244,9 +230,9 @@ ALTER TABLE `factura`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `producto`
+-- Indices de la tabla `inventario`
 --
-ALTER TABLE `producto`
+ALTER TABLE `inventario`
   ADD PRIMARY KEY (`id_producto`),
   ADD KEY `id_categoria_producto` (`id_categoria_producto`);
 
@@ -305,13 +291,13 @@ ALTER TABLE `carrito_compras`
 -- AUTO_INCREMENT de la tabla `categoria_producto`
 --
 ALTER TABLE `categoria_producto`
-  MODIFY `id_categoria_producto` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `producto`
+-- AUTO_INCREMENT de la tabla `inventario`
 --
-ALTER TABLE `producto`
-  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `inventario`
+  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `recordatorio`
@@ -333,14 +319,14 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `carrito_compras`
 --
 ALTER TABLE `carrito_compras`
-  ADD CONSTRAINT `carrito de compras producto` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
+  ADD CONSTRAINT `carrito de compras producto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`),
   ADD CONSTRAINT `carrito de compras usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `compra`
 --
 ALTER TABLE `compra`
-  ADD CONSTRAINT `compra producto` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`),
+  ADD CONSTRAINT `compra producto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`),
   ADD CONSTRAINT `compra tipo de pago` FOREIGN KEY (`id_tipo_pago`) REFERENCES `tipo_pago` (`id_tipo_pago`),
   ADD CONSTRAINT `compra usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
@@ -352,10 +338,10 @@ ALTER TABLE `factura`
   ADD CONSTRAINT `factura usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Filtros para la tabla `producto`
+-- Filtros para la tabla `inventario`
 --
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto categoria producto` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`);
+ALTER TABLE `inventario`
+  ADD CONSTRAINT `producto categoria producto` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `recordatorio`

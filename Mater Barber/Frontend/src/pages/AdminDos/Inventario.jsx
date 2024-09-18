@@ -55,9 +55,9 @@ export default function Inventario() {
                 setInventario(res.data)
                 console.log(res)
             } catch (err) {
-                console.log(err)
+                console.log('Error al obtener los datos:', err)
             }
-        }
+        }   
         fetchInventario()
     }, [])
 
@@ -91,22 +91,25 @@ export default function Inventario() {
                                 </thead>
                                 <tbody>
                                     {inventario.map((item) => (
-                                        <tr>
-                                            <th >{item.id_producto}</th>
+                                        <tr key={item.id_producto}> {/* Agrega la key aquí */}
+                                            <th>{item.id_producto}</th>
                                             <td>{item.nombre}</td>
                                             <td>{item.descripcion_P}</td>
                                             <td>{item.cantidad}</td>
                                             <td>{item.id_categoria_producto}</td>
-                                            <td ><img src="/LOGO.png" alt="" srcset="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom ' /></td>
+                                            <td><img src="/LOGO.png" alt="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom' /></td>
                                             <td>{item.PrecioUnitario}</td>
                                             <td>
                                                 <div className="d-flex">
-                                                    <button type="button" class="btn btn-outline-warning .col-md-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                                                    <i class="bi bi-trash-fill"></i>
+                                                    <button type="button" className="btn btn-outline-warning col-md-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                                        <i className='bi bi-pencil-fill text-white'></i>
+                                                    </button>
+                                                    <i className="bi bi-trash-fill"></i>
                                                 </div>
                                             </td>
                                         </tr>
                                     ))}
+
                                 </tbody>
                             </table>
                         </div>
