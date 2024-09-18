@@ -194,12 +194,12 @@ app.post('/EnvEmail', (req, res) => {
 
 
 
-app.get('/inventario', (req, res) => {
+app.get('/mostrarInventario', (req, res) => {
     db.query(`
         SELECT 
             id_producto, 
             nombre, 
-            descripcion_P, 
+            decripcion_p,  
             cantidad, 
             id_categoria_producto, 
             PrecioUnitario 
@@ -214,23 +214,56 @@ app.get('/inventario', (req, res) => {
     });
 });
 
-app.post('/inventario', (req, res) => {
-    const q = "INSERT INTO inventario (id_producto, nombre, descripcion_P, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?)"
+app.post('/CrearInventario', (req, res) => {
+    const nombre = req.body.nombre;
+    const descripcion = req.body.descripcion;
+    const cantidad = req.body.cantidad;
+    const categoria = req.body.categoria;
+    const precio = req.body.precio;
+  
 
-    const values = [
-        req.body.producto,
-        req.body.nombre,
-        req.body.descripcion,
-        req.body.cantidad,
-        req.body.categoria,
-        req.body.precio
-    ]
-    db.query(q, [values], (err, data) => {
-        if (err) return res.json(err)
-        return res.json("se ha creado correctamente")
+    if (!nombre || !descripcion || !categoria || !precio || !cantidad) {
+        return res.status(400).send('Todos los campos son obligatorios');
+    }
 
-    })
+    const verificarNombre = "SELECT * FROM inventario WHERE nombre = ?";
+    db.query(verificarNombre, [nombre], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        if (results.length > 0) {
+            return res.status(400).send('El nombre ya existe');
+        }
+        else {
+            const q = "INSERT INTO inventario (nombre, descripcion_p, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?, ?, ?, ?, ?)";
+            db.query(q, [nombre, descripcion, cantidad, categoria, precio,], (err, results) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(500).send('Error en el servidor');
+                }
+                else {
+                    return res.status(200).send('Producto creado exitosamente');
+                }
+            });
+        }
+    });
 })
+
+
+
+app.DELETE('/DeleteInventario', (req, res) => {
+    const id = req.params.id;
+    db.query('DELETE FROM inventario WHERE id_producto = ?', [id], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send('producto eliminado exitosamente');
+        }
+    })
+});
 
 
 

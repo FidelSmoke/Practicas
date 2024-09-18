@@ -1,57 +1,115 @@
-import React, { useEffect } from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 export default function Inventario() {
-    const [item, setItem] = useState({
+    // Traer los datos de la base de datos
+    const [inventario, setInventario] = useState([]);
+    const [isDataUpdated, setIsDataUpdated] = useState(false);
+
+
+    // Modal para añadir
+    const [producto, setProducto] = useState({
         nombre: '',
         descripcion: '',
         cantidad: '',
         categoria: '',
-        PrecioUnitario: ''
+        precio: '',
     });
 
 
-    const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        setItem(prev => ({ ...prev, [e.target.name]: e.target.value }))
-    }
-    
+    // Modal para editar
+
+    // const [ProductoEditar, setProductoEditar] = useState({
+    //     nombre: '',
+    //     descripcion_P: '',
+    //     cantidad: '',
+    //     id_categoria_producto: '',
+    //     PrecioUnitario: '',
+    // });
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`http://localhost:8081/mostrarInventario`);
+                setInventario(res.data);
+                setIsDataUpdated(false);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, [isDataUpdated]);
 
+    // Función para crear los Productos
+
+    const handleClick = async (e) => {
+        e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:8081/inventario", item);
+            const res = await axios.post(`http://localhost:8081/crearInventario`, producto);
+            Swal.fire({
+                icon: 'success',
+                title: 'producto creado exitosamente',
+            });
+            if (res.status === 200) {
+                setIsDataUpdated(true); 
+            }
+        } catch (err) {
+            console.log(err);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: err.response.data,
+            });
+        }
+    };
+
+    // Handle change para añadir
+    const handleChange = (e) => {
+        setProducto(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const DeleteInventario = async (id) => {
+        try {
+            const confirm = await Swal.fire({
+                title: '¿Estas seguro de borrar este ingrediente?',
+                text: "No podrás revertir esta acción",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, borrar'
+            });
+            if (!confirm.isConfirmed) {
+                return;
+            }
+            const res = await axios.delete(`http://localhost:8081/DeleteInventario`);
+            console.log(res);
             if (res.status === 200) {
                 Swal.fire({
-                    title: 'producto creado correctamente',
                     icon: 'success',
-                    confirmButtonText: 'Continuar'
-                })
-
-                navigate("/inventario")
+                    title: res.data
+                });
+                setIsDataUpdated(true);
             }
-
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.response.data
+            });
         }
-    }
-
-
-
-    const [inventario, setInventario] = useState([]);
+    };
 
     useEffect(() => {
         const fetchInventario = async () => {
             try {
-                const res = await axios.get("http://localhost:8081/inventario");
+                const res = await axios.get("http://localhost:8081/mostrar");
                 setInventario(res.data)
                 console.log(res)
             } catch (err) {
@@ -90,9 +148,9 @@ export default function Inventario() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {inventario.map((item, i) => (
-                                        <tr key={i}>
-                                        <th scope="row">{item.id_producto}</th>
+                                    {inventario.map((item) => (
+                                        <tr key={item.id_producto}> {/* Agrega la key aquí */}
+                                            <th>{item.id_producto}</th>
                                             <td>{item.nombre}</td>
                                             <td>{item.descripcion_P}</td>
                                             <td>{item.cantidad}</td>
@@ -104,7 +162,7 @@ export default function Inventario() {
                                                     <button type="button" className="btn btn-outline-warning col-md-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                                                         <i className='bi bi-pencil-fill text-white'></i>
                                                     </button>
-                                                    <i className="bi bi-trash-fill"></i>
+                                                    <i className="bi bi-trash-fill" onClick={() => DeleteInventario(item.id_producto)} ></i>
                                                 </div>
                                             </td>
                                         </tr>
@@ -133,19 +191,19 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" name="nombre" id="recipient-name" />
+                                            <input type="text" class="form-control" name="nombre_i" id="recipient-name" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" name="descripcion" id="recipient-name" />
+                                            <input type="text" class="form-control" name="descripcion_p" id="recipient-name" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" name="cantidad" id="recipient-name" />
+                                            <input type="text" class="form-control" name="cantidad_i" id="recipient-name" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
-                                            <input type="text" class="form-control" name="categoria" id="recipient-name" />
+                                            <input type="text" class="form-control" name="categoria_i" id="recipient-name" />
                                         </div>
                                         <div className="col-12 mb-3">
                                             <label htmlFor="floatingInput" className='text-white'>Imagen</label>
@@ -153,13 +211,13 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" name="precio" id="recipient-name" />
+                                            <input type="text" class="form-control" name="precio_i" id="recipient-name" />
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
-                                    <button type="button" class="btn btn-danger">Editar</button>
+                                    <button type="button" class="btn btn-danger" >Editar</button>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +229,7 @@ export default function Inventario() {
                         <div class="modal-dialog">
                             <div class="modal-content bg-dark">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5 text-white text-white" id="exampleModalLabel">AÑADIR</h1>
+                                    <h1 class="modal-title fs-5 text-white text-white" id="exampleModalLabel" >AÑADIR</h1>
                                 </div>
                                 <div class="modal-body">
                                     <form onSubmit={handleSubmit} >
@@ -181,15 +239,15 @@ export default function Inventario() {
                                         </div> */}
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='nombre' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='nombre' onChange={handleChange} />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='descripcion_P' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={handleChange}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='cantidad' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='cantidad' onChange={handleChange} />
                                         </div >
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Categoria:</label>
@@ -202,14 +260,14 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='PrecioUnitario' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='precio' onChange={handleChange}/>
                                         </div>
 
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger" onChange={handleSubmit}>Añadir</button>
+                                    <button type="submit" class="btn btn-danger" onClick={handleClick}>Añadir</button>
                                 </div>
                             </div>
                         </div>
