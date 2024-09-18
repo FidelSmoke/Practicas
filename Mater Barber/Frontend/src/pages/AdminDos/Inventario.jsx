@@ -51,7 +51,7 @@ export default function Inventario() {
     useEffect(() => {
         const fetchInventario = async () => {
             try {
-                const res = await axios.get("http://localhost:8081/mostrar");
+                const res = await axios.get("http://localhost:8081/inventario");
                 setInventario(res.data)
                 console.log(res)
             } catch (err) {
@@ -90,9 +90,9 @@ export default function Inventario() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {inventario.map((item) => (
-                                        <tr key={item.id_producto}> {/* Agrega la key aquí */}
-                                            <th>{item.id_producto}</th>
+                                    {inventario.map((item, i) => (
+                                        <tr key={i}>
+                                        <th scope="row">{item.id_producto}</th>
                                             <td>{item.nombre}</td>
                                             <td>{item.descripcion_P}</td>
                                             <td>{item.cantidad}</td>
@@ -185,7 +185,7 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='descripcion_P' onChange={handleChange}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
@@ -193,7 +193,7 @@ export default function Inventario() {
                                         </div >
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Categoria:</label>
-                                            <select name="categoria" class="form-select" id="" onChange={handleChange}>
+                                            <select name="id_categoria_producto" class="form-select" id="" onChange={handleChange}>
                                                 <option selected disabled>Categoria</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -202,7 +202,7 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='precio' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='PrecioUnitario' onChange={handleChange}/>
                                         </div>
 
                                     </form>
