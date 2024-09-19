@@ -41,10 +41,6 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-
-
-
-
 app.post('/login', (req, res) => {
 
     const email = req.body.email
@@ -77,9 +73,6 @@ app.post('/login', (req, res) => {
         }
     })
 })
-
-
-
 
 app.post('/registrar', (req, res) => {
 
@@ -135,9 +128,6 @@ app.post('/registrar', (req, res) => {
     })
 });
 
-
-
-
 app.post('/EnvEmail', (req, res) => {
     const email = req.body.email;
 
@@ -192,67 +182,89 @@ app.post('/EnvEmail', (req, res) => {
     });
 });
 
-
-
-app.get('/mostrarInventario', (req, res) => {
-    db.query(`
-        SELECT 
-            id_producto, 
-            nombre, 
-            decripcion_p,  
-            cantidad, 
-            id_categoria_producto, 
-            PrecioUnitario 
-        FROM inventario
-    `, (err, results) => {
+app.get('/GetInventario', (req, res) => {
+    db.query('SELECT * FROM inventario', (err, results) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error en el servidor');
-        } else {
-            return res.status(200).send(results);
-        }
-    });
-});
-
-app.post('/CrearInventario', (req, res) => {
-    const nombre = req.body.nombre;
-    const descripcion = req.body.descripcion;
-    const cantidad = req.body.cantidad;
-    const categoria = req.body.categoria;
-    const precio = req.body.precio;
-  
-
-    if (!nombre || !descripcion || !categoria || !precio || !cantidad) {
-        return res.status(400).send('Todos los campos son obligatorios');
-    }
-
-    const verificarNombre = "SELECT * FROM inventario WHERE nombre = ?";
-    db.query(verificarNombre, [nombre], (err, results) => {
-        if (err) {
-            console.log(err);
-            return res.status(500).send('Error en el servidor');
-        }
-        if (results.length > 0) {
-            return res.status(400).send('El nombre ya existe');
         }
         else {
-            const q = "INSERT INTO inventario (nombre, descripcion_p, cantidad, id_categoria_producto, PrecioUnitario) VALUES (?, ?, ?, ?, ?)";
-            db.query(q, [nombre, descripcion, cantidad, categoria, precio,], (err, results) => {
-                if (err) {
-                    console.log(err);
-                    return res.status(500).send('Error en el servidor');
-                }
-                else {
-                    return res.status(200).send('Producto creado exitosamente');
-                }
-            });
+            return res.status(200).send(results);
         }
-    });
+    })
 })
 
+app.get('/GetInventario/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('SELECT * FROM inventario WHERE id_producto = ?', [id], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send(results);
+        }
+    })
+})
 
+app.post('/CreateInventario', (req, res) => {
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion_P
+    const cantidad = req.body.cantidad
+    const categoria = req.body.id_categoria_producto
+    const precio = req.body.PrecioUnitario
 
-app.DELETE('/DeleteInventario', (req, res) => {
+    const q = 'INSERT INTO inventario (nombre,descripcion_P,cantidad,id_categoria_producto,PrecioUnitario) VALUES (?,?,?,?,?)'
+
+    const values = [
+        nombre,
+        descripcion,
+        cantidad,
+        categoria,
+        precio
+    ]
+
+    db.query(q, values, (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send('Producto creado exitosamente');
+        }
+    })
+})
+
+app.put('/UpdateInventario/:id', (req, res) => {
+    const id = req.params.id;
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion_P
+    const cantidad = req.body.cantidad
+    const categoria = req.body.id_categoria_producto
+    const precio = req.body.PrecioUnitario
+
+    const q = 'UPDATE inventario SET nombre = ?, descripcion_P = ?, cantidad = ?, id_categoria_producto = ?, PrecioUnitario = ? WHERE id_producto = ?'
+
+    const values = [
+        nombre,
+        descripcion,
+        cantidad,
+        categoria,
+        precio,
+        id
+    ]
+    db.query(q, values, (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send('Producto actualizado exitosamente');
+        }
+    })
+})
+
+app.delete('/DeleteInventario/:id', (req, res) => {
     const id = req.params.id;
     db.query('DELETE FROM inventario WHERE id_producto = ?', [id], (err, results) => {
         if (err) {
@@ -260,18 +272,27 @@ app.DELETE('/DeleteInventario', (req, res) => {
             return res.status(500).send('Error en el servidor');
         }
         else {
-            return res.status(200).send('producto eliminado exitosamente');
+            return res.status(200).send('Producto eliminado exitosamente');
         }
     })
 });
 
-
-
+app.get ('/categorias', (req, res) => {
+    db.query('SELECT * FROM categoria_producto', (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send(results);
+        }
+    })
+})
 
 app.post('/Cambiarpasscod', (req, res) => {
     const verificaCode = req.body.verificaCode;
     const newContrasena = req.body.newcontrasena
-    const confirmContra= req.body.confirmcontra
+    const confirmContra = req.body.confirmcontra
     const fecha = moment().format('YYYY-MM-DD HH:mm:ss');
 
     db.query('SELECT * FROM usuarios WHERE user_reset_code = ? AND user_reset_code_expiration > ?', [verificaCode, fecha], (err, results) => {
@@ -295,7 +316,7 @@ app.post('/Cambiarpasscod', (req, res) => {
         const user = results[0];
         const hashPassword = bcrypt.hashSync(newContrasena, 10)
 
-        db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario   ], (err) => {
+        db.query('UPDATE usuarios SET contrasena = ?, user_reset_code = NULL, user_reset_code_expiration = NULL WHERE id_usuario = ?', [hashPassword, user.id_usuario], (err) => {
             if (err) return res.status(500).send('Error al actualizar la contraseña');
             res.status(200).send('Contraseña restablecida con éxito');
         });

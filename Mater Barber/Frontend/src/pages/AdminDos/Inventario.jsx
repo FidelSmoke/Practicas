@@ -3,60 +3,44 @@ import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 export default function Inventario() {
-    // Traer los datos de la base de datos
+
     const [inventario, setInventario] = useState([]);
-    const [isDataUpdated, setIsDataUpdated] = useState(false);
-
-
-    // Modal para añadir
     const [producto, setProducto] = useState({
         nombre: '',
-        descripcion: '',
+        descripcion_P: '',
         cantidad: '',
-        categoria: '',
-        precio: '',
+        id_categoria_producto: '',
+        PrecioUnitario: ''
     });
 
+    const [productoEditar, setProductoEditar] = useState({
+        nombre: '',
+        descripcion_P: '',
+        cantidad: '',
+        id_categoria_producto: '',
+        PrecioUnitario: ''
+    });
 
+    const [categorias, setCategorias] = useState([]);
 
-    // Modal para editar
+    const navigate = useNavigate();
 
-    // const [ProductoEditar, setProductoEditar] = useState({
-    //     nombre: '',
-    //     descripcion_P: '',
-    //     cantidad: '',
-    //     id_categoria_producto: '',
-    //     PrecioUnitario: '',
-    // });
+    // Crear los Productos
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(`http://localhost:8081/mostrarInventario`);
-                setInventario(res.data);
-                setIsDataUpdated(false);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchData();
-    }, [isDataUpdated]);
-
-    // Función para crear los Productos
-
-    const handleClick = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8081/crearInventario`, producto);
-            Swal.fire({
-                icon: 'success',
-                title: 'producto creado exitosamente',
-            });
+            const res = await axios.post(`http://localhost:8081/CreateInventario`, producto);
             if (res.status === 200) {
-                setIsDataUpdated(true); 
+                Swal.fire({
+                    icon: 'success',
+                    title: res.data
+                }).then(() => {
+                    navigate(0);
+                })
             }
         } catch (err) {
             console.log(err);
@@ -68,6 +52,31 @@ export default function Inventario() {
         }
     };
 
+    const handleSubmitEdit = async (id) => {
+        try {
+            const res = await axios.put(`http://localhost:8081/UpdateInventario/${id}`, productoEditar);
+            if (res.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: res.data
+                }).then(() => {
+                    navigate(0);
+                })
+            }
+        } catch (err) {
+            console.log(err);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: err.response.data,
+            });
+        }
+    };
+
+    const handleChangeEdit = (e) => {
+        setProductoEditar(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
     // Handle change para añadir
     const handleChange = (e) => {
         setProducto(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -76,7 +85,7 @@ export default function Inventario() {
     const DeleteInventario = async (id) => {
         try {
             const confirm = await Swal.fire({
-                title: '¿Estas seguro de borrar este ingrediente?',
+                title: '¿Estas seguro de borrar este producto?',
                 text: "No podrás revertir esta acción",
                 icon: 'warning',
                 showCancelButton: true,
@@ -87,20 +96,21 @@ export default function Inventario() {
             if (!confirm.isConfirmed) {
                 return;
             }
-            const res = await axios.delete(`http://localhost:8081/DeleteInventario`);
+            const res = await axios.delete(`http://localhost:8081/DeleteInventario/${id}`);
             console.log(res);
             if (res.status === 200) {
                 Swal.fire({
                     icon: 'success',
                     title: res.data
-                });
-                setIsDataUpdated(true);
+                }).then(() => {
+                    navigate(0);
+                })
             }
         } catch (error) {
             console.log(error);
             Swal.fire({
                 icon: 'error',
-                title: 'Oops...',
+                title: 'Error al borrar',
                 text: error.response.data
             });
         }
@@ -109,17 +119,32 @@ export default function Inventario() {
     useEffect(() => {
         const fetchInventario = async () => {
             try {
-                const res = await axios.get("http://localhost:8081/mostrar");
+                const res = await axios.get("http://localhost:8081/GetInventario");
                 setInventario(res.data)
                 console.log(res)
             } catch (err) {
                 console.log('Error al obtener los datos:', err)
             }
-        }   
+        }
         fetchInventario()
     }, [])
 
+    const openEditModal = (item) => {
+        setProductoEditar(item);
+    };
 
+    useEffect(() => {
+        const fetchCategorias = async () => {
+            try {
+                const res = await axios.get("http://localhost:8081/categorias");
+                setCategorias(res.data)
+                console.log(res)
+            } catch (err) {
+                console.log('Error al obtener los datos:', err)
+            }
+        }
+        fetchCategorias()
+    }, [])
 
     return (
         <div>
@@ -142,27 +167,27 @@ export default function Inventario() {
                                         <th >Descripcion</th>
                                         <th >Cantidad</th>
                                         <th >Categoria producto</th>
-                                        <th>Imagen</th>
                                         <th >PrecioUnitario</th>
                                         <th >Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {inventario.map((item) => (
-                                        <tr key={item.id_producto}> {/* Agrega la key aquí */}
+                                        <tr key={item.id_producto}>
                                             <th>{item.id_producto}</th>
                                             <td>{item.nombre}</td>
                                             <td>{item.descripcion_P}</td>
                                             <td>{item.cantidad}</td>
-                                            <td>{item.id_categoria_producto}</td>
-                                            <td><img src="/LOGO.png" alt="" className='col-md-3 col-sm-12 img-fluid zoomhover containerzoom' /></td>
+                                            <td>{categorias.find(c => c.id_categoria_producto === item.id_categoria_producto).categoria}</td>
                                             <td>{item.PrecioUnitario}</td>
                                             <td>
                                                 <div className="d-flex">
-                                                    <button type="button" className="btn btn-outline-warning col-md-6" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                                                    <button type="button" className="btn btn-outline-warning me-3" onClick={() => openEditModal(item)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                                                         <i className='bi bi-pencil-fill text-white'></i>
                                                     </button>
-                                                    <i className="bi bi-trash-fill" onClick={() => DeleteInventario(item.id_producto)} ></i>
+                                                    <button className='btn btn-outline-danger' onClick={() => DeleteInventario(item.id_producto)}>
+                                                        <i className="bi bi-trash-fill"  ></i>
+                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -184,40 +209,37 @@ export default function Inventario() {
                                     <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form >
-                                        <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
-                                            <input type="text" class="form-control" name="producto" id="recipient-name" />
-                                        </div>
+                                    <form>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
-                                            <input type="text" class="form-control" name="nombre_i" id="recipient-name" />
+                                            <input type="text" value={productoEditar.nombre} class="form-control" id="recipient-name" name='nombre' onChange={handleChangeEdit} />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" name="descripcion_p" id="recipient-name" />
+                                            <input type="text" value={productoEditar.descripcion_P} class="form-control" id="recipient-name" name='descripcion_P' onChange={handleChangeEdit} />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
-                                            <input type="text" class="form-control" name="cantidad_i" id="recipient-name" />
-                                        </div>
+                                            <input type="text" value={productoEditar.cantidad} class="form-control" id="recipient-name" name='cantidad' onChange={handleChangeEdit} />
+                                        </div >
                                         <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label text-white">Id_Categoria_Producto:</label>
-                                            <input type="text" class="form-control" name="categoria_i" id="recipient-name" />
-                                        </div>
-                                        <div className="col-12 mb-3">
-                                            <label htmlFor="floatingInput" className='text-white'>Imagen</label>
-                                            <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='imagen' required />
+                                            <label for="recipient-name" class="col-form-label text-white">Categoria:</label>
+                                            <select name="id_categoria_producto" value={productoEditar.id_categoria_producto} class="form-select" id="" onChange={handleChangeEdit}>
+                                                <option selected disabled>Categoria</option>
+                                                {categorias.map((item) => (
+                                                    <option key={item.id_categoria} value={item.id_categoria_producto}>{item.categoria}</option>
+                                                ))}
+                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" name="precio_i" id="recipient-name" />
+                                            <input value={productoEditar.PrecioUnitario} type="text" class="form-control" id="recipient-name" name='PrecioUnitario' onChange={handleChangeEdit} />
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
-                                    <button type="button" class="btn btn-danger" >Editar</button>
+                                    <button type="sumbit" class="btn btn-danger" onClick={() => handleSubmitEdit(productoEditar.id_producto)}>Editar</button>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +254,7 @@ export default function Inventario() {
                                     <h1 class="modal-title fs-5 text-white text-white" id="exampleModalLabel" >AÑADIR</h1>
                                 </div>
                                 <div class="modal-body">
-                                    <form onSubmit={handleSubmit} >
+                                    <form>
                                         {/* <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
                                             <input type="text" class="form-control" id="recipient-name" />
@@ -243,7 +265,7 @@ export default function Inventario() {
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Descripcion:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='descripcion_P' onChange={handleChange} />
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Cantidad:</label>
@@ -253,21 +275,21 @@ export default function Inventario() {
                                             <label for="recipient-name" class="col-form-label text-white">Categoria:</label>
                                             <select name="id_categoria_producto" class="form-select" id="" onChange={handleChange}>
                                                 <option selected disabled>Categoria</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
+                                                {categorias.map((item) => (
+                                                    <option key={item.id_categoria} value={item.id_categoria_producto}>{item.categoria}</option>
+                                                ))}
                                             </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Precio:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name='precio' onChange={handleChange}/>
+                                            <input type="text" class="form-control" id="recipient-name" name='PrecioUnitario' onChange={handleChange} />
                                         </div>
 
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-danger" onClick={handleClick}>Añadir</button>
+                                    <button type="submit" class="btn btn-danger" onClick={handleSubmit}>Añadir</button>
                                 </div>
                             </div>
                         </div>
