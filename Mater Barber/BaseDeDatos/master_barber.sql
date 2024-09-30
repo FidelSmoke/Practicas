@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-09-2024 a las 17:46:24
+-- Tiempo de generación: 30-09-2024 a las 14:22:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -51,7 +51,8 @@ CREATE TABLE `categoria_producto` (
 INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
 (1, 'Ropa'),
 (2, 'Accesorios'),
-(3, 'Productos de cuidado personal');
+(3, 'Productos de cuidado personal'),
+(4, 'Zapatos');
 
 -- --------------------------------------------------------
 
@@ -95,6 +96,21 @@ CREATE TABLE `inventario` (
   `id_categoria_producto` int(255) NOT NULL,
   `PrecioUnitario` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `inventario`
+--
+
+INSERT INTO `inventario` (`id_producto`, `nombre`, `descripcion_P`, `cantidad`, `id_categoria_producto`, `PrecioUnitario`) VALUES
+(9, 'gorra', '2', 50, 4, 24000),
+(10, 'cuchilla', 'cortar', 12, 1, 2),
+(12, 'perro', 'oqwro', 23, 1, 23),
+(13, 'a', 'a', 2, 1, 23),
+(14, 'aaa', 'aa', 23, 1, 233),
+(15, 'a', 'a', 23, 1, 23),
+(16, 'zapatos', 'para los pies', 190, 3, 120000),
+(17, 'gorras', 'para el pelo', 12, 2, 50000),
+(19, 'gorra 2', 'para cabeza', 12, 2, 100000);
 
 -- --------------------------------------------------------
 
@@ -291,13 +307,13 @@ ALTER TABLE `carrito_compras`
 -- AUTO_INCREMENT de la tabla `categoria_producto`
 --
 ALTER TABLE `categoria_producto`
-  MODIFY `id_categoria_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `recordatorio`
