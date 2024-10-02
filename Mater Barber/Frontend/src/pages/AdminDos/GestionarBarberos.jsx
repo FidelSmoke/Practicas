@@ -2,10 +2,129 @@ import React from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios'
+// import { useNavigate } from 'react-router-dom'
 
 
 
 export default function GestionarBarberos() {
+
+//   const [barberos, setBarberos] = useState([]);
+//   const [barbero, setBarbero] = useState({
+//     nombre: "",
+//     descripcion: "",
+//   });
+
+//   const [barberoEdit, setBarberoEdit] = useState({
+//     nombre: "",
+//     descripcion: "",
+//   });
+//   const navigate = useNavigate();
+
+//   //crear barberos
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axios.post(`http://localhost:8081/CreateBarberos`, barbero);
+//       if (res.status === 200) {
+//         Swal.fire({
+//           icon: 'success',
+//           title: res.data
+//         }).then(() => {
+//           navigate(0);
+//         })
+//       }
+//     } catch (err) {
+//       console.log(err);
+//       Swal.fire({
+//         icon: 'error',
+//         title: 'Error',
+//         text: err.response.data,
+//       });
+//     }
+//   };
+
+//   const handleSubmitEdit = async (id) => {
+//     try {
+//       const res = await axios.put(`http://localhost:8081/UpdateBarberos/${id}`, barberoEdit);
+//       if (res.status === 200) {
+//         Swal.fire({
+//           icon: 'success',
+//           title: res.data
+//         }).then(() => {
+//           navigate(0);
+//         })
+//       }
+//     } catch (err) {
+//       console.log(err);
+//       Swal.fire({
+//         icon: 'error',
+//         title: 'Error',
+//         text: err.response.data,
+//       });
+//     }
+//   };
+
+//   const handleChangeEdit = (e) => {
+//     setBarberoEdit(prev => ({ ...prev, [e.target.name]: e.target.value }));
+//   };
+
+//   //handele change para añadir
+//   const handleChange = (e) => {
+//     setBarbero(prev => ({ ...prev, [e.target.name]: e.target.value }));
+//   };
+
+//   const DeleteInventario = async (id) => {
+//     try {
+//       const confirm = await Swal.fire({
+//           title: '¿Estas seguro de borrar este barbero?',
+//           text: "No podrás revertir esta acción",
+//           icon: 'warning',
+//           showCancelButton: true,
+//           confirmButtonColor: '#3085d6',
+//           cancelButtonColor: '#d33',
+//           confirmButtonText: 'Sí, borrar'
+//       });
+//       if (!confirm.isConfirmed) {
+//           return;
+//       }
+//       const res = await axios.delete(`http://localhost:8081/DeleteBarberos/${id}`);
+//       console.log(res);
+//       if (res.status === 200) {
+//           Swal.fire({
+//               icon: 'success',
+//               title: res.data
+//           }).then(() => {
+//               navigate(0);
+//           })
+//       }
+//   } catch (error) {
+//       console.log(error);
+//       Swal.fire({
+//           icon: 'error',
+//           title: 'Error al borrar',
+//           text: error.response.data
+//       });
+//   }
+// };
+
+// useEffect(() => {
+//   const fetchBarberos = async () => {
+//     try {
+//       const res = await axios.get("http://localhost:8081/GetBarberos");
+//       setBarberos(res.data);
+//     } catch (err) {
+//       console.log("Error al obtener los datos:", err);
+//     }
+//   }
+//   fetchBarberos()
+// }, [])
+
+// const openEditModal = (barbero) => {
+//   setBarberoEdit(barbero);
+// };
+
   return (
     <div>
       <NavbarAdmin />
