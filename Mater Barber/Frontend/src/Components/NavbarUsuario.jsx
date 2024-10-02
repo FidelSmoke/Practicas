@@ -42,7 +42,7 @@ export default function NavbarUsuario() {
                                     <a class="nav-link active mt-3" href="#ubicacion"><i class="bi bi-geo-alt mx-3"></i>Ubicacion</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active mt-3" href="../Registro"><i class="bi bi-arrow-right mx-3"></i>Crear Mi Cuenta</a>
+                                    <a class="nav-link active mt-3 bg-warning text-dark" href="../Registro"><i class="bi bi-arrow-right mx-3"></i>Crear Mi Cuenta</a>
                                 </li>
 
                             </ul>
