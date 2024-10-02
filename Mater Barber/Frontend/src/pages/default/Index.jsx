@@ -1,12 +1,12 @@
 import React from 'react'
-import NavbarUsuario from '../../Components/NavbarUsuario'
+import NavbarIndex from '../../Components/NavbarIndex'
 import CarrouselShop from '../../Components/CarrouselShop'
 import CarrouselGaleria from '../../Components/CarrouselGaleria'
 
 export default function Index() {
     return (
         <div>
-            <NavbarUsuario />
+            <NavbarIndex />
             <div className="img position-absolute top-50 start-50 translate-middle row h-100 col-1 col-sm-12"><img src="/LOGO.png" alt="" className='' /></div>
             <div className='container p-5 mt-5 table-responsive col col-sm-12' id='home'>
                 <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER VIP</h1>

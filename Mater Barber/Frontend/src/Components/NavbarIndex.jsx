@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function NavbarUsuario() {
+export default function NavbarIndex() {
     return (
         <div className="">
             <nav class="navbar navbar-dark fixed-top mx-3 mt-3" >
