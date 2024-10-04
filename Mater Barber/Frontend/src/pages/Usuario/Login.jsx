@@ -1,27 +1,31 @@
-import React, { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import axios from 'axios'
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-    const navigate = useNavigate()
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8081/login`, { email, password });
+            const res = await axios.post('http://localhost:8081/login', { email, password });
+
             if (res.status === 200) {
+                const token = res.data.token; // Extraer el token de la respuesta
+                localStorage.setItem('token', token); // Guardar el token en localStorage
+
                 Swal.fire({
                     title: 'Iniciaste sesión',
                     text: 'Has iniciado sesión correctamente',
                     icon: 'success',
                     confirmButtonText: 'Continuar'
                 });
-                navigate("/");
+
+                navigate('/IndexUser');
             }
         } catch (error) {
             console.log(error);
@@ -47,7 +51,8 @@ export default function Login() {
                 });
             }
         }
-    }
+    };
+
     return (
         <div className="login">
             <div className="min-vh-100 align-content-center mx-5 justify-content-end">
@@ -94,6 +99,5 @@ export default function Login() {
                 </div>
             </div>
         </div>
-
-    )
+    );
 }

@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const moment = require('moment');
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -41,38 +42,98 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+
 app.post('/login', (req, res) => {
+    const { email, password } = req.body;
 
-    const email = req.body.email
-    const contraseña = req.body.password
+    // Validar si email o contraseña no están vacíos
+    if (!email || !password) {
+        return res.status(400).json({ error: "Email y contraseña son requeridos" });
+    }
 
-    db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, result) => {
-
+    db.query("SELECT * FROM usuarios WHERE email = ?", [email], (err, userResult) => {
         if (err) {
-            console.log(err)
-            return res.status(500).send(err)
+            console.log(err);
+            return res.status(500).json({ error: "Error del servidor" });
         }
 
-        else if (result.length > 0) {
-            console.log(result[0])
-            bcrypt.compare(contraseña, result[0].contrasena, (err, result) => {
-                if (err) {
-                    console.log(err)
-                    return res.status(500).send(err)
-                }
-                else if (result) {
-                    return res.status(200).send("Inicio sesion correctamente")
-                }
-                else {
-                    return res.status(400).send("Contraseña incorrecta")
-                }
-            })
+        // Verificar si el usuario existe
+        if (userResult.length === 0) {
+            return res.status(400).json({ error: "El usuario no existe, por favor registrese" });
         }
-        else {
-            return res.status(400).send("El usuario no existe , por favor registrese")
+
+        // Comparar la contraseña
+        const usuario = userResult[0];
+        bcrypt.compare(password, usuario.contrasena, (err, isMatch) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).json({ error: "Error al verificar la contraseña" });
+            }
+            
+
+            if (isMatch) {
+                // Crear un objeto de usuario con los datos del usuario real
+                const userPayload = {
+                    id: usuario.id_usuario,        // Asumiendo que tu tabla tiene una columna 'id'
+                    username: usuario.nombre_usuario,  // Suponiendo que tienes un campo 'nombre'
+                    email: usuario.email
+                };
+
+                const secretKey = 'miClaveSecreta';  // Debes guardar la clave secreta en un entorno seguro
+
+                // Crear el token JWT con una expiración de 1 hora
+                const token = jwt.sign(userPayload, secretKey, { expiresIn: '1h' });
+
+
+                // Enviar la respuesta con el token generado
+                return res.status(200).json({
+                    message: "Inicio de sesión exitoso",
+                    token: token,
+                    user: userPayload  // Puedes enviar la información del usuario también si es necesario
+
+                });
+            } else {
+                return res.status(400).json({ error: "Contraseña incorrecta" });
+            }
+        });
+    });
+});
+
+
+// Middleware para verificar el token
+const verificarToken = (req, res, next) => {
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(403).json({ error: "Token no proporcionado" });
+    }
+
+    jwt.verify(token, process.env.JWT_SECRET || 'miClaveSecreta', (err, decoded) => {
+        if (err) {
+            return res.status(401).json({ error: "Token inválido" });
         }
-    })
-})
+        
+        // Guardar la información del usuario en la solicitud para usar en rutas protegidas
+        req.usuario = decoded;
+        next();
+    });
+};
+
+app.get('/ruta-protegida', verificarToken, (req, res) => {
+    // Aquí puedes acceder a req.usuario
+    res.status(200).json({
+        message: "Ruta protegida",
+        usuario: req.usuario
+    });
+});
+
+app.get('/perfil', verificarToken, (req, res) => {
+    res.status(200).json({
+        message: "Bienvenido al perfil",
+        usuario: req.usuario
+    });
+});
+
 
 app.post('/registrar', (req, res) => {
 
@@ -323,6 +384,9 @@ app.post('/Cambiarpasscod', (req, res) => {
     });
 
 });
+
+
+
 
 // app.get('/GetBarberos', (req, res) => {
 //     db.query('SELECT * FROM AddBarberos', (err, results) => {

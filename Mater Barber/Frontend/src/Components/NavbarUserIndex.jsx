@@ -1,5 +1,5 @@
 import React from 'react'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function NavbarUserIndex() {
@@ -41,10 +41,10 @@ export default function NavbarUserIndex() {
                         </button>
                         <ul class="dropdown-menu bg-dark">
                             <li>
-                                <a class="dropdown-item bebas text-white " href="/PerfilAdmin">Perfil</a>
+                                <a class="dropdown-item bebas text-white " href="#">Perfil</a>
                             </li>
                             <li>
-                                <a class="dropdown-item bebas text-white" href="/ConfiguracionAdmin">Configuración</a>
+                                <a class="dropdown-item bebas text-white" href="#">Configuración</a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-danger bebas" href="#">
@@ -59,7 +59,7 @@ export default function NavbarUserIndex() {
             {/* Modal Para Notificaciones */}
             <div class="offcanvas offcanvas-top bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title text-white" id="offcanvasTopLabel"><i class="bi bi-alarm-fill mx-4 text-warning"></i>Mis Reservas</h5>
+                    <h5 class="text-white anton" id="offcanvasTopLabel"><i class="bi bi-alarm-fill mx-4 text-warning"></i>Mis Reservas</h5>
                     <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
             </div>
