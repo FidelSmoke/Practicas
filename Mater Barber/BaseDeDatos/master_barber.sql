@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2024 a las 14:22:47
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 04-10-2024 a las 21:52:21
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,14 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carrito_compras`
+-- Estructura de tabla para la tabla `addbarberos`
 --
 
-CREATE TABLE `carrito_compras` (
-  `id_carrito_compras` int(255) NOT NULL,
-  `id_producto` int(255) NOT NULL,
-  `id_usuario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `addbarberos` (
+  `id_barbero` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `decripcion` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -42,7 +42,7 @@ CREATE TABLE `carrito_compras` (
 CREATE TABLE `categoria_producto` (
   `id_categoria_producto` int(255) NOT NULL,
   `categoria` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categoria_producto`
@@ -57,34 +57,6 @@ INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compra`
---
-
-CREATE TABLE `compra` (
-  `id_compra` int(255) NOT NULL,
-  `descripcion_C` varchar(255) NOT NULL,
-  `precio_total` int(255) NOT NULL,
-  `id_tipo_pago` int(255) NOT NULL,
-  `id_producto` int(255) NOT NULL,
-  `id_usuario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `factura`
---
-
-CREATE TABLE `factura` (
-  `id_factura` int(255) NOT NULL,
-  `fecha` date NOT NULL,
-  `id_compra` int(255) NOT NULL,
-  `id_usuario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `inventario`
 --
 
@@ -95,22 +67,7 @@ CREATE TABLE `inventario` (
   `cantidad` int(255) NOT NULL,
   `id_categoria_producto` int(255) NOT NULL,
   `PrecioUnitario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `inventario`
---
-
-INSERT INTO `inventario` (`id_producto`, `nombre`, `descripcion_P`, `cantidad`, `id_categoria_producto`, `PrecioUnitario`) VALUES
-(9, 'gorra', '2', 50, 4, 24000),
-(10, 'cuchilla', 'cortar', 12, 1, 2),
-(12, 'perro', 'oqwro', 23, 1, 23),
-(13, 'a', 'a', 2, 1, 23),
-(14, 'aaa', 'aa', 23, 1, 233),
-(15, 'a', 'a', 23, 1, 23),
-(16, 'zapatos', 'para los pies', 190, 3, 120000),
-(17, 'gorras', 'para el pelo', 12, 2, 50000),
-(19, 'gorra 2', 'para cabeza', 12, 2, 100000);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -122,7 +79,7 @@ CREATE TABLE `recordatorio` (
   `id_recordatorio` int(255) NOT NULL,
   `mensaje` varchar(255) NOT NULL,
   `id_ReservaTurno` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -138,7 +95,7 @@ CREATE TABLE `reserva_turno` (
   `Aceptar_Turno` varchar(2) NOT NULL,
   `Cancelar_Turno` varchar(2) NOT NULL,
   `id_usuario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -149,7 +106,7 @@ CREATE TABLE `reserva_turno` (
 CREATE TABLE `rol` (
   `id_rol` int(255) NOT NULL,
   `nombre_rol` varchar(55) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -163,17 +120,6 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tipo_pago`
---
-
-CREATE TABLE `tipo_pago` (
-  `id_tipo_pago` int(255) NOT NULL,
-  `TipoPago` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tipo_servicio`
 --
 
@@ -183,7 +129,7 @@ CREATE TABLE `tipo_servicio` (
   `descripcion_S` varchar(255) NOT NULL,
   `precio` varchar(255) NOT NULL,
   `id_usuario` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -201,7 +147,7 @@ CREATE TABLE `usuarios` (
   `id_rol` int(255) NOT NULL,
   `user_reset_code` varchar(7) DEFAULT NULL,
   `user_reset_code_expiration` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -215,35 +161,16 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `email`, `nit`, `telefon
 --
 
 --
--- Indices de la tabla `carrito_compras`
+-- Indices de la tabla `addbarberos`
 --
-ALTER TABLE `carrito_compras`
-  ADD PRIMARY KEY (`id_carrito_compras`),
-  ADD KEY `id_producto` (`id_producto`),
-  ADD KEY `id_usuario` (`id_usuario`);
+ALTER TABLE `addbarberos`
+  ADD PRIMARY KEY (`id_barbero`);
 
 --
 -- Indices de la tabla `categoria_producto`
 --
 ALTER TABLE `categoria_producto`
   ADD PRIMARY KEY (`id_categoria_producto`);
-
---
--- Indices de la tabla `compra`
---
-ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id_compra`),
-  ADD KEY `compra_ibfk_1` (`id_producto`),
-  ADD KEY `id_usuario` (`id_usuario`),
-  ADD KEY `id_tipo_pago` (`id_tipo_pago`);
-
---
--- Indices de la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD PRIMARY KEY (`id_factura`),
-  ADD KEY `id_compra` (`id_compra`),
-  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `inventario`
@@ -274,12 +201,6 @@ ALTER TABLE `rol`
   ADD PRIMARY KEY (`id_rol`);
 
 --
--- Indices de la tabla `tipo_pago`
---
-ALTER TABLE `tipo_pago`
-  ADD PRIMARY KEY (`id_tipo_pago`);
-
---
 -- Indices de la tabla `tipo_servicio`
 --
 ALTER TABLE `tipo_servicio`
@@ -298,10 +219,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `carrito_compras`
+-- AUTO_INCREMENT de la tabla `addbarberos`
 --
-ALTER TABLE `carrito_compras`
-  MODIFY `id_carrito_compras` int(255) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `addbarberos`
+  MODIFY `id_barbero` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria_producto`
@@ -330,28 +251,6 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `carrito_compras`
---
-ALTER TABLE `carrito_compras`
-  ADD CONSTRAINT `carrito de compras producto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`),
-  ADD CONSTRAINT `carrito de compras usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `compra`
---
-ALTER TABLE `compra`
-  ADD CONSTRAINT `compra producto` FOREIGN KEY (`id_producto`) REFERENCES `inventario` (`id_producto`),
-  ADD CONSTRAINT `compra tipo de pago` FOREIGN KEY (`id_tipo_pago`) REFERENCES `tipo_pago` (`id_tipo_pago`),
-  ADD CONSTRAINT `compra usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD CONSTRAINT `factura compra` FOREIGN KEY (`id_compra`) REFERENCES `compra` (`id_compra`),
-  ADD CONSTRAINT `factura usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `inventario`
