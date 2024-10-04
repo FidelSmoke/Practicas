@@ -32,6 +32,7 @@
     "sweetalert2": "^11.12.4",
     "swiper": "^11.1.10",
     "uninstall": "^0.0.0",
+    "use-history": "^1.4.1",
     "useref": "^1.4.4",
     "web-vitals": "^4.2.3"
   },
