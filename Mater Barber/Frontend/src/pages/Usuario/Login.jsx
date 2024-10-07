@@ -31,7 +31,7 @@ export default function Login() {
             console.log(error);
             if (error.response) {
                 Swal.fire({
-                    title: error.response.data || 'Credenciales incorrectas',
+                    title: error.response.data.error || 'Credenciales incorrectas',
                     icon: 'error',
                     confirmButtonText: 'Intentar de nuevo'
                 });

@@ -69,7 +69,7 @@ app.post('/login', (req, res) => {
                 console.log(err);
                 return res.status(500).json({ error: "Error al verificar la contraseña" });
             }
-            
+
 
             if (isMatch) {
                 // Crear un objeto de usuario con los datos del usuario real
@@ -112,7 +112,7 @@ const verificarToken = (req, res, next) => {
         if (err) {
             return res.status(401).json({ error: "Token inválido" });
         }
-        
+
         // Guardar la información del usuario en la solicitud para usar en rutas protegidas
         req.usuario = decoded;
         next();
