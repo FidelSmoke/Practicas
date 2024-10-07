@@ -171,7 +171,7 @@ export default function Inventario() {
                                         <th >Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody className='p-5'>
                                     {inventario.map((item) => (
                                         <tr key={item.id_producto}>
                                             <th>{item.id_producto}</th>
@@ -255,10 +255,6 @@ export default function Inventario() {
                                 </div>
                                 <div class="modal-body">
                                     <form>
-                                        {/* <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label text-white">Id_producto:</label>
-                                            <input type="text" class="form-control" id="recipient-name" />
-                                        </div> */}
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label text-white">Nombre:</label>
                                             <input type="text" class="form-control" id="recipient-name" name='nombre' onChange={handleChange} />

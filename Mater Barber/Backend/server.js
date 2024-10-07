@@ -388,86 +388,86 @@ app.post('/Cambiarpasscod', (req, res) => {
 
 
 
-// app.get('/GetBarberos', (req, res) => {
-//     db.query('SELECT * FROM AddBarberos', (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send('Error en el servidor');
-//         }
-//         else {
-//             return res.status(200).send(results);
-//         }
-//     })
-// })
+app.get('/GetBarberos', (req, res) => {
+    db.query('SELECT * FROM addbarberos', (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send(results);
+        }
+    })
+})
 
-// app.get('/GetBarberos/:id', (req, res) => {
-//     const id = req.params.id;
-//     db.query('SELECT * FROM AddBarberos WHERE id = ?', [id], (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send('Error en el servidor');
-//         }
-//         else {
-//             return res.status(200).send(results);
-//         }
-//     })
-// })
+app.get('/GetBarberos/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('SELECT * FROM addbarberos WHERE id = ?', [id], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }
+        else {
+            return res.status(200).send(results);
+        }
+    })
+})
 
-// app.post('/CreateBarberos', (req, res) => {
-//     const nombre = req.body.nombre
-//     const descripcion = req.body.descripcion
+app.post('/CreateBarberos', (req, res) => {
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion
 
-//     const q = 'INSERT INTO AddBarberos (nombre,descripcion) VALUES (?,?)'
+    const q = 'INSERT INTO addbarberos (nombre,descripcion) VALUES (?,?)'
 
-//     const values = [
-//         nombre,
-//         descripcion
-//     ]
+    const values = [
+        nombre,
+        descripcion
+    ]
 
-//     db.query(q, values, (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send('Error en el servidor');
-//         }else{
-//             return res.status(200).send('Barbero añadido exitosamente');
-//         }
-//     })
-// })
+    db.query(q, values, (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }else{
+            return res.status(200).send('Barbero añadido exitosamente');
+        }
+    })
+})
 
-// app.put('/UpdateBarberos/:id', (req, res) => {
-//     const id = req.params.id;
-//     const nombre = req.body.nombre
-//     const descripcion = req.body.descripcion
+app.put('/UpdateBarberos/:id', (req, res) => {
+    const id = req.params.id;
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion
 
-//     const q = 'UPDATE AddBarberos SET nombre = ?, descripcion = ? WHERE id = ?'
+    const q = 'UPDATE addbarberos SET nombre = ?, descripcion = ? WHERE id = ?'
 
-//     const values = [
-//         nombre,
-//         descripcion,
-//         id
-//     ]
+    const values = [
+        nombre,
+        descripcion,
+        id
+    ]
 
-//     db.query(q, values, (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send('Error en el servidor');
-//         }else{
-//             return res.status(200).send('Barbero actualizado exitosamente');
-//         }
-//     })
-// })
+    db.query(q, values, (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }else{
+            return res.status(200).send('Barbero actualizado exitosamente');
+        }
+    })
+})
 
-// app.delete('/DeleteBarberos/:id', (req, res) => {
-//     const id = req.params.id;
-//     db.query('DELETE FROM AddBarberos WHERE id = ?', [id], (err, results) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(500).send('Error en el servidor');
-//         }else{
-//             return res.status(200).send('Barbero eliminado exitosamente');
-//         }
-//     })
-// });
+app.delete('/DeleteBarberos/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('DELETE FROM addbarberos WHERE id = ?', [id], (err, results) => {
+        if (err) {
+            console.log(err);
+            return res.status(500).send('Error en el servidor');
+        }else{
+            return res.status(200).send('Barbero eliminado exitosamente');
+        }
+    })
+});
 
 app.listen(8081, () => {
     console.log("Conexion exitosa:)")

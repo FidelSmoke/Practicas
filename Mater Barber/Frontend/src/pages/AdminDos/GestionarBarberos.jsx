@@ -1,129 +1,128 @@
-import React from 'react'
 import NavbarAdmin from '../../Components/NavbarAdmin'
 import SidebarAdmin from '../../Components/SidebarAdmin'
 import Swal from 'sweetalert2'
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios'
-// import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function GestionarBarberos() {
 
-//   const [barberos, setBarberos] = useState([]);
-//   const [barbero, setBarbero] = useState({
-//     nombre: "",
-//     descripcion: "",
-//   });
+  const [barberos, setBarberos] = useState([]);
+  const [barbero, setBarbero] = useState({
+    nombre: "",
+    descripcion: "",
+  });
 
-//   const [barberoEdit, setBarberoEdit] = useState({
-//     nombre: "",
-//     descripcion: "",
-//   });
-//   const navigate = useNavigate();
+  const [barberoEdit, setBarberoEdit] = useState({
+    nombre: "",
+    descripcion: "",
+  });
+  const navigate = useNavigate();
 
-//   //crear barberos
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const res = await axios.post(`http://localhost:8081/CreateBarberos`, barbero);
-//       if (res.status === 200) {
-//         Swal.fire({
-//           icon: 'success',
-//           title: res.data
-//         }).then(() => {
-//           navigate(0);
-//         })
-//       }
-//     } catch (err) {
-//       console.log(err);
-//       Swal.fire({
-//         icon: 'error',
-//         title: 'Error',
-//         text: err.response.data,
-//       });
-//     }
-//   };
+  //crear barberos
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`http://localhost:8081/CreateBarberos`, barbero);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: 'success',
+          title: res.data
+        }).then(() => {
+          navigate(0);
+        })
+      }
+    } catch (err) {
+      console.log(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: err.response.data,
+      });
+    }
+  };
 
-//   const handleSubmitEdit = async (id) => {
-//     try {
-//       const res = await axios.put(`http://localhost:8081/UpdateBarberos/${id}`, barberoEdit);
-//       if (res.status === 200) {
-//         Swal.fire({
-//           icon: 'success',
-//           title: res.data
-//         }).then(() => {
-//           navigate(0);
-//         })
-//       }
-//     } catch (err) {
-//       console.log(err);
-//       Swal.fire({
-//         icon: 'error',
-//         title: 'Error',
-//         text: err.response.data,
-//       });
-//     }
-//   };
+  const handleSubmitEdit = async (id) => {
+    try {
+      const res = await axios.put(`http://localhost:8081/UpdateBarberos/${id}`, barberoEdit);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: 'success',
+          title: res.data
+        }).then(() => {
+          navigate(0);
+        })
+      }
+    } catch (err) {
+      console.log(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: err.response.data,
+      });
+    }
+  };
 
-//   const handleChangeEdit = (e) => {
-//     setBarberoEdit(prev => ({ ...prev, [e.target.name]: e.target.value }));
-//   };
+  const handleChangeEdit = (e) => {
+    setBarberoEdit(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-//   //handele change para añadir
-//   const handleChange = (e) => {
-//     setBarbero(prev => ({ ...prev, [e.target.name]: e.target.value }));
-//   };
+  //handle change para añadir
+  const handleChange = (e) => {
+    setBarbero(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-//   const DeleteInventario = async (id) => {
-//     try {
-//       const confirm = await Swal.fire({
-//           title: '¿Estas seguro de borrar este barbero?',
-//           text: "No podrás revertir esta acción",
-//           icon: 'warning',
-//           showCancelButton: true,
-//           confirmButtonColor: '#3085d6',
-//           cancelButtonColor: '#d33',
-//           confirmButtonText: 'Sí, borrar'
-//       });
-//       if (!confirm.isConfirmed) {
-//           return;
-//       }
-//       const res = await axios.delete(`http://localhost:8081/DeleteBarberos/${id}`);
-//       console.log(res);
-//       if (res.status === 200) {
-//           Swal.fire({
-//               icon: 'success',
-//               title: res.data
-//           }).then(() => {
-//               navigate(0);
-//           })
-//       }
-//   } catch (error) {
-//       console.log(error);
-//       Swal.fire({
-//           icon: 'error',
-//           title: 'Error al borrar',
-//           text: error.response.data
-//       });
-//   }
-// };
+  const DeleteBarberos = async (id) => {
+    try {
+      const confirm = await Swal.fire({
+          title: '¿Estas seguro de borrar este barbero?',
+          text: "No podrás revertir esta acción",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, borrar'
+      });
+      if (!confirm.isConfirmed) {
+          return;
+      }
+      const res = await axios.delete(`http://localhost:8081/DeleteBarberos/${id}`);
+      console.log(res);
+      if (res.status === 200) {
+          Swal.fire({
+              icon: 'success',
+              title: res.data
+          }).then(() => {
+              navigate(0);
+          })
+      }
+  } catch (error) {
+      console.log(error);
+      Swal.fire({
+          icon: 'error',
+          title: 'Error al borrar',
+          text: error.response.data
+      });
+  }
+};
 
-// useEffect(() => {
-//   const fetchBarberos = async () => {
-//     try {
-//       const res = await axios.get("http://localhost:8081/GetBarberos");
-//       setBarberos(res.data);
-//     } catch (err) {
-//       console.log("Error al obtener los datos:", err);
-//     }
-//   }
-//   fetchBarberos()
-// }, [])
+useEffect(() => {
+  const fetchBarberos = async () => {
+    try {
+      const res = await axios.get("http://localhost:8081/GetBarberos");
+      setBarberos(res.data);
+    } catch (err) {
+      console.log("Error al obtener los datos:", err);
+    }
+  }
+  fetchBarberos()
+}, [])
 
-// const openEditModal = (barbero) => {
-//   setBarberoEdit(barbero);
-// };
+const openEditModal = (barbero) => {
+  setBarberoEdit(barbero);
+};
 
   return (
     <div>
@@ -143,185 +142,27 @@ export default function GestionarBarberos() {
                 <tr className='bg-white'>
                   <th scope="col" className='p-2 display-6 bebas'>Nombre</th>
                   <th scope="col" className='p-2 display-6 bebas w-50'>Descripcion</th>
-                  <th scope="col" className='p-2 display-6 bebas'>imagen Barbero</th>
+                  {/* <th scope="col" className='p-2 display-6 bebas'>imagen Barbero</th> */}
                   <th scope="col" className='p-2 text-warning display-6 bebas'>Acciones</th>
                 </tr>
               </thead>
               <tbody className='p-5'>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>DEIBY</th>
-                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/B1.JPG" alt="" srcset="" className='zoomhover containerzoom col-md-2 col-sm-12 mt-3 img-fluid' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>JEISON</th>
-                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/B2.JPG" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom ' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>NIXON</th>
-                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/B3.JPG" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom ' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>CAMILO</th>
-                  <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>CRISTIAN</th>
-                  <td className='col-md-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
-                <tr>
-                  <th scope="row" className='display-6 bebas'>JORGE</th>
-                  <td >Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus assumenda vero minima accusantium eveniet atque temporibus libero nam ab, ex, ratione veritatis dolorem explicabo, deleniti quod? Saepe sunt minus vel.</td>
-                  <td><img src="/LOGO.png" alt="" srcset="" className='col-md-2 col-sm-12 mt-3 img-fluid zoomhover containerzoom' /></td>
-                  <td className='.col-md-4'><button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i className='bi bi-pencil-fill text-white'></i></button>
-                    <button className="btn btn-outline-danger mx-2" onClick={() => {
-                      Swal.fire({
-                        title: "¿Eliminar Barbero?",
-                        text: "¡Se eliminara el Barbero!",
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "¡Si, eliminar!",
-                        cancelButtonText: "Cancelar"
-                      }).then(
-                        (result) => {
-                          if (result.isConfirmed) {
-                            Swal.fire({
-                              title: 'Barbero eliminado',
-                              text: 'El Barbero fue eliminado correctamente.',
-                              icon: 'success',
-                              confirmButtonText: 'Hecho'
-                            })
-                          }
-                        }
-                      )
-                    }}><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
+                {barberos.map((barbero) => (
+                  <tr key={barbero.id_barbero}>
+                    <td>{barbero.nombre}</td>
+                    <td>{barbero.descripcion}</td>
+                    <td>
+                      <div className="d-flex justify-content-center">
+                          <button type="button" className="btn btn-outline-warning me-3" onClick={() => openEditModal(barbero)} data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                          <i className='bi bi-pencil-fill text-white'></i>
+                          </button>
+                          <button className='btn btn-outline-danger' onClick={() => DeleteBarberos(barbero.id_barbero)}>
+                          <i className="bi bi-trash-fill"  ></i>
+                          </button>
+                      </div>
+                    </td>
+                 </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -341,51 +182,23 @@ export default function GestionarBarberos() {
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Nombre Barbero</label>
-                    <input type="text" class="form-control" id="recipient-name" />
+                    <input type="text" class="form-control" id="recipient-name" value={barberoEdit.nombre} name='nombre' onChange={handleChangeEdit} />
                   </div>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Descripcion</label>
-                    <input type="text" class="form-control" id="recipient-name" />
+                    <input type="text" class="form-control" id="recipient-name" value={barberoEdit.descripcion} name='descripcion' onChange={handleChangeEdit} placeholder='Escriba una Descripcion'/>
                   </div>
-                  <div className="col-12 mb-3">
+                  {/* <div className="col-12 mb-3">
                     <label htmlFor="floatingInput" className='text-white'>Imagen</label>
                     <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
-                  </div>
+                  </div> */}
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
-                  Swal.fire({
-                    title: "¿Estas Seguro De Terminar Este Proceso?",
-                    text: "¡Se Borrara Todo Lo Editado!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, Cerrar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Cerrado',
-                          text: 'Se Ah Cerrado Correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
-                      }
-                    }
-                  )
-                }}>Close</button>
-                <button type="button" class="btn btn-danger" onClick={() => {
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Se Ah Editado Correctamente",
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                }}>Editar</button>
+              <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                  <button type="sumbit" class="btn btn-danger" onClick={() => handleSubmitEdit(barberoEdit.id_barbero)}>Editar</button>
+                </div>
               </div>
             </div>
           </div>
@@ -404,51 +217,23 @@ export default function GestionarBarberos() {
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Nombre Barbero</label>
-                    <input type="text" class="form-control" id="recipient-name" />
+                    <input type="text" class="form-control" id="recipient-name" name='nombre' onChange={handleChange} placeholder='Escriba un Nombre'/>
                   </div>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Descripcion</label>
-                    <input type="text" class="form-control" id="recipient-name" />
+                    <input type="text" class="form-control" id="recipient-name" name='descripcion' onChange={handleChange} placeholder='Escriba una Descripcion'/>
                   </div>
-                  <div className="col-12 mb-3">
+                  {/* <div className="col-12 mb-3">
                     <label htmlFor="floatingInput" className='text-white'>Imagen</label>
                     <input className='form-control' type="file" accept='image/*' autoComplete='off' id='photo' name='photo' required />
-                  </div>
+                  </div> */}
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
-                  Swal.fire({
-                    title: "¿Estas Seguro De Terminar Este Proceso?",
-                    text: "¡Se Borrara Todo Lo Anterior!",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "¡Si, Cerrar!",
-                    cancelButtonText: "Cancelar"
-                  }).then(
-                    (result) => {
-                      if (result.isConfirmed) {
-                        Swal.fire({
-                          title: 'Cerrado',
-                          text: 'Se Ah Cerrado Correctamente.',
-                          icon: 'success',
-                          confirmButtonText: 'Hecho'
-                        })
-                      }
-                    }
-                  )
-                }}>Close</button>
-                <button type="button" class="btn btn-danger" onClick={() => {
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Se Ah Añadido Correctamente",
-                    showConfirmButton: false,
-                    timer: 1500
-                  })
-                }}>Añadir</button>
+              <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-danger" onClick={handleSubmit}>Añadir</button>
+                </div>
               </div>
             </div>
           </div>
