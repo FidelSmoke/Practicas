@@ -1,8 +1,13 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 export default function NavbarUserIndex() {
+    const cerrarSesion = () => {
+        localStorage.removeItem('token');
+        // Redirige a la página de inicio de sesión
+        window.location.href = '/';
+    };
+
     return (
         <div className='navbar navbar-expand-md'>
             <div class="container-fluid justify-content-end">
@@ -42,7 +47,7 @@ export default function NavbarUserIndex() {
                             <li>
                                 <a class="dropdown-item bebas text-white" href="#">Configuración</a>
                             </li>
-                            <li>
+                            <li onClick={cerrarSesion}>
                                 <a class="dropdown-item text-danger bebas" href="#">
                                     <i class="bi bi-box-arrow-right mx-1">
                                     </i> Cerrar sesión</a>
