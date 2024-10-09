@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2024 a las 21:52:21
+-- Tiempo de generación: 09-10-2024 a las 21:44:36
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `addbarberos` (
   `id_barbero` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
-  `decripcion` varchar(200) NOT NULL
+  `descripcion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -222,7 +222,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `addbarberos`
 --
 ALTER TABLE `addbarberos`
-  MODIFY `id_barbero` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_barbero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria_producto`
