@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2024 a las 21:44:36
+-- Tiempo de generación: 09-10-2024 a las 21:48:15
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -51,8 +51,7 @@ CREATE TABLE `categoria_producto` (
 INSERT INTO `categoria_producto` (`id_categoria_producto`, `categoria`) VALUES
 (1, 'Ropa'),
 (2, 'Accesorios'),
-(3, 'Productos de cuidado personal'),
-(4, 'Zapatos');
+(3, 'Productos de cuidado personal');
 
 -- --------------------------------------------------------
 
@@ -234,7 +233,7 @@ ALTER TABLE `categoria_producto`
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
-  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `recordatorio`
