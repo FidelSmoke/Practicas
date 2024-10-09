@@ -439,7 +439,7 @@ app.put('/UpdateBarberos/:id', (req, res) => {
     const nombre = req.body.nombre
     const descripcion = req.body.descripcion
 
-    const q = 'UPDATE addbarberos SET nombre = ?, descripcion = ? WHERE id = ?'
+    const q = 'UPDATE addbarberos SET nombre = ?, descripcion = ? WHERE id_barbero = ?'
 
     const values = [
         nombre,
@@ -459,7 +459,7 @@ app.put('/UpdateBarberos/:id', (req, res) => {
 
 app.delete('/DeleteBarberos/:id', (req, res) => {
     const id = req.params.id;
-    db.query('DELETE FROM addbarberos WHERE id = ?', [id], (err, results) => {
+    db.query('DELETE FROM addbarberos WHERE id_barbero = ?', [id], (err, results) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error en el servidor');

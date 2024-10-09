@@ -182,7 +182,7 @@ const openEditModal = (barbero) => {
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Nombre Barbero</label>
-                    <input type="text" class="form-control" id="recipient-name" value={barberoEdit.nombre} name='nombre' onChange={handleChangeEdit} />
+                    <input type="text" class="form-control" id="recipient-name" value={barberoEdit.nombre} name='nombre' onChange={handleChangeEdit} placeholder='Escriba un nombre'/>
                   </div>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label text-white">Descripcion</label>
