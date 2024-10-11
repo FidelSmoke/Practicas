@@ -45,21 +45,16 @@ export default function EnvEmail() {
 
     return (
         <div className="resetpass">
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
-                <div className="container p-5 w-50 border border-4 border-white table-responsive border rounded-4 bg-dark.bg-gradient">
+            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end row table-responsive">
+                <div className="container p-5 w-50 border border-4 border-white table-responsive border rounded-4 bg-dark.bg-gradient col-sm-12 col">
                     <div className="row">
-                        <div className="">
-                            <h2 className="text-center text-warning anton mb-4 display-6">Recupera tu contraseña</h2>
+                        <div className=" col col-sm-12">
+                            <h2 className="text-center text-warning anton mb-4 display-6 col">Recupera tu contraseña</h2>
                         </div>
-                        <div className="col-lg-12 text-center">
-                        </div>
-                        {/* <div className="">
-                            <h1 className="text-center text-white anton mb-4 ">Recupera tu contraseña</h1>
-                        </div> */}
                         <form className='row g-1' onSubmit={handleSubmit}>
-                            <h3 className="text-white text-center antonparabackend mb-2 p-2">¡Se Enviara Un Codigo De Veridicación A Tu Correo!</h3>
-                            <div className="input-group mb-3 w-50 mx-auto mt-4 ">
-                                <input clas required type="email" className="form-control" name='email' placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="basic-addon2"
+                            <h3 className="text-white text-center antonparabackend mb-2 p-2 col-sm-12 col">¡Se Enviara Un Codigo De Veridicación A Tu Correo!</h3>
+                            <div className="input-group mb-3 w-50 mx-auto mt-4 row ">
+                                <input clas required type="email" className="form-control col col-sm-2" name='email' placeholder="Correo electronico" aria-label="Recipient's username" aria-describedby="basic-addon2"
                                     onChange={handleChange}
                                 />
                             </div>

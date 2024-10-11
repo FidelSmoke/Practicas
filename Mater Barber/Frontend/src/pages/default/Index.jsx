@@ -2,8 +2,18 @@ import React from 'react'
 import NavbarIndex from '../../Components/NavbarIndex'
 import CarrouselShop from '../../Components/CarrouselShop'
 import CarrouselGaleria from '../../Components/CarrouselGaleria'
+import Swal from 'sweetalert2'
+import Calificaciones from '../../Components/Calificaciones'
 
 export default function Index() {
+    const handleRating = (rating) => {
+        Swal.fire ({
+            icon: 'success',
+            title: 'Gracias por su opinion',
+            text: `Calificaste con ${rating} estrellas`
+        })
+    };
+
     return (
         <div>
             <NavbarIndex />
@@ -310,12 +320,24 @@ export default function Index() {
 
 
             <div className="welcome" id='ubicacion'>
-                <h1 className='text-center text-white display-1 anton'>ESTAMOS UBICADOS</h1>
-                <iframe class=" bi-text-lg-center map mt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="500px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h1 className='text-center text-white display-1 anton'>¿Como Llegar?</h1>
+                <div className="container-fluid d-flex mt-5 row justify-content-center">
+                <iframe class="map mt-5 m-3 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="560px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               <img src="/Ubicacion.JPG" alt="" className=' mx-auto map mt-5 col m-3' height="560px" />
+               </div>
             </div>
-<footer>
+
+            <div className='text-white antonparabackend text-center pt-5' id='calificaciones'>
+                <h1>Calificación con Estrellas</h1>
+                <Calificaciones onRate={handleRating}/>
+            </div>
+
+
+<footer className="bg-dark text-center text-white mt-5">
+            <p className='text-center text-white'>Copyright © 2022. Todos los derechos reservados. MASTER BARBER VIP</p>
 </footer>
-        </div >
+
+</div >
 
 
     )

@@ -73,18 +73,18 @@ export default function Cambiarpasscod() {
 
     return (
         <div className="resetpass">
-            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end">
+            <div className="min-vh-100 p-5 align-content-center mx-5 justify-content-end row">
                 <div className="container p-5 w-50 border border-4 border-white table-responsive border rounded-4 bg-dark.bg-gradient">
                     <div className="row">
-                        <div className="col col-lg-12 ">
-                            <h1 className="text-center text-warning antonparabackend mb-4 ">Cambiar Contraseña</h1>
+                        <div className="col col-lg-12">
+                            <h1 className="text-center text-warning antonparabackend mb-4 col col-lg-12">Cambiar Contraseña</h1>
                         </div>
                         <form className='row g-1' onSubmit={handleSubmit}>
-                            <div class="input-group mb-1 w-75 mx-auto ">
+                            <div class="input-group mb-1 w-75 mx-auto col col-sm-12">
                                 <span class="input-group-text bg-dark text-white"><i class="bi bi-lock"></i></span>
-                                <div class="form-floating">
-                                    <input type="password" class="form-control" placeholder="password" name="newcontrasena" onChange={handleChange} required />
-                                    <label for="floatingInputGroup1" className='antonpararecuperar'>Nueva contraseña</label>
+                                <div class="form-floating col col-sm-12">
+                                    <input type="password" class="form-control col col-sm-12" placeholder="password" name="newcontrasena" onChange={handleChange} required />
+                                    <label for="floatingInputGroup1" className='antonpararecuperar col col-sm-12'>Nueva contraseña</label>
                                 </div>
                             </div>
                             <div class="input-group mb-4 mt-2 w-75 mx-auto">
