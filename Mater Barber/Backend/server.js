@@ -473,6 +473,5 @@ app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
 
-// style="width: 20%; height: 20%;">
 
 
