@@ -9,18 +9,19 @@
   padding: 0;
 }
 
-.nab{
+.nab {
   margin-top: 5%;
 }
+
 :root {
   --swiper-theme-color: #ffffff !important;
 }
 
 
-body {
-  font-family: "Rubik", sans-serif;
-  background-color: #1f1f1f;
-}
+// body {
+//   font-family: "Rubik", sans-serif;
+//   background-color: #1f1f1f;
+// }
 
 .login {
   background-color: #000000;
@@ -153,7 +154,26 @@ $gray: #e7e9eb;
   border-radius: 100px;
 }
 
- .map {
-   width: 60%;
- }
+.map {
+  width: 60%;
+}
 
+
+
+ /* Estilos para el modo claro */
+body.light {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* Estilos para el modo oscuro */
+body.dark {
+  background-color: white;
+  color: white;
+}
+
+i {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

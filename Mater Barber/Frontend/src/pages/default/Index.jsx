@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import NavbarIndex from '../../Components/NavbarIndex'
 import CarrouselShop from '../../Components/CarrouselShop'
 import CarrouselGaleria from '../../Components/CarrouselGaleria'
 import Swal from 'sweetalert2'
 import Calificaciones from '../../Components/Calificaciones'
+import Darkandlight from "../../Components/Dark and light";
 
 export default function Index() {
+
+    // CODIGO CALIFICACION
     const handleRating = (rating) => {
         Swal.fire({
             icon: 'success',
@@ -16,6 +19,7 @@ export default function Index() {
 
     return (
         <div>
+            <div className="mt-3"><Darkandlight/></div>
             <NavbarIndex />
             <div className="img position-absolute top-50 start-50 translate-middle row h-100 col-1 col-sm-12"><img src="/LOGO.png" alt="" className='' /></div>
             <div className='container p-5 mt-5 table-responsive col col-sm-12' id='home'>
@@ -140,7 +144,7 @@ export default function Index() {
                             <div className="mt-5 pt-5">
                                 <div className="border-bottom d-flex justify-content-between mt-4">
                                     <p className='text-white mx-3'>Corte Basico</p>
-                                    <p className='text-warning mx-3'>18.000</p>
+                                    <p className='text-warning mx-3'>20.000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
                                     <p className='text-white mx-3'>Cejas</p>
@@ -331,6 +335,7 @@ export default function Index() {
                 <h1>Calificación con Estrellas</h1>
                 <Calificaciones onRate={handleRating} />
             </div>
+
 
 
             <footer className="bg-dark text-center text-white mt-5">
