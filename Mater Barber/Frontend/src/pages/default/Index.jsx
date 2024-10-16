@@ -7,6 +7,19 @@ import Calificaciones from '../../Components/Calificaciones'
 import Darkandlight from "../../Components/Dark and light";
 
 export default function Index() {
+    const [theme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
+
+    // Efecto para aplicar la clase correspondiente al body según el tema
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
+
+
+
+
+
 
     // CODIGO CALIFICACION
     const handleRating = (rating) => {
@@ -19,28 +32,43 @@ export default function Index() {
 
     return (
         <div>
-            <div className="mt-3"><Darkandlight/></div>
+            <div><Darkandlight /></div>
             <NavbarIndex />
+
             <div className="img position-absolute top-50 start-50 translate-middle row h-100 col-1 col-sm-12"><img src="/LOGO.png" alt="" className='' /></div>
             <div className='container p-5 mt-5 table-responsive col col-sm-12' id='home'>
-                <h1 className='text-white text-center display-1 anton fw-bold'>MASTER BARBER VIP</h1>
-                <h2 className='text-warning text-center mt-5 anton fw-bold'>BOGOTA</h2>
-                <p className='text-white text-center mt-5 p-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!</p>
-                <div className="mt-5 pt-5 d-flex justify-content-center">
-                    <div className="row mt-5 pt-5 d-flex col-sm-14">
-                        <h1 className='anton text-center text-warning mx-3 col'>DIRRECION
-                            <p className='bebas text-center text-white'>cra 4 este #37-38</p>
-                        </h1>
-                        <h1 className='anton text-warning text-center mx-5 col'>TELEFONO
-                            <p className='bebas text-center text-white '>3142758305</p>
-                        </h1>
-                        <h1 className='anton text-center text-warning mx-3 col'>HORARIO
-                            <p className='bebas text-white text-center'> 10am-8pm</p>
-                        </h1>
+                
+                    <h1 className={`text-center display-1 anton fw-bold mt-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                        MASTER BARBER VIP
+                    </h1>
+                    <h2 className={`text-center mt-5 anton fw-bold ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                        BOGOTA
+                    </h2>
+                    <p className={`text-center mt-5 p-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!
+                    </p>
+                    <div className="mt-5 pt-5 d-flex justify-content-center ">
+                        <div className="row mt-5 m-2 col-sm-14">
+                        <div className="nav mt-5">
+                            <h1 className={`anton text-center me-1 ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                                TELÉFONO:
+                            </h1>
+
+                            <h3 className={`bebas text-center mt-2 mx-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                                3142758305
+                            </h3>
+                            <h1 className={`anton  text-center mx-5  ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                                HORARIO:
+                            </h1>
+                            <h3 className={`bebas text-center mt-2 ${theme === "light" ? "dark" : "text-white"}`}>
+                                10am-8pm
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="welcome bg-dark">
+
+            <div className="welcome ">
                 <div className="container-fluid">
                     <div className="row">
                         <div class="col col-sm-6">
@@ -48,7 +76,7 @@ export default function Index() {
                         </div>
                         <div class="col-12 col-sm-5 text-center p-5">
                             <h2 className='welcome-2 text-danger anton display-1'>Sobre Nosotros</h2>
-                            <p className='text-white pt-5'>
+                            <p className={`pt-5 ${theme === "light" ? "dark" : "text-white"}`}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                 Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
                                 dolorem laborum corrupti est officiis magni,
