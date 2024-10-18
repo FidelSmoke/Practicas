@@ -9,15 +9,19 @@
   padding: 0;
 }
 
-.nab {
-  margin-top: 5%;
-}
 
+
+// COLOR DE FLECHAS DE LOS CARROUSELES
 :root {
   --swiper-theme-color: #ffffff !important;
 }
+// FIN
 
 
+
+
+
+// TODOS LOS BACGROUNDS
 body {
   background-color: #1f1f1f;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -38,40 +42,21 @@ body {
   background-color: #000000;
 }
 
-.texto {
-  margin-bottom: -3px;
+.bg-warning {
+  color: #ffc107;
 }
+// FIN BACGROUNDS
 
 
-$light: #ffffff;
-$gray: #e7e9eb;
 
-.flex {
-  display: flex;
-}
 
+
+
+
+// TODOS LOS TEXTOS
 .Texto {
   font-family: "Bebas Neue", sans-serif;
 }
-
-// SIDEBARPARAADMIN
-.sidebar2 {
-  width: 12vw;
-
-  a {
-    text-decoration: none;
-
-    &.active {
-      background-color: #e9c706;
-    }
-  }
-}
-
-
-.nave {
-  margin-top: 9%;
-}
-
 .anton {
   letter-spacing: 5px;
   font-family: "Anton SC", sans-serif;
@@ -86,22 +71,52 @@ $gray: #e7e9eb;
   font-family: "Anton SC", sans-serif;
 }
 
-.bg-warning {
-  color: #ffc107;
-  ;
+.bebas {
+  font-family: "Bebas Neue", sans-serif;
 }
 
+.texto {
+  margin-bottom: -3px;
+}
+// FIN TEXTOS
+
+
+// SIDEBARPARAADMIN
+.sidebar2 {
+  width: 12vw;
+
+  a {
+    text-decoration: none;
+
+    &.active {
+      background-color: #e9c706;
+    }
+  }
+}
+
+// FIN
+
+
+
+
+
+
+
+// STYLES IMGS
 .img {
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.2;
   width: 50%;
 }
+// FIN IMGS
 
-.bebas {
-  font-family: "Bebas Neue", sans-serif;
-}
 
+
+
+
+
+// TODAS LAS MARGENES
 .welcome {
   margin-top: 20%;
 }
@@ -117,7 +132,13 @@ $gray: #e7e9eb;
 .contenido2 {
   margin-left: 15%;
 }
+// FIN MARGENES
 
+
+
+
+
+// CREO QUE SON STYLE PARA LA IMAGEN DE LOS BARBEROS
 .zoomhover:hover {
   transform: scale(4.10);
 }
@@ -130,9 +151,15 @@ $gray: #e7e9eb;
   overflow: hidden;
   transition: all 500ms;
 }
+// FIN 
 
 
 
+
+
+
+
+// SYLES CODIGO VERIFICACION
 .clase-codigo-verificacion {
   margin-top: 30px;
   display: flex;
@@ -155,13 +182,23 @@ $gray: #e7e9eb;
   transition: 0.3s;
   border-radius: 100px;
 }
+// FIN
 
+
+
+
+// STYLE MAPA
 .map {
   width: 60%;
 }
+// FIN 
 
 
 
+
+
+
+// DARK AND LIGHT STYLE 
 
 /* Estilos para el modo claro */
 body.light {
@@ -191,3 +228,4 @@ button:hover {
   background-color: #1f1f1f;
 }
 
+// FIN DARK AND LIGHT 

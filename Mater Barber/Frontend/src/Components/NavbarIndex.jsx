@@ -7,7 +7,7 @@ export default function NavbarIndex() {
             <nav class="navbar navbar-dark fixed-top mx-3 mt-3" >
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler border border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <button class="navbar-toggler bg-dark border border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon "></span>
                     </button>
                     <div class="offcanvas offcanvas-end text-bg-dark bebas" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">

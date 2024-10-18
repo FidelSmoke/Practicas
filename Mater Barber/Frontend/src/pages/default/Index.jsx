@@ -47,20 +47,20 @@ export default function Index() {
                     <p className={`text-center mt-5 p-5 ${theme === "light" ? "dark" : "text-white"}`}>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!
                     </p>
-                    <div className="mt-5 pt-5 d-flex justify-content-center ">
-                        <div className="row mt-5 m-2 col-sm-14">
-                        <div className="nav mt-5">
-                            <h1 className={`anton text-center me-1 ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                    <div className=" row m-5">
+                        <div className="col-sm-12 col-2">
+                        <div className="nav mx-5">
+                            <h1 className={`anton text-center mx-5 ${theme === "light" ? "text-warning" : "text-warning"}`}>
                                 TELÉFONO:
                             </h1>
 
-                            <h3 className={`bebas text-center mt-2 mx-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                            <h3 className={`bebas text-center mt-2 col ${theme === "light" ? "dark" : "text-white"}`}>
                                 3142758305
                             </h3>
-                            <h1 className={`anton  text-center mx-5  ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                            <h1 className={`anton  text-center mx-5   ${theme === "light" ? "text-warning" : "text-warning"}`}>
                                 HORARIO:
                             </h1>
-                            <h3 className={`bebas text-center mt-2 ${theme === "light" ? "dark" : "text-white"}`}>
+                            <h3 className={`bebas text-center mt-2 col col-sm-2 ${theme === "light" ? "dark" : "text-white"}`}>
                                 10am-8pm
                             </h3>
                         </div>
@@ -71,7 +71,7 @@ export default function Index() {
             <div className="welcome ">
                 <div className="container-fluid">
                     <div className="row">
-                        <div class="col col-sm-6">
+                        <div class="col col-sm-6 d-none d-sm-block">
                             <img src="/MB1.JPG" alt="" className='img-fluid' />
                         </div>
                         <div class="col-12 col-sm-5 text-center p-5">
@@ -87,12 +87,17 @@ export default function Index() {
                 </div>
             </div>
 
-
+     
 
 
             <div className="welcome container" id='services'>
-                <h1 className='text-center text-white display-1 anton'>NUESTROS SERVICIOS</h1>
-                <p className='text-white mt-5 p-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
+            <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>NUESTROS SERVICIOS</h1>
+            <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
+                                dolorem laborum corrupti est officiis magni,
+                                soluta nemo nobis eligendi repellat id!
+                            </p>
                 <div className="row justify-content-center mt-5 pt-5">
                     <div class="row">
                         <div class="col w-50">
@@ -161,9 +166,9 @@ export default function Index() {
             <div className="welcome" id='prices'>
                 <div className="container-fluid mt-5 pt-5">
                     <div className="row">
-                        <div class="col-12 col-sm-7 text-center p-5 bg-dark">
-                            <h2 className='text-white anton display-5'>Lista de precios</h2>
-                            <p className='text-white mt-5'>
+                        <div class="col-12 col-sm-7 text-center p-5">
+                            <h2 className={`display-5 anton  ${theme === "light" ? "dark" : "text-white"}`}>Lista de precios</h2>
+                            <p className={`mt-5 ${theme === "light" ? "dark" : "text-white"}`}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                                 Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
                                 dolorem laborum corrupti est officiis magni,
@@ -171,50 +176,55 @@ export default function Index() {
                             </p>
                             <div className="mt-5 pt-5">
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Corte Basico</p>
-                                    <p className='text-warning mx-3'>20.000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Corte Basico</p>
+                                    <p className='text-warning mx-3 antonparabackend'>20.000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Cejas</p>
-                                    <p className='text-warning mx-3'>5.000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Cejas</p>
+                                    <p className='text-warning mx-3 antonparabackend'>5.000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Figuras</p>
-                                    <p className='text-warning mx-3'>5.000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Figuras</p>
+                                    <p className='text-warning mx-3 antonparabackend'>5.000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Mascarillas</p>
-                                    <p className='text-warning mx-3'>25.0000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Mascarillas</p>
+                                    <p className='text-warning mx-3 antonparabackend'>25.0000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Barbas</p>
-                                    <p className='text-warning mx-3'>12.0000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Barbas</p>
+                                    <p className='text-warning mx-3 antonparabackend'>12.0000</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Tintes</p>
-                                    <p className='text-warning mx-3'>Depende Del Tinte</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Tintes</p>
+                                    <p className='text-warning mx-3 antonparabackend'>Depende Del Tinte</p>
                                 </div>
                                 <div className="border-bottom d-flex justify-content-between mt-4">
-                                    <p className='text-white mx-3'>Corte Premium</p>
-                                    <p className='text-warning mx-3'>55.000</p>
+                                    <p className={`mx-3 antonparabackend  ${theme === "light" ? "dark" : "text-white"}`}>Corte Premium</p>
+                                    <p className='text-warning mx-3 antonparabackend'>55.000</p>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="row col col-sm-5">
-                            <img src="/MB2.JPG" alt="" />
+                        <div class="row col-sm-5">
+                            <img src="/MB2.JPG" alt="" className="d-none d-sm-block" />
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className="welcome" id='barbers'>
-                <h1 className='text-center text-white display-1 anton'>CONOCE A NUESTROS ESTILISTAS</h1>
-                <p className='text-white mt-5 pt-5 text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolorum illo facere recusandae repellat adipisci, ducimus porro tempore deleniti corporis aliquam molestiae ipsa labore est et culpa quo sequi eveniet?</p>
+            <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>CONOCE A NUESTROS ESTILISTAS</h1>
+            <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
+                                dolorem laborum corrupti est officiis magni,
+                                soluta nemo nobis eligendi repellat id!
+                            </p>
                 <div className="container mt-5 pt-5">
                     <div class="row row-cols-1 row-cols-md-3">
                         <div class="col">
-                            <div class="card bg-dark">
+                            <div class="card bg-dark mt-5">
                                 <img src="./B1.JPG" class="card-img-top img-fluid" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas">DEIBY</h5>
@@ -226,7 +236,7 @@ export default function Index() {
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card bg-dark">
+                            <div class="card bg-dark mt-5">
                                 <img src="./B2.JPG" class="card-img-top img-fluid" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas">JEISON</h5>
@@ -238,7 +248,7 @@ export default function Index() {
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card bg-dark">
+                            <div class="card bg-dark mt-5">
                                 <img src="./B3.JPG" class="card-img-top img-fluid" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-danger text-center bebas">NIXON</h5>
@@ -297,7 +307,7 @@ export default function Index() {
             </div>
 
             <div className='welcome' id='turno'>
-                <h1 className='text-center text-white display-1 bebas'>¿PORQUE RESERVAR CON NOSOTROS?</h1>
+                <h1  className={`text-center display-1 bebas ${theme === "light" ? "dark" : "text-white"}`}>¿PORQUE RESERVAR CON NOSOTROS?</h1>
 
                 <div className='container mt-5 p-5'>
                     <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -350,24 +360,21 @@ export default function Index() {
                 </div>
             </div>
 
-
             <div className="welcome" id='ubicacion'>
-                <h1 className='text-center text-white display-1 anton'>¿Como Llegar?</h1>
+                <h1  className={`text-center display-1 anton ${theme === "light" ? "dark" : "text-white"}`}>¿Como Llegar?</h1>
                 <div className="container-fluid d-flex mt-5 row justify-content-center">
                     <iframe class="map mt-5 m-3 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="560px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <img src="/Ubicacion.JPG" alt="" className=' mx-auto map mt-5 col m-3' height="560px" />
                 </div>
             </div>
-
-            <div className='text-white antonparabackend text-center pt-5' id='calificaciones'>
+            <div className={`antonparabackend text-center pt-5  ${theme === "light" ? "dark" : "text-white"}`} id='calificaciones'>
                 <h1>Calificación con Estrellas</h1>
                 <Calificaciones onRate={handleRating} />
             </div>
 
 
-
-            <footer className="bg-dark text-center text-white mt-5">
-                <p className='text-center text-white'>Copyright © 2022. Todos los derechos reservados. MASTER BARBER VIP</p>
+            <footer>
+            <p className={`text-center ${theme === "light" ? "dark" : "text-white"}`}>Copyright © 2022. Todos los derechos reservados. MASTER BARBER VIP </p>
             </footer>
 
         </div >
