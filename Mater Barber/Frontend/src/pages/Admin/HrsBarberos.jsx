@@ -7,8 +7,8 @@ export default function HrsBarberos() {
     <div>
       <NavbarAdmin />
       <SidebarAdmin />
-      <div className='contenido p-5 container'>
-        <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| ESTAS SON LAS HORAS DE LOS BARBEROS</p>
+      <div className='contenido2 p-4 container '>
+        <p className='text-center text-white mt-5 display-6 bebas '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| ESTAS SON LAS HORAS DE LOS BARBEROS</p>
         <div className="mt-5 pt-5 contenido">
           <div class="row row-cols-1 row-cols-md-3">
             <div class="col">
@@ -80,7 +80,7 @@ export default function HrsBarberos() {
                   <h3 class="text-white text-center bebas">Horario De Barbero</h3>
                 </div>
                 <div class="d-grid gap-2 col-12 mx-auto">
-                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a> 
+                  <a class="btn btn-warning" href="#" role="button"><i class="bi bi-alarm mx-2"></i> VER HORAS EXTRAS</a>
                 </div>
               </div>
             </div>

@@ -37,18 +37,18 @@ export default function Index() {
 
             <div className="img position-absolute top-50 start-50 translate-middle row h-100 col-1 col-sm-12"><img src="/LOGO.png" alt="" className='' /></div>
             <div className='container p-5 mt-5 table-responsive col col-sm-12' id='home'>
-                
-                    <h1 className={`text-center display-1 anton fw-bold mt-5 ${theme === "light" ? "dark" : "text-white"}`}>
-                        MASTER BARBER VIP
-                    </h1>
-                    <h2 className={`text-center mt-5 anton fw-bold ${theme === "light" ? "text-warning" : "text-warning"}`}>
-                        BOGOTA
-                    </h2>
-                    <p className={`text-center mt-5 p-5 ${theme === "light" ? "dark" : "text-white"}`}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!
-                    </p>
-                    <div className=" row m-5">
-                        <div className="col-sm-12 col-2">
+
+                <h1 className={`text-center display-1 anton fw-bold mt-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                    MASTER BARBER VIP
+                </h1>
+                <h2 className={`text-center mt-5 anton fw-bold ${theme === "light" ? "text-warning" : "text-warning"}`}>
+                    BOGOTA
+                </h2>
+                <p className={`text-center mt-5 p-5 ${theme === "light" ? "dark" : "text-white"}`}>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium animi, cum quas delectus nulla voluptate velit, corrupti beatae in rerum sint, minima doloribus fugit officia quae dolor doloremque aspernatur voluptas!
+                </p>
+                <div className=" row m-5">
+                    <div className="col-sm-12 col-2">
                         <div className="nav mx-5">
                             <h1 className={`anton text-center mx-5 ${theme === "light" ? "text-warning" : "text-warning"}`}>
                                 TELÉFONO:
@@ -71,10 +71,10 @@ export default function Index() {
             <div className="welcome ">
                 <div className="container-fluid">
                     <div className="row">
-                        <div class="col col-sm-6 d-none d-sm-block">
+                        <div class="col-12 col-sm-5 d-none d-sm-block">
                             <img src="/MB1.JPG" alt="" className='img-fluid' />
                         </div>
-                        <div class="col-12 col-sm-5 text-center p-5">
+                        <div class="col-12 col-sm-7 text-center p-5">
                             <h2 className='welcome-2 text-danger anton display-1'>Sobre Nosotros</h2>
                             <p className={`pt-5 ${theme === "light" ? "dark" : "text-white"}`}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -87,17 +87,17 @@ export default function Index() {
                 </div>
             </div>
 
-     
+
 
 
             <div className="welcome container" id='services'>
-            <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>NUESTROS SERVICIOS</h1>
-            <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
-                                dolorem laborum corrupti est officiis magni,
-                                soluta nemo nobis eligendi repellat id!
-                            </p>
+                <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>NUESTROS SERVICIOS</h1>
+                <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
+                    dolorem laborum corrupti est officiis magni,
+                    soluta nemo nobis eligendi repellat id!
+                </p>
                 <div className="row justify-content-center mt-5 pt-5">
                     <div class="row">
                         <div class="col w-50">
@@ -166,7 +166,7 @@ export default function Index() {
             <div className="welcome" id='prices'>
                 <div className="container-fluid mt-5 pt-5">
                     <div className="row">
-                        <div class="col-12 col-sm-7 text-center p-5">
+                        <div class="col-12 col-sm-8 text-center p-5 pt-5 mt-5">
                             <h2 className={`display-5 anton  ${theme === "light" ? "dark" : "text-white"}`}>Lista de precios</h2>
                             <p className={`mt-5 ${theme === "light" ? "dark" : "text-white"}`}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -206,7 +206,7 @@ export default function Index() {
                             </div>
 
                         </div>
-                        <div class="row col-sm-5">
+                        <div class="row col-sm-4 col">
                             <img src="/MB2.JPG" alt="" className="d-none d-sm-block" />
                         </div>
                     </div>
@@ -214,13 +214,13 @@ export default function Index() {
             </div>
 
             <div className="welcome" id='barbers'>
-            <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>CONOCE A NUESTROS ESTILISTAS</h1>
-            <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
-                                dolorem laborum corrupti est officiis magni,
-                                soluta nemo nobis eligendi repellat id!
-                            </p>
+                <h1 className={`text-center display-1 anton  ${theme === "light" ? "dark" : "text-white"}`}>CONOCE A NUESTROS ESTILISTAS</h1>
+                <p className={`mt-5 p-5 pt-5 text-center ${theme === "light" ? "dark" : "text-white"}`}>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Facere pariatur mollitia illo perspiciatis velit tempora fugiat neque ut,
+                    dolorem laborum corrupti est officiis magni,
+                    soluta nemo nobis eligendi repellat id!
+                </p>
                 <div className="container mt-5 pt-5">
                     <div class="row row-cols-1 row-cols-md-3">
                         <div class="col">
@@ -307,7 +307,7 @@ export default function Index() {
             </div>
 
             <div className='welcome' id='turno'>
-                <h1  className={`text-center display-1 bebas ${theme === "light" ? "dark" : "text-white"}`}>¿PORQUE RESERVAR CON NOSOTROS?</h1>
+                <h1 className={`text-center display-1 bebas ${theme === "light" ? "dark" : "text-white"}`}>¿PORQUE RESERVAR CON NOSOTROS?</h1>
 
                 <div className='container mt-5 p-5'>
                     <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -361,20 +361,20 @@ export default function Index() {
             </div>
 
             <div className="welcome" id='ubicacion'>
-                <h1  className={`text-center display-1 anton ${theme === "light" ? "dark" : "text-white"}`}>¿Como Llegar?</h1>
+                <h1 className={`text-center display-1 anton ${theme === "light" ? "dark" : "text-white"}`}>¿Como Llegar?</h1>
                 <div className="container-fluid d-flex mt-5 row justify-content-center">
                     <iframe class="map mt-5 m-3 " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.224597345888!2d-74.09438192628066!3d4.553574442918059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99e5c678c39f%3A0xe8d6bf03bd32ac11!2sMASTER%20BARBER%20VIP!5e0!3m2!1ses!2sco!4v1717791930339!5m2!1ses!2sco" height="560px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <img src="/Ubicacion.JPG" alt="" className=' mx-auto map mt-5 col m-3' height="560px" />
                 </div>
             </div>
-            <div className={`antonparabackend text-center pt-5  ${theme === "light" ? "dark" : "text-white"}`} id='calificaciones'>
+            {/* <div className={`antonparabackend text-center pt-5  ${theme === "light" ? "dark" : "text-white"}`} id='calificaciones'>
                 <h1>Calificación con Estrellas</h1>
                 <Calificaciones onRate={handleRating} />
-            </div>
+            </div> */}
 
 
             <footer>
-            <p className={`text-center ${theme === "light" ? "dark" : "text-white"}`}>Copyright © 2022. Todos los derechos reservados. MASTER BARBER VIP </p>
+                <p className={`text-center ${theme === "light" ? "dark" : "text-white"}`}>Copyright © 2022. Todos los derechos reservados. MASTER BARBER VIP </p>
             </footer>
 
         </div >

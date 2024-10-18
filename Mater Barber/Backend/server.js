@@ -470,6 +470,49 @@ app.delete('/DeleteBarberos/:id', (req, res) => {
 });
 
 
+
+
+
+
+// Middleware para verificar el token y el rol
+const verifyTokenAndRole = (allowedRoles) => {
+    return (req, res, next) => {
+      const token = req.headers['authorization'];
+  
+      if (!token) {
+        return res.status(403).json({ message: 'No token provided.' });
+      }
+  
+      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+          return res.status(401).json({ message: 'Unauthorized.' });
+        }
+  
+        // Verificar si el rol del usuario está permitido
+        if (!allowedRoles.includes(decoded.role)) {
+          return res.status(403).json({ message: 'Access denied.' });
+        }
+  
+        req.user = decoded; // Guardar los datos del usuario para usarlos en las rutas
+        next();
+      });
+    };
+  };
+  
+  // Rutas protegidas por rol
+  app.get('/admin-route', verifyTokenAndRole(['1']), (req, res) => {
+    res.send('Bienvenido Administrador');
+  });
+  
+  app.get('/barber-route', verifyTokenAndRole(['2', '1']), (req, res) => {
+    res.send('Bienvenido Barbero');
+  });
+  
+  app.get('/client-route', verifyTokenAndRole(['3', '2', '1']), (req, res) => {
+    res.send('Bienvenido Cliente');
+  });
+
+
 app.listen(8081, () => {
     console.log("Conexion exitosa:)")
 });
