@@ -69,28 +69,22 @@ app.post('/login', (req, res) => {
                 console.log(err);
                 return res.status(500).json({ error: "Error al verificar la contraseña" });
             }
-
-
             if (isMatch) {
-                // Crear un objeto de usuario con los datos del usuario real
-                const userPayload = {
-                    id: usuario.id_usuario,        // Asumiendo que tu tabla tiene una columna 'id'
-                    username: usuario.nombre_usuario,  // Suponiendo que tienes un campo 'nombre'
-                    email: usuario.email
-                };
 
                 const secretKey = 'miClaveSecreta';  // Debes guardar la clave secreta en un entorno seguro
 
                 // Crear el token JWT con una expiración de 1 hora
-                const token = jwt.sign(userPayload, secretKey, { expiresIn: '1h' });
-
+                const token = jwt.sign({ email: usuario.email, role: usuario.id_rol }, secretKey, { expiresIn: '1h' });
 
                 // Enviar la respuesta con el token generado
                 return res.status(200).json({
                     message: "Inicio de sesión exitoso",
                     token: token,
-                    user: userPayload  // Puedes enviar la información del usuario también si es necesario
-
+                    user: {
+                        id: usuario.id,
+                        email: usuario.email,
+                        role: usuario.id_rol
+                    }
                 });
             } else {
                 return res.status(400).json({ error: "Contraseña incorrecta" });
@@ -428,7 +422,7 @@ app.post('/CreateBarberos', (req, res) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error en el servidor');
-        }else{
+        } else {
             return res.status(200).send('Barbero añadido exitosamente');
         }
     })
@@ -451,7 +445,7 @@ app.put('/UpdateBarberos/:id', (req, res) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error en el servidor');
-        }else{
+        } else {
             return res.status(200).send('Barbero actualizado exitosamente');
         }
     })
@@ -463,7 +457,7 @@ app.delete('/DeleteBarberos/:id', (req, res) => {
         if (err) {
             console.log(err);
             return res.status(500).send('Error en el servidor');
-        }else{
+        } else {
             return res.status(200).send('Barbero eliminado exitosamente');
         }
     })
@@ -477,40 +471,40 @@ app.delete('/DeleteBarberos/:id', (req, res) => {
 // Middleware para verificar el token y el rol
 const verifyTokenAndRole = (allowedRoles) => {
     return (req, res, next) => {
-      const token = req.headers['authorization'];
-  
-      if (!token) {
-        return res.status(403).json({ message: 'No token provided.' });
-      }
-  
-      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-        if (err) {
-          return res.status(401).json({ message: 'Unauthorized.' });
+        const token = req.headers['authorization'];
+
+        if (!token) {
+            return res.status(403).json({ message: 'No token provided.' });
         }
-  
-        // Verificar si el rol del usuario está permitido
-        if (!allowedRoles.includes(decoded.role)) {
-          return res.status(403).json({ message: 'Access denied.' });
-        }
-  
-        req.user = decoded; // Guardar los datos del usuario para usarlos en las rutas
-        next();
-      });
+
+        jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(401).json({ message: 'Unauthorized.' });
+            }
+
+            // Verificar si el rol del usuario está permitido
+            if (!allowedRoles.includes(decoded.role)) {
+                return res.status(403).json({ message: 'Access denied.' });
+            }
+
+            req.user = decoded; // Guardar los datos del usuario para usarlos en las rutas
+            next();
+        });
     };
-  };
-  
-  // Rutas protegidas por rol
-  app.get('/admin-route', verifyTokenAndRole(['1']), (req, res) => {
+};
+
+// Rutas protegidas por rol
+app.get('/admin-route', verifyTokenAndRole(['1']), (req, res) => {
     res.send('Bienvenido Administrador');
-  });
-  
-  app.get('/barber-route', verifyTokenAndRole(['2', '1']), (req, res) => {
+});
+
+app.get('/barber-route', verifyTokenAndRole(['2', '1']), (req, res) => {
     res.send('Bienvenido Barbero');
-  });
-  
-  app.get('/client-route', verifyTokenAndRole(['3', '2', '1']), (req, res) => {
+});
+
+app.get('/client-route', verifyTokenAndRole(['3', '2', '1']), (req, res) => {
     res.send('Bienvenido Cliente');
-  });
+});
 
 
 app.listen(8081, () => {

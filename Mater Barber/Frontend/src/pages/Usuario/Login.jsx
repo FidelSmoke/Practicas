@@ -15,9 +15,9 @@ export default function Login() {
             const res = await axios.post('http://localhost:8081/login', { email, password });
 
             if (res.status === 200) {
-                const token = res.data.token; // Extraer el token de la respuesta
+                const { token, user } = res.data; // Extraer el token y el usuario de la respuesta
                 localStorage.setItem('token', token); // Guardar el token en localStorage
-
+                console.log(user);
                 Swal.fire({
                     title: 'Iniciaste sesión',
                     text: 'Has iniciado sesión correctamente',
@@ -25,7 +25,20 @@ export default function Login() {
                     confirmButtonText: 'Continuar'
                 });
 
-                navigate('/IndexUser');
+                // Redirigir según el rol del usuario
+                switch (user.role) {
+                    case 1: // Administrador
+                        navigate('/InicioAdmin');
+                        break;
+                    case 2: // Barbero
+                        navigate('/barber-route');  // Cambia a la ruta correspondiente de barberos
+                        break;
+                    case 3: // Cliente
+                        navigate('/IndexUser');
+                        break;
+                    default:
+                        navigate('/access-denied');
+                }
             }
         } catch (error) {
             console.log(error);
@@ -87,7 +100,6 @@ export default function Login() {
                                 </div>
                                 <div className='text-center'>
                                     <p className='text-white text-center antonparabackend'>¿No tienes cuenta? <br className='d-none d-sm-none' /><a className="link-offset-1 text-decoration-none" href="./registro"> Registrate</a></p>
-
                                 </div>
                                 <div className=' text-center mt-4 mb-4 text-sm-center'>
                                     <button type="submit" className="btn btn-outline-warning antonparabackend">Continuar</button>

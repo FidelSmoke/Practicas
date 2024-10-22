@@ -20,9 +20,6 @@ import IndexUser from './pages/Usuario/IndexUser';
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss';
 
-/**
-  ENRUTADOR
- */
 function App() {
   return (
     <BrowserRouter>
@@ -40,46 +37,46 @@ function App() {
             <Route
               exact
               path='/InicioAdmin'
-              element={<PrivateRoute roles={['1']} element={InicioAdmin} />}
+              element={<PrivateRoute roles={['1']} element={<InicioAdmin />} />}
             />
             <Route
               exact
               path='/GestionarBarberos'
-              element={<PrivateRoute roles={['1']} element={GestionarBarberos} />}
+              element={<PrivateRoute roles={['1']} element={<GestionarBarberos />} />}
             />
             <Route
               exact
               path='/Inventario'
-              element={<PrivateRoute roles={['1']} element={Inventario} />}
+              element={<PrivateRoute roles={['1']} element={<Inventario />} />}
             />
             <Route
               exact
               path='/HrsBarberos'
-              element={<PrivateRoute roles={['1']} element={HrsBarberos} />}
+              element={<PrivateRoute roles={['1']} element={<HrsBarberos />} />}
             />
             <Route
               exact
               path='/Analisisdeventas'
-              element={<PrivateRoute roles={['1']} element={Analisisdeventas} />}
+              element={<PrivateRoute roles={['1']} element={<Analisisdeventas />} />}
             />
             <Route
               exact
               path='/Gestiondeventas'
-              element={<PrivateRoute roles={['1']} element={Gestiondeventas} />}
+              element={<PrivateRoute roles={['1']} element={<Gestiondeventas />} />}
             />
 
             {/* Rutas privadas para barberos */}
-            {/* <Route
+            <Route
               exact
-              path='/Horasdeiby'
-              element={<PrivateRoute roles={['2', '1']} element={Horasdeiby} />}
-            /> */}
+              path='/HorasBarberos'
+              element={<PrivateRoute roles={['2', '1']} element={<HrsBarberos />} />}
+            />
 
             {/* Rutas privadas para clientes */}
             <Route
               exact
               path='/IndexUser'
-              element={<PrivateRoute roles={['3', '2', '1']} element={IndexUser} />}
+              element={<PrivateRoute roles={['3']} element={<IndexUser />} />}
             />
 
             {/* Ruta de acceso denegado */}

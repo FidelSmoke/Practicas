@@ -1,21 +1,35 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ element: Component, roles, ...rest }) => {
-  const currentUser = JSON.parse(localStorage.getItem('user')); // Suponiendo que guardas el token y rol en localStorage
+const PrivateRoute = ({ roles, element }) => {
+    const token = localStorage.getItem('token');
 
-  if (!currentUser) {
-    // Si no hay usuario autenticado, redirigir al login
-    return <Navigate to="/Login" />;
-  }
+    // Si no hay token, redirigir a la página de login
+    if (!token) {
+        console.log("No token found. Redirecting to Login.");
+        return <Navigate to="/Login" />;
+    }
 
-  if (!roles.includes(currentUser.role)) {
-    // Si el rol del usuario no está permitido, redirigir a una página de acceso denegado
-    return <Navigate to="/access-denied" />;
-  }
+    let userRole;
+    try {
+        // Decodifica el token
+        const user = JSON.parse(atob(token.split('.')[1]));
+        userRole = user.role; // Asigna el rol
+        console.log("User role from token:", userRole);
+    } catch (error) {
+        console.error("Error decoding token", error);
+        return <Navigate to="/access-denied" />;
+    }
 
-  // Si todo está bien, renderizar el componente
-  return <Component {...rest} />;
+    // Asegúrate de que el rol sea una cadena antes de compararlo
+    if (!roles.includes(userRole.toString())) {
+        console.log(`Access denied. User role: ${userRole}, required roles: ${roles}`);
+        return <Navigate to="/access-denied" />;
+    }
+
+    // Si tiene el rol adecuado, renderiza el elemento
+    return element;
 };
 
 export default PrivateRoute;
+

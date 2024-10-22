@@ -2,6 +2,11 @@ import React from 'react'
 
 
 export default function NavbarAdmin() {
+    const cerrarSesion = () => {
+        localStorage.removeItem('token');
+        // Redirige a la página de inicio de sesión
+        window.location.href = '/';
+    };
     return (
         <div className='navbar border-bottom bg-dark shadow '>
             <div class="container-fluid">
@@ -20,7 +25,7 @@ export default function NavbarAdmin() {
                             <li>
                                 <a class="dropdown-item bebas text-danger" href="/ConfiguracionAdmin">Configuración</a>
                             </li>
-                            <li>
+                            <li onClick={cerrarSesion}>
                                 <a class="dropdown-item text-warning bebas" href="#">
                                     <i class="bi bi-box-arrow-right mx-1">
                                     </i> Cerrar sesión</a>
