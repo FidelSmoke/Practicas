@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2024 a las 21:48:15
+-- Tiempo de generación: 22-10-2024 a las 22:37:23
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -71,18 +71,6 @@ CREATE TABLE `inventario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `recordatorio`
---
-
-CREATE TABLE `recordatorio` (
-  `id_recordatorio` int(255) NOT NULL,
-  `mensaje` varchar(255) NOT NULL,
-  `id_ReservaTurno` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `reserva_turno`
 --
 
@@ -126,8 +114,7 @@ CREATE TABLE `tipo_servicio` (
   `id_tipo_servicio` int(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `descripcion_S` varchar(255) NOT NULL,
-  `precio` varchar(255) NOT NULL,
-  `id_usuario` int(255) NOT NULL
+  `precio` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -179,13 +166,6 @@ ALTER TABLE `inventario`
   ADD KEY `id_categoria_producto` (`id_categoria_producto`);
 
 --
--- Indices de la tabla `recordatorio`
---
-ALTER TABLE `recordatorio`
-  ADD PRIMARY KEY (`id_recordatorio`),
-  ADD KEY `id_ReservaTurno` (`id_ReservaTurno`);
-
---
 -- Indices de la tabla `reserva_turno`
 --
 ALTER TABLE `reserva_turno`
@@ -203,8 +183,7 @@ ALTER TABLE `rol`
 -- Indices de la tabla `tipo_servicio`
 --
 ALTER TABLE `tipo_servicio`
-  ADD PRIMARY KEY (`id_tipo_servicio`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD PRIMARY KEY (`id_tipo_servicio`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -236,12 +215,6 @@ ALTER TABLE `inventario`
   MODIFY `id_producto` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de la tabla `recordatorio`
---
-ALTER TABLE `recordatorio`
-  MODIFY `id_recordatorio` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -258,23 +231,11 @@ ALTER TABLE `inventario`
   ADD CONSTRAINT `producto categoria producto` FOREIGN KEY (`id_categoria_producto`) REFERENCES `categoria_producto` (`id_categoria_producto`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `recordatorio`
---
-ALTER TABLE `recordatorio`
-  ADD CONSTRAINT `recordatorio reserva turno` FOREIGN KEY (`id_ReservaTurno`) REFERENCES `reserva_turno` (`id_ReservaTurno`);
-
---
 -- Filtros para la tabla `reserva_turno`
 --
 ALTER TABLE `reserva_turno`
   ADD CONSTRAINT `reserva de turno` FOREIGN KEY (`id_ReservaTurno`) REFERENCES `usuarios` (`id_usuario`),
   ADD CONSTRAINT `reserva tipo servicio` FOREIGN KEY (`id_tipo_servicio`) REFERENCES `tipo_servicio` (`id_tipo_servicio`);
-
---
--- Filtros para la tabla `tipo_servicio`
---
-ALTER TABLE `tipo_servicio`
-  ADD CONSTRAINT `tipo servicio usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Filtros para la tabla `usuarios`
