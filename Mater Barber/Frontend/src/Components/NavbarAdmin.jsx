@@ -10,7 +10,7 @@ export default function NavbarAdmin() {
     return (
         <div className='navbar border-bottom bg-dark shadow '>
             <div class="container-fluid">
-                <a class="navbar-brand text-warning anton fs-2" href="/"><img src="LOGO.png" alt="" width="40" height="40" class="d-inline-block align-text-top mx-4 mt-1" />
+                <a class="navbar-brand text-warning anton fs-2"><img src="LOGO.png" alt="" width="40" height="40" class="d-inline-block align-text-top mx-4 mt-1" />
                     Master Barber</a>
                 <div class="d-flex ">
                     <div class="dropdown position-absolute top-0 end-0 pe-2 me-2" >

@@ -151,7 +151,7 @@ export default function Inventario() {
             <NavbarAdmin />
             <SidebarAdmin />
             <div>
-                <div className='contenido'>
+                <div className='contenido' id='Inventario'>
                     <p className='text-center text-white mt-5 display-6 bebas mx-3 '>HOLA, <span className='text-danger'>ADMINISTRADOR</span>| ESTE ES EL INVENTARIO DE PRODUCTOS</p>
 
                     <div className="d-flex justify-content-end mx-5 mt-5">
