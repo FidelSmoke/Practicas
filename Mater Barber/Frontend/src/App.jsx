@@ -19,6 +19,7 @@ import IndexUser from './pages/Usuario/IndexUser';
 // ESTILOS DE LA PAGINA
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss';
+import Iniciobarber from './pages/Barbers/Iniciobarber';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route exact path='/Registro' element={<Registro />} />
             <Route exact path='/EnvEmail' element={<EnvEmail />} />
             <Route exact path='/cambiarpasscod' element={<Cambiarpasscod />} />
+            <Route exact path='/Iniciobarber' element={<Iniciobarber />} />
 
             {/* Rutas privadas para administrador */}
             <Route
@@ -70,7 +72,14 @@ function App() {
               exact
               path='/HorasBarberos'
               element={<PrivateRoute roles={['2', '1']} element={<HrsBarberos />} />}
+              
             />
+              {/* <Route
+              exact
+              path='/Iniciobarber'
+              element={<PrivateRoute roles={['2', '1']} element={<Iniciobarber />} />}
+              
+            /> */}
 
             {/* Rutas privadas para clientes */}
             <Route

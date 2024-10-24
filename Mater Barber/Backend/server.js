@@ -113,20 +113,20 @@ const verificarToken = (req, res, next) => {
     });
 };
 
-app.get('/ruta-protegida', verificarToken, (req, res) => {
-    // Aquí puedes acceder a req.usuario
-    res.status(200).json({
-        message: "Ruta protegida",
-        usuario: req.usuario
-    });
-});
+// app.get('/ruta-protegida', verificarToken, (req, res) => {
+//     // Aquí puedes acceder a req.usuario
+//     res.status(200).json({
+//         message: "Ruta protegida",
+//         usuario: req.id_usuario
+//     });
+// });
 
-app.get('/perfil', verificarToken, (req, res) => {
-    res.status(200).json({
-        message: "Bienvenido al perfil",
-        usuario: req.usuario
-    });
-});
+// app.get('/perfil', verificarToken, (req, res) => {
+//     res.status(200).json({
+//         message: "Bienvenido al perfil",
+//         usuario: req.id_usuario
+//     });
+// });
 
 
 app.post('/registrar', (req, res) => {
@@ -494,17 +494,18 @@ const verifyTokenAndRole = (allowedRoles) => {
 };
 
 // Rutas protegidas por rol
-app.get('/admin-route', verifyTokenAndRole(['1']), (req, res) => {
-    res.send('Bienvenido Administrador');
-});
 
-app.get('/barber-route', verifyTokenAndRole(['2', '1']), (req, res) => {
-    res.send('Bienvenido Barbero');
-});
+// app.get('/admin-route', verifyTokenAndRole(['1']), (req, res) => {
+//     res.send('Bienvenido Administrador');
+// });
 
-app.get('/client-route', verifyTokenAndRole(['3', '2', '1']), (req, res) => {
-    res.send('Bienvenido Cliente');
-});
+// app.get('/barber-route', verifyTokenAndRole(['2', '1']), (req, res) => {
+//     res.send('Bienvenido Barbero');
+// });
+
+// app.get('/client-route', verifyTokenAndRole(['1']), (req, res) => {
+//     res.send('Bienvenido Cliente');
+// });
 
 
 app.listen(8081, () => {
