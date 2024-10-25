@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2024 a las 00:16:40
+-- Tiempo de generación: 26-10-2024 a las 00:30:04
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -32,6 +32,14 @@ CREATE TABLE `addbarberos` (
   `nombre` varchar(200) NOT NULL,
   `descripcion` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `addbarberos`
+--
+
+INSERT INTO `addbarberos` (`id_barbero`, `nombre`, `descripcion`) VALUES
+(2, 'Deiby', ''),
+(3, 'Nixon', '');
 
 -- --------------------------------------------------------
 
@@ -201,7 +209,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `addbarberos`
 --
 ALTER TABLE `addbarberos`
-  MODIFY `id_barbero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_barbero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria_producto`

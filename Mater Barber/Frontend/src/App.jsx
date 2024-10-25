@@ -15,11 +15,18 @@ import Gestiondeventas from './pages/Admin/Gestiondeventas';
 import EnvEmail from './pages/default/EnvEmail';
 import Cambiarpasscod from './pages/default/Cambiarpasscod';
 import IndexUser from './pages/Usuario/IndexUser';
+import Iniciobarber from './pages/Barbers/Iniciobarber';
+import PerfilAdmin from './pages/Admin/PerfilAdmin';
+import ConfiguracionAdmin from './pages/Admin/ConfiguracionAdmin';
+//FIN IMPORTACION DE RUTAS
+
+
+
 
 // ESTILOS DE LA PAGINA
 import './App.scss';
 import 'bootstrap/scss/bootstrap.scss';
-import Iniciobarber from './pages/Barbers/Iniciobarber';
+//FIN ESTILOS
 
 function App() {
   return (
@@ -27,15 +34,25 @@ function App() {
       <div className='flex'>
         <div className='content w-100'>
           <Routes>
-            {/* Rutas públicas */}
+            {/* RUTAS PUBLICAS */}
             <Route exact path='/' element={<Index />} />
             <Route exact path='/Login' element={<Login />} />
             <Route exact path='/Registro' element={<Registro />} />
             <Route exact path='/EnvEmail' element={<EnvEmail />} />
             <Route exact path='/cambiarpasscod' element={<Cambiarpasscod />} />
             <Route exact path='/Iniciobarber' element={<Iniciobarber />} />
+            {/* FIN RUTAS PUBLICAS */}
 
-            {/* Rutas privadas para administrador */}
+
+
+
+
+
+
+
+
+
+            {/* RUTAS PRIVDAS ADMINISTRADOR*/}
             <Route
               exact
               path='/InicioAdmin'
@@ -66,30 +83,63 @@ function App() {
               path='/Gestiondeventas'
               element={<PrivateRoute roles={['1']} element={<Gestiondeventas />} />}
             />
+            <Route
+              exact
+              path='/PerfilAdmin'
+              element={<PrivateRoute roles={['1']} element={<PerfilAdmin />} />}
+            />
+            <Route
+              exact
+              path='/ConfiguracionAdmin'
+              element={<PrivateRoute roles={['1']} element={<ConfiguracionAdmin />} />}
+            />
+            {/* FIN RUTAS PRIVDAS ADMINISTRADOR*/}
 
-            {/* Rutas privadas para barberos */}
+
+
+
+
+
+
+            {/* RUTAS PRIVADAS BARBEROS */}
             <Route
               exact
               path='/HorasBarberos'
               element={<PrivateRoute roles={['2', '1']} element={<HrsBarberos />} />}
-              
+
             />
-              {/* <Route
+            {/* <Route
               exact
               path='/Iniciobarber'
               element={<PrivateRoute roles={['2', '1']} element={<Iniciobarber />} />}
               
             /> */}
+            {/* FIN RUTAS PRIVADAS BARBEROS */}
 
-            {/* Rutas privadas para clientes */}
+
+
+
+
+
+
+
+            {/* RUTAS PRIVADAS CLIENTE*/}
             <Route
               exact
               path='/IndexUser'
               element={<PrivateRoute roles={['3']} element={<IndexUser />} />}
             />
+            {/* FIN RUTAS PRIVADAS CLIENTE*/}
 
-            {/* Ruta de acceso denegado */}
+
+
+            {/* RUTA ACCESO DENEGADO*/}
             <Route exact path='/access-denied' element={<AccessDenied />} />
+            {/* FIN RUTA ACCESO DENEGADO*/}
+
+
+
+
           </Routes>
         </div>
       </div>
