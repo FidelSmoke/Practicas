@@ -42,7 +42,7 @@ export default function NavbarUserIndex() {
                         </button>
                         <ul class="dropdown-menu bg-dark">
                             <li>
-                                <a class="dropdown-item bebas text-white " href="#">Perfil</a>
+                                <a class="dropdown-item bebas text-white " href="/PerfilUser">Perfil</a>
                             </li>
                             <li>
                                 <a class="dropdown-item bebas text-white" href="#">Configuración</a>

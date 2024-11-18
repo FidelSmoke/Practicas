@@ -40,7 +40,7 @@ export default function InicioAdmin() {
                                 <p><a href="Gestiondeventas" class="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover mx-4 bebas">GESTIONVENTAS</a></p>
                             </div>
                             <div className="col zoomhover2">
-                                <img src="logomastershop.png" alt="" width="100%" height="90%" class="d-inline-block align-text-top mx-3 mt-1" />
+                                <img src="logomastershop.png" alt="" width="100%" height="90%" class="d-inline-block align-text-top mx-3 mt-1 " />
                             </div>
                         </div>
                     </div>
