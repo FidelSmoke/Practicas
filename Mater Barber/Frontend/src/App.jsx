@@ -95,20 +95,22 @@ function App() {
             />
             {/* FIN RUTAS PRIVDAS ADMINISTRADOR*/}
 
+
             {/* RUTAS PRIVADAS BARBEROS */}
-            <Route
+
+            {/* <Route
               exact
               path="/HorasBarberos"
               element={
                 <PrivateRoute roles={["2", "1"]} element={<HrsBarberos />} />
               }
-            />
-            {/* <Route
+            /> */}
+            <Route
               exact
               path='/Iniciobarber'
               element={<PrivateRoute roles={['2', '1']} element={<Iniciobarber />} />}
               
-            /> */}
+            />
             {/* FIN RUTAS PRIVADAS BARBEROS */}
 
             {/* RUTAS PRIVADAS CLIENTE*/}

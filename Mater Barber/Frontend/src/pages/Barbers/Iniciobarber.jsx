@@ -1,10 +1,14 @@
 // BARBEROS
-import React from 'react'
+import React, { useState } from "react";
+import Reservations from "../../Components/NavbarBarber";
 
-export default function Iniciobarber() {
+const Dashboard = () => {
   return (
     <div>
-       <h1>HOLA MUNDO</h1>
+      <Reservations />
     </div>
-  )
-}
+  );
+};
+
+export default Dashboard;
+
